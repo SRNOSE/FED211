@@ -16,6 +16,20 @@
       color: inherit;
     }
 
+    /* 피겨박스 이미지 */
+    figure img {
+      width: 100%;
+    }
+
+    /* 피겨설명박스 */
+    figcaption {
+      font-size: 9px;
+      /* 글자 젤 작은사이즈가 9px */
+    }
+
+    span{
+      color:red;
+    }
     footer {
       text-align: center;
       padding: 10px 0;
@@ -61,46 +75,174 @@
     <!-- hr요소:가로구분선(css시 사용안함) -->
     <!-- 3.메인컨텐츠 -->
     <main>
+      <!-- 언론사 정보영역 -->
+      <div>
+        <img src="images/art1-1.png" alt="한겨례로고">
+      </div>
       <!-- 기사제목 -->
-      <a href=""><img src="../001.Info_PJ/images/art1-1.png" alt=""></a>
-      <h2>민주당 대선 첫 순회경선, 4일 웃는 자 누구?</h2>
+      <h2>민주당 <span>대선</span> 첫 순회경선, 4일 웃는 자 누구?</h2>
       <!-- 기사이미지 -->
-      <img src="../001.Info_PJ/images/art1-2.jpg" alt="">
-      <p>왼쪽부터 박용진, 정세균, <mark>이낙연</mark>, 추미애, 김두관, 이재명 후보. 국회사진기자단</p>
+      <!-- 이미지에 설명을 덧붙이고 싶을때 사용한다 -->
+      <figure>
+        <img src="../001.Info_PJ/images/art1-2.jpg" alt="정치 기사사진">
+        <figcaption>
+          왼쪽부터 박용진, 정세균,이낙연, 추미애, 김두관, 이재명 후보. 국회사진기자단
+        </figcaption>
+      </figure>
       <!-- 기사내용 -->
       <p>더불어민주당 <b>대통령후보</b>를 뽑는 첫 순회 경선에서 누가 웃게 될까.<abbr title="아주 잘 봤음">아잘봄</abbr></p>
 
-      민주당은 4일 대전 유성구 대전컨벤션센터<sup>①</sup>에서 대선주자 합동연설회<sup>②</sup> 및 현장투표를 실시하며 개표 결과도 발표한다. 이날 공개되는 결과는 대전·충남 지역의 대의원(980명) 현장투표와 온라인 투표를 마친
-      <p>권리당원(5만1776명)의 표심이다. 민주당 대전·충남 지역의 이른바 ‘당심’이다. 경선 참여를 신청한 국민선거인단도 대의원·권리당원과 똑같은 1표로 인정받지만, 처음 공개되는 이번 순회경선 결과가 오는</p>
+      민주당은 4일 대전 유성구 대전컨벤션센터<sup>①</sup>에서 <span>대선</span>주자 합동연설회<sup>②</sup> 및 현장투표를 실시하며 개표 결과도 발표한다. 이날 공개되는 결과는 대전·충남 지역의
+      대의원(980명) 현장투표와 온라인 투표를 마친
+      <p>권리당원(5만1776명)의 표심이다. 민주당 대전·충남 지역의 이른바 ‘당심’이다. 경선 참여를 신청한 국민선거인단도 대의원·권리당원과 똑같은 1표로 인정받지만, 처음 공개되는 이번 순회경선 결과가
+        오는</p>
       8일부터 12일까지 진행되는 64만명의 1차 선거인단 표심에도 영향을 줄 수 있어 각 캠프는 촉각을 곤두세우고 있다.
 
-      첫 경선의 관전 포인트는 여론조사에서 <strong>1위</strong>를 달리고 있는 이재명 경기지사의 과반 득표 여부다.<i> 이재명 캠프</i> 관계자는 3일 “오늘 발표된 한국갤럽 여론조사를 보면 <mark>이낙연</mark> 전 대표 지지율은 한 자릿수로
-      <p>떨어졌다”며 <q>이 여론조사를 보면 과반을 기대할 수 있겠다는 생각이 든다고 말했다.</q> 한국갤럽이 지난달 31일부터 이달 2일까지 전국 성인 1000명을 대상으로 대선주자 선호도를 조사한 결과(신뢰수준</p>
-      95%, 오차범위 ±3.1% 포인트), 이 지사 24%, 윤석열 전 총장 19%, <mark>이낙연</mark> 전 대표 8% 차례였다. 반면 <mark>이낙연</mark> 캠프는 이재명-<mark>이낙연</mark> 후보 모두 40%대 득표로 박빙의 승부를 펼칠 것으로
-      기대하고 있다. <i><mark>이낙연</mark> 캠프</i>의 설훈 선대위원장은 이날 국회 소통관에서 기자회견을 열고 <q>충청의 밑바닥 민심은 이낙연을 원한다는 것을 확인했다.</q> 충청의 민심은 늘 도덕성을 중시해왔다며 <q>충청에서 반전의 드라마가 시작될 것이라고 기대하고 있다며 고</q> 말했다.
+      첫 경선의 관전 포인트는 여론조사에서 <strong>1위</strong>를 달리고 있는 이재명 경기지사의 과반 득표 여부다.<i> 이재명 캠프</i> 관계자는 3일 “오늘 발표된 한국갤럽 여론조사를 보면
+      <mark>이낙연</mark> 전 대표 지지율은 한 자릿수로
+      <p>떨어졌다”며 <q>이 여론조사를 보면 과반을 기대할 수 있겠다는 생각이 든다고 말했다.</q> 한국갤럽이 지난달 31일부터 이달 2일까지 전국 성인 1000명을 대상으로 <span>대선</span>주자 선호도를 조사한
+        결과(신뢰수준</p>
+      95%, 오차범위 ±3.1% 포인트), 이 지사 24%, 윤석열 전 총장 19%, <mark>이낙연</mark> 전 대표 8% 차례였다. 반면 <mark>이낙연</mark> 캠프는
+      이재명-<mark>이낙연</mark> 후보 모두 40%대 득표로 박빙의 승부를 펼칠 것으로
+      기대하고 있다. <i><mark>이낙연</mark> 캠프</i>의 설훈 선대위원장은 이날 국회 소통관에서 기자회견을 열고 <q>충청의 밑바닥 민심은 이낙연을 원한다는 것을 확인했다.</q> 충청의 민심은
+      늘 도덕성을 중시해왔다며 <q>충청에서 반전의 드라마가 시작될 것이라고 기대하고 있다며 고</q> 말했다.
 
-      정세균 전 총리와 추미애 전 법무부 장관, 김두관·박용진 의원 중 누가 <em><ins>코로나</ins>3위를 차지할지도 관심사다</em>. 첫 경선에서 어느 정도 지지율이 확보돼야 반등의 기회를 잡을 수 있기 때문이다. 자가격리 중인 정 전
-      <p>총리는 이날 시비에스(CBS) 라디오에 출연해 “충청에서 시작되는 경선<sup>job</sup>에서 드라마가 펼쳐질 것 아닌가, 이렇게 기대하고 있다”며 “여론조사가 경선을 어렵게 만든 측면이 있는데 그것과는 다른 결과가</p>
-        <del>나오지 않을까 그렇게 본다”고 말했다.</del>
+      정세균 전 총리와 추미애 전 법무부 장관, 김두관·박용진 의원 중 누가 <em><ins>코로나</ins>3위를 차지할지도 관심사다</em>. 첫 경선에서 어느 정도 지지율이 확보돼야 반등의 기회를 잡을 수
+      있기 때문이다. 자가격리 중인 정 전
+      <p>총리는 이날 시비에스(CBS) 라디오에 출연해 “충청에서 시작되는 경선<sup>job</sup>에서 드라마가 펼쳐질 것 아닌가, 이렇게 기대하고 있다”며 “여론조사가 경선을 어렵게 만든 측면이 있는데
+        그것과는 다른 결과가</p>
+      <del>나오지 않을까 그렇게 본다”고 말했다.</del> <br>
       <!-- 기자이름 -->
-      서영지(yj@hani.co.kr)
+      서영지(yj@hani.co.kr) <br>
       <!-- 원본기사 -->
-      https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=100&oid=028&aid=0002559229
+      <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=100&oid=028&aid=0002559229"
+        target="_blank">원본기사</a>
 
       <!-- 인용구 -->
-      <blockquote cite="https://ko.wikipedia.org/wiki/%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4">코로나바이러스(영어: Coronavirus, 문화어: 코로나비루스)는 코로나바이러스과(영어: Coronaviridae)의 코로나바이러스아과(Coronavirinae)에 속하는 RNA 바이러스의 총칭으로,[1][2] 사람과 동물의 호흡기와 소화기계 감염을 유발한다. 주로 점막전염(粘膜感染), 비말전파(飛沫傳播)로 쉽게 감염되며, 사람에게는 일반적으로 경미한 호흡기 감염을 일으키지만 치명적인 감염을 유발하기도 하며, 소와 돼지는 설사, 닭은 호흡기 질환이 발생하기도 한다.
+      <blockquote cite="https://ko.wikipedia.org/wiki/%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4">
+        코로나바이러스(영어: Coronavirus, 문화어: 코로나비루스)는 코로나바이러스과(영어: Coronaviridae)의 코로나바이러스아과(Coronavirinae)에 속하는 RNA 바이러스의
+        총칭으로,[1][2] 사람과 동물의 호흡기와 소화기계 감염을 유발한다. 주로 점막전염(粘膜感染), 비말전파(飛沫傳播)로 쉽게 감염되며, 사람에게는 일반적으로 경미한 호흡기 감염을 일으키지만 치명적인
+        감염을 유발하기도 하며, 소와 돼지는 설사, 닭은 호흡기 질환이 발생하기도 한다.
       </blockquote>
       <hr>
       <small>①정세균 전 총리와 추미애 전 법무부 장관, 김두관·박용진 의원</small> <br>
-      <small>②한국갤럽이 지난달 31일부터 이달 2일까지 전국 성인 1000명을 대상으로 대선주자 선호도를 조사한 결과</small>
+      <small>②한국갤럽이 지난달 31일부터 이달 2일까지 전국 성인 1000명을 대상으로 <span>대선</span>주자 선호도를 조사한 결과</small>
 
       <hr>
       <h3>오늘의 명화</h3>
-        <img src="https://www.w3schools.com/html/img_the_scream.jpg" alt="뭉크의 절규" style="width:50px;">
-        <br>
-        뭉크의<cite>[절규]</cite>
-        <br>
-         <bdo dir="rtl">얄리얄리얄라셩얄라리얄라</bdo>
+      <img src="https://www.w3schools.com/html/img_the_scream.jpg" alt="뭉크의 절규" style="width:50px;">
+      <br>
+      뭉크의<cite>[절규]</cite>
+      <br>
+      <bdo dir="rtl">얄리얄리얄라셩얄라리얄라</bdo>
+
+      <hr>
+
+      <h4>한겨례 주요뉴스</h4>
+      <ul>
+        <li>
+          <a href="https://www.hani.co.kr/arti/politics/assembly/1010380.html?_ns=t0" target="_blank">윤석열 캠프, ‘전달’ 인정한
+            김웅에 “정밀 검토하고 해명하라"</a>
+          </li>
+        <li>
+          <a href="https://www.hani.co.kr/arti/animalpeople/ecology_evolution/1010379.html?_ns=t0"
+            target="_blank">17.4㎝ 공룡?…안데스에서 공룡 닮은 신종 도마뱀 잡았다</a>
+          </li>
+        <li>
+          <a href="https://www.hani.co.kr/arti/area/yeongnam/1010365.html?_ns=t0" target="_blank">
+          91명에 ‘유통기한 지난 화이자’ 접종한 종합병원…위탁 해지</a>
+        </li>
+      </ul>
+
+      <hr>
+
+      <h5>한겨례 랭킨순위</h5>
+      <ol>
+        <li>
+          <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=028&aid=0002559390&rankingType=RANKING" target="_blank">‘진짜 사나이’와는 전혀 다른, 섬뜩한 군생활 이야기 ‘디 …</a>
+        </li>
+        <li>
+          <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=028&aid=0002559431&rankingType=RANKING" target="_blank">김웅, “(김건희 고발장은) 검찰 측 입장에서 전달” 취재 …</a>
+        </li>
+        <li>
+          <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=028&aid=0002559413&rankingType=RANKING" target="_blank">국민지원금 신청 몰려 카드사·은행 앱 접속 지연</a>
+        </li>
+      </ol>
+
+      <hr>
+      <h6>분야별 주요뉴스</h6>
+      <dl>
+        <dt>정치</dt>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=100&oid=088&aid=0000719857" target="_blank">
+            국민의힘 '역선택 방지' 도입 X, 대신 '본선 경쟁력' 평가
+          </a>
+        </dd>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=100&oid=008&aid=0004641068" target="_blank">
+            홍준표 "또다른 불씨 안고 있지만…선관위 전원 합의 존중"
+          </a>
+        </dd>
+
+        <dt>경제</dt>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=101&oid=014&aid=0004703936" target="_blank">
+            동국제약, 식약처 의약품 품질고도화 컨설팅 지원 기업 선정
+          </a>
+        </dd>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=101&oid=374&aid=0000256911" target="_blank">
+            삼성 美 새 반도체 공장 부지 텍사스 테일러시 부상
+          </a>
+        </dd>
+
+        <dt>사회</dt>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=102&oid=022&aid=0003616527" target="_blank">
+            6일부터 국민지원금 신청 절차 시작…대상 여부 조회·신청 방법은
+          </a>
+        </dd>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=102&oid=015&aid=0004600489" target="_blank">
+            [단독] '모더나행' 항공료만 1600만원 들었는데…결국 또 펑크
+          </a>
+        </dd>
+      </dl>
+      
+      <hr>
+
+      <h6>언론사별 가장 많이 본 뉴스</h6>
+      <!-- 테이블요소 2열3행 -->
+      <table><!-- 1행 -->
+        <tr>
+          <td>
+              <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=437&aid=0000275463&rankingType=RANKING" target="blank">
+                마이크 발로 찬 강윤성, 이번엔 유치장 문 열린 틈타 경찰 밀치고 욕설
+              </a>
+          </td>
+          <td>
+            <a href="https://mimgnews.pstatic.net/image/origin/437/2021/09/06/275463.jpg?type=nf88_60"><img src="https://mimgnews.pstatic.net/image/origin/437/2021/09/06/275463.jpg?type=nf88_60" alt="기사사진" style="width:88px; height: 60px;"></a>
+
+          </td>
+        </tr>
+        <tr><!-- 2행 -->
+          <td>
+            <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=020&aid=0003380431&rankingType=RANKING" target="_blank">남편 ‘일본도’에 숨진 아내, 마지막 말은 “우리 애들 어떡해”</a>
+          </td>
+          <td>
+            <a href="https://mimgnews.pstatic.net/image/origin/022/2021/09/06/3616799.jpg?type=nf88_60"><img src="https://mimgnews.pstatic.net/image/origin/022/2021/09/06/3616799.jpg?type=nf88_60" width="88" height="60" alt="기사사진" style="width: 88px; height: 60px;"></a>
+          </td>
+        </tr>
+        <tr><!-- 3행 -->
+          <td>
+            <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=001&aid=0012644450&rankingType=RANKING" target="_blank">
+              베트남 총리, 삼성전자 찾아 "한국 정부가 백신 확보 도와달라"</a>
+          </td>
+          <td>
+            <a href="https://mimgnews.pstatic.net/image/origin/001/2021/09/06/12644450.jpg?type=nf88_60"><img src="https://mimgnews.pstatic.net/image/origin/001/2021/09/06/12644450.jpg?type=nf88_60" width="88" height="60" alt="기사사진" style="width: 88px; height: 60px;"></a>
+          </td>
+        </tr>
+      </table>
     </main>
     <!-- 4.하단정보 -->
     <hr>
