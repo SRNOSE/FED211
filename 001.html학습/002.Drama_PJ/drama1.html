@@ -4,49 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>최신드라마 - 월화드라마</title>
-   <style>
-     /* 
-     선택자 {
-       속성명: 값;
-     }
-     */
-     #top{
-       text-align: center;
-     }
-         /* 컨텐츠부분 */
-     a{
-       text-decoration: none;
-       color: inherit;
-     }
-     .tbl{
-        /* 테두리 */
-        border: 5px solid #ccc;
-        border-radius: 5px;
-        width: 800px;
-        margin: 0 auto;
-     }
-     /* 테이블데이타(td) */
-     .tbl td{
-       /* 글자크기:기본글자크기 16px */
-       font-size: 18px;
-       /* 줄간격:숫자는 글자크기기준 배수(px사용가능)*/
-       line-height: 2;
-       /* 안쪽여백 */
-       padding: 5px;
-     }
-
-     /* 드라마제목 */
-     .tbl a{
-       color: #000;
-       text-decoration: none;
-     }
-     .tbl a:hover{
-       color: crimson;
-       text-decoration: underline;
-       font-weight: bold;
-     }
-   </style>
-</head>
+  <link rel="stylesheet" href="css/common.css">
+  </head>
 
 <body>
   <!-- 1.상단부분 -->
@@ -54,8 +13,8 @@
     <!-- 1-1.제목 -->
     <h1>최신드라마 - 월화드라마</h1>
     <!-- 1-2.메뉴 -->
-    <h2>
-      <a href="drama1.html">월화드라마</a> |
+    <h2 class="menu">
+      <a href="drama1.html" class="on">월화드라마</a> |
       <a href="drama2.html">수목드라마</a>
     </h2>
   </div>
