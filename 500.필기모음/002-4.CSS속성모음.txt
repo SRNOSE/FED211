@@ -1,0 +1,21 @@
+[글자관련]
+1. color :글자색
+2. font-family : 글자체
+3. font-size : 글자크기
+4. font-weight:글자굵기
+5. font-style: 글자스타일
+6.letter-spacing
+7.word-spacing
+8. text-align: 박스에서의 글자(인라인)정렬
+left(기본값), right, center, justify(양쪽정렬)
+[border관련]
+https://www.w3schools.com/cssref/pr_border-style.asp
+ 
+* 마진,패딩 공통 셋팅!
+margin(padding) : 값 ; -> 4방향
+margin(padding) : 값 값; ->위아래
+margin(padding): 값 값 값 -> 위 양쪽 아래
+margin(padding) : 값 값 값 값 -> 위 오른 아래 왼
+
+->각 방향별 속성
+margin(padding)- top, margin(padding)-left, margin(padding)-right, margin(padding)-bottom
