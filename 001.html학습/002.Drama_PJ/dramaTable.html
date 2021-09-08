@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <title>한국 최신 드라마 리스트</title>
     <style>
-      #drama{
+      /* 테이블공통 */
+      .tbl{
         font-family: "궁서체","굴림", sans-serif;
         /* 글자체 - 순서대로 있는체를 적용함 */
-        font-size: 24px;
         color: #222;
 
         /* 테이블 td사이의 공백없애기!!!! */
@@ -18,8 +18,13 @@
           (테이블 디자인 시 필수셋팅)
         */
 
-        /* 테이블 가로 중앙정렬 */
-        margin: 0 auto;
+      }
+      #drama
+      {
+        font-size: 24px;
+        width: 1000px;
+         /* 테이블 가로 중앙정렬 */
+         margin: 0 auto;
         /* 
         블록요소의 가로 중앙정렬시 마영오!
         테이블도 기본속성이 block과 유사함
@@ -30,12 +35,10 @@
         >>> 테이블은 내용만큼만 늘어난다
         테이블의 특징중 하나는 부모요소의 가로크기가 
         >>>자기가 만든 자동크기보다 작아지면 같이 작아짐
-        */
-        width: 1000px;
+        */      
       }
-
+     
       /* 테이블 제목 */
-
       #drama caption{
         font-size: 35px;
         font-weight: bold;
@@ -57,15 +60,28 @@
       }
 
       /* 중앙부분 마지막 td 아래줄 두껍게 */
-      #drama tr:last-child td{
+      #drama tbody tr:last-child td{
         border-bottom: 2px solid #555;
       }
    
       /* 중앙부분 첫번째 td에 윗줄 두껍게  */
-      #drama tr:first-child td{
+      #drama tbody tr:first-child td{
         border-top: 2px solid #555;
       }
 
+      /* 중앙부분 몇번째 요소의 글자색 변경하기 */
+      #drama tbody tr:nth-child(8) td{
+        color: red;
+      }
+
+      /*중앙부분 짝수번째 요소 배경색 넣기 */
+      /* nth-child(순번) */
+
+      #drama tbody tr:nth-child(2n) td{
+       background: #ccc;
+      }
+
+      
       /* 하단부분 */
       #drama tfoot td{
         text-align: center;
@@ -76,7 +92,31 @@
       #drama tbody td{
         border: 1px solid #ccc;
       }
+      /* 구분 테이블 박스 */
+      .gubun{
+        width: 1000px;
+        margin: 0 auto;
+      }
+      /* 구분테이블 */
+      #gubun{
+        font-size: 20px;
+        border: 1px solid #666;
+      }
+      #gubun td{
+        padding: 10px;
+      }
+      /* 구분 테이블 첫번째 tr의 첫번째 td에 오른쪽 border */
+      #gubun tr:first-child td:first-child{
+        border-right: 1px dotted #999;
+      }
+      /* 구분테이블의 tr중 앞에 tr형제가 있는 td만 윗쪽보더 */
+      #gubun tr + tr td{
+        border-top: 1px dotted #666;
+      }
+       
+       
     </style>
+
   </head>
   <body>
       <!-- 한국 최신 드라마 리스트 테이블 -->
@@ -203,9 +243,35 @@
             <td>16부작</td>
           </tr>
         </tbody>
-
-      
-
       </table>
+
+      <!-- 구분테이블 -->
+      <div class="gubun">
+        <table id="gubun" class="tbl">
+          <tr>
+            <td rowspan="4">구분</td>
+            <td>월화드라마</td>
+          </tr>
+          <tr>
+            
+            <td>수목드라마</td>
+          </tr>
+          <tr>
+           
+            <td>금토드라마</td>
+          </tr>
+          <tr>
+            
+            <td>토일드라마</td>
+          </tr>
+          
+        </table>
+        <!-- 
+          rowspan 속성은 위아래행을 합치는 속성
+          여기서는 4줄을 합치므로 값을 4로 설정함
+
+        -->
+      </div>
+
   </body>
 </html>
