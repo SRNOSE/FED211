@@ -58,4 +58,38 @@ body{
   width: 100%;
   /* 이미지의 height는 자동(비율유지) */
 }
+.ci > img{/* 직계자식 이미지만 */
+  width: 100%;
+}
+/* 캐릭터 이름 */
+.ci span{
+  text-align: center;
+  display: block;
+  margin-top: -22%;
+  /* 비율로 이미지가 변경되므로 마진도 상대적으로 변경되게함! */
+}
 
+/* 캐릭터 이름 이미지 */
+.ci span img{
+  width: 40%;
+
+}
+
+/* 캐릭터 이름 첫번째 이미지 숨기기 */
+
+/* display:none사용 */
+.ci span img:first-child{
+  display: none;
+}
+
+/* .cat박스에 마우스 오버시 */
+/* 캐릭터 이름 첫번쨰 이미지 보이기 */
+/* 원래 이미지는 display:inline */
+.cat:hover .ci span img:first-child{
+  display: inline; /* 인라인 요소니까 인라인을 주느거임 */
+}
+/* .cat박스에 마우스 오버시 */
+/* 캐릭터 이름 마지막 이미지 숨기기 */
+.cat:hover .ci span img:last-child{
+  display: none;
+}
