@@ -105,5 +105,6 @@ body{
 /* 캐릭터설명 문단 */
 .cd p{
   padding: 10px;
-  font: 14px/2, '맑은 고딕', '돋움', arial ;
+  font: 14px/1.5, '맑은 고딕', '돋움', arial ;
+  text-align: justify;/* 양쪽정렬 */
 }
