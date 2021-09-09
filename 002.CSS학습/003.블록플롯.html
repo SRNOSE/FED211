@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <title>003.블록요소의 float</title>
   <style>
-
     /* 
     [블록요소의 float]
 
@@ -42,14 +42,22 @@
     [기존의 float셋팅된 요소 없애기]
     float:none;
 
+    [float에 의한 진행방향]
+    float:left만 사용-> 왼쪽에서 오른쪽으로 진행
+    float:right만 사용->오른쪽에서 왼쪽으로 진행
+
+    (경우5)
+
+
     */
 
-    h1{
+    h1 {
       text-align: center;
 
     }
+
     /* 부모박스 */
-    .wrap{
+    .wrap {
       border: 5px dashed #b8203e;
       margin: 10px;
       padding: 10px;
@@ -57,7 +65,7 @@
 
     /* 블록박스 공통 디자인 */
 
-    .bx{
+    .bx {
       width: 300px;
       height: 200px;
       border: 5px ridge #ccc;
@@ -67,49 +75,59 @@
       background-position: center;
       background-size: cover;
     }
-   
+
 
     /* 개별 디자인박스 */
-    .bx1{
+    .bx1 {
       background-image: url(imgs/dc1.png);
     }
-    .bx2{
+
+    .bx2 {
       background-image: url(imgs/dc2.png);
     }
-    .bx3{
+
+    .bx3 {
       background-image: url(imgs/dc3.png);
     }
-    .bx4{
+
+    .bx4 {
       background-image: url(imgs/dc4.png);
     }
 
     /* 플롯관련 class */
-    .fll{
+    .fll {
       float: left;
       /* 나는 왼쪽에 너는 오른쪽에 */
     }
-    .flr{
+
+    .flr {
       float: right;
       /* 나는 오른쪽에 너는 왼쪽에 */
     }
-    .clb{
+
+    .clb {
       clear: both;
       /* 양쪽 다 지워 */
     }
-    .cll{
+
+    .cll {
       clear: left;
       /* 왼쪽float지워 */
     }
-    .clr{
+
+    .clr {
       clear: right;
       /* 오른쪽 float지워 */
     }
 
     /* 플롯해제용 가상요소 */
-    .flclb::after{
-      content: '';/* 마치 span태그를 쓴것같음 */
-      display: block;/* 마치div태그를 쓴것같음 */
-      clear: both;/* 플롯해제->인라인요소에는 안먹히고 블록요소에만 먹힌다 */
+    .flclb::after {
+      content: '';
+      /* 마치 span태그를 쓴것같음 */
+      display: block;
+      /* 마치div태그를 쓴것같음 */
+      clear: both;
+      /* 플롯해제->인라인요소에는 안먹히고 블록요소에만 먹힌다 */
     }
 
     /* 
@@ -133,59 +151,70 @@
       display:block으로 쓰면 마치 div를 쓴것과 같아짐
     */
 
-      /* 경우4 */
-      .case4{
-        overflow: hidden;
-      }
-      .case4 .bx{
-        float: left;
-       
-      }
+    /* 경우4 */
+    .case4 {
+      overflow: hidden;
+    }
 
+    .case4 .bx {
+      float: left;
+
+    }
+    /* 경우5 */
+    .case5 {
+      overflow: hidden;
+    }
+
+    .case5 .bx {
+      float: right;
+      /* 오른쪽 기준: 방향 오른쪽부터 왼쪽으로 */
+    }
   </style>
 </head>
+
 <body>
-    <h1>003.블록요소의 float</h1>
-    <h2>경우1</h2>
-    <div class="wrap">
-      <!-- .bx.bx$*4 -->
-      <div class="bx bx1 fll"></div>
-      <div class="bx bx2 flr"></div>
-      <div class="bx bx3 clb"></div>
-      <div class="bx bx4 "></div>
-    </div>
-    <h2>경우2</h2>
-    <div class="wrap">
-     
-      <div class="bx bx1 fll"></div>
-      <div class="bx bx2 flr"></div>
-      <div class="bx bx3 clb fll"></div>
-      <div class="bx bx4 flr"></div>
-      <div class="clb"></div>
-    </div>
-    <h2>경우3</h2>
-    <div class="wrap flclb">
-     
-      <div class="bx bx1 fll"></div>
-      <div class="bx bx2 flr"></div>
-      <div class="bx bx3 clb fll"></div>
-      <div class="bx bx4 flr"></div>
-    </div>
-    <h2>경우4</h2>
-    <div class="wrap case4">
-     
-      <div class="bx bx1"></div>
-      <div class="bx bx2"></div>
-      <div class="bx bx3"></div>
-      <div class="bx bx4"></div>
-    </div>
-    <h2>경우5</h2>
-    <div class="wrap">
-     
-      <div class="bx bx1"></div>
-      <div class="bx bx2"></div>
-      <div class="bx bx3"></div>
-      <div class="bx bx4"></div>
-    </div>
+  <h1>003.블록요소의 float</h1>
+  <h2>경우1</h2>
+  <div class="wrap">
+    <!-- .bx.bx$*4 -->
+    <div class="bx bx1 fll"></div>
+    <div class="bx bx2 flr"></div>
+    <div class="bx bx3 clb"></div>
+    <div class="bx bx4 "></div>
+  </div>
+  <h2>경우2</h2>
+  <div class="wrap">
+
+    <div class="bx bx1 fll"></div>
+    <div class="bx bx2 flr"></div>
+    <div class="bx bx3 clb fll"></div>
+    <div class="bx bx4 flr"></div>
+    <div class="clb"></div>
+  </div>
+  <h2>경우3</h2>
+  <div class="wrap flclb">
+
+    <div class="bx bx1 fll"></div>
+    <div class="bx bx2 flr"></div>
+    <div class="bx bx3 clb fll"></div>
+    <div class="bx bx4 flr"></div>
+  </div>
+  <h2>경우4</h2>
+  <div class="wrap case4">
+
+    <div class="bx bx1"></div>
+    <div class="bx bx2"></div>
+    <div class="bx bx3"></div>
+    <div class="bx bx4"></div>
+  </div>
+  <h2>경우5</h2>
+  <div class="wrap case5">
+
+    <div class="bx bx1"></div>
+    <div class="bx bx2"></div>
+    <div class="bx bx3"></div>
+    <div class="bx bx4"></div>
+  </div>
 </body>
+
 </html>
