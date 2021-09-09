@@ -24,8 +24,7 @@ body{
   width: 90%;
   /* height: 300px; 자식요소float때문에 자식요소를 인식하지 못함
   높이값이 없을때 높이값이 안나옴 */
-  margin: 0 auto;/* 마영오 - 블록박스 가로중앙정렬 */
-  outline: 15px dashed lime;
+  margin: 50px auto 0;/* 마영오 - 블록박스 가로중앙정렬 */
   /* overflow: hidden; 가상요소로 해제함*/
 }
 
@@ -50,7 +49,6 @@ body{
   padding: 5px;
   /* 마진,패딩 포함하기 속성 */
   box-sizing: border-box;
-  outline: 10px dotted rgb(41, 8, 230);
   
 }
 /* 캐릭터 이미지 */
@@ -92,4 +90,20 @@ body{
 /* 캐릭터 이름 마지막 이미지 숨기기 */
 .cat:hover .ci span img:last-child{
   display: none;
+}
+
+/* 캐릭터 설명박스 */
+.cd{
+  background: url(../images/eachBG.jpg) no-repeat center/cover;
+}
+
+/* 캐릭터 설명 타이틀 */
+.cd h3{
+  padding: 20px;
+}
+
+/* 캐릭터설명 문단 */
+.cd p{
+  padding: 10px;
+  font: 14px/2, '맑은 고딕', '돋움', arial ;
 }

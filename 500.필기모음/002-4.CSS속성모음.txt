@@ -10,6 +10,10 @@
 left(기본값), right, center, justify(양쪽정렬)
 [border관련]
 https://www.w3schools.com/cssref/pr_border-style.asp
+ 9. line-height: 1.8; (배수/px,em)
+ 10.폰트 한번에 쓰기
+ font: 스타일 두께 크기 /줄간격 글자체;
+ font: 스 두 크 /줄 체; 
  
 * 마진,패딩 공통 셋팅!
 margin(padding) : 값 ; -> 4방향
