@@ -111,7 +111,7 @@ body{
 /* 캐릭터 설명박스 */
 .cd{
   background: url(../images/eachBG.jpg) no-repeat center/cover;
-  height: 250px;
+  height:0;/* 마우스오버시 250px */
   overflow: auto;/* 넘치면 스크롤바 */
   margin-top: 15px;
   border-radius: 20px 0 0 20px;
@@ -119,13 +119,20 @@ body{
   /* 둥금모서리 방향별로 주기
     border-radius:왼위 오른위 오른아래 왼아래(왼쪽부터 시계방향설정)
   */
-  border-start-start-radius: 10px;
+
+  /* 트랜지션으로 애니메이션 설정하기
+  transition: 속성명 시간 이징 지연시간
+  */
+  transition: .8s;
+}
+/* 캐릭터개별박스(.cat) */
+.cat:hover .cd{
+  height: 250px;
   
 }
-
 /* 캐릭터 설명 타이틀 */
 .cd h3{
-  padding: 20px;
+  padding: 5px 10px 0;
 }
 
 /* 캐릭터설명 문단 */
