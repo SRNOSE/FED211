@@ -79,8 +79,48 @@
       font-family: '궁서';
       color: red;
     }
+    /* 가상클래스 2개 사용가능 */
     ul.part1 li:first-child:hover{
       font-size: 50px;
+    }
+    ul.part1 li:nth-of-type(2){
+      font-size: 30px;
+      font-family: '굴림';
+      color: purple;
+      font-weight: bold;
+    }
+    ul.part1 li:nth-of-type(2):hover{
+      color:skyblue;
+    }
+
+    /* 3번째 li */
+    ul.part1 li:nth-of-type(3){
+      font-size: 24px;
+      font-family: 'dotum', '돋움';
+      color: brown;
+      font-weight: bold;
+      font-style: italic;
+    }
+    ul.part1 li:nth-of-type(3):hover{
+      font-style: normal;
+    }
+    ul.part1 li:nth-of-type(4) {
+
+      font-size: 50px;
+      font-family: '궁서';
+      color: dodgerblue;
+    }
+    ul.part1 li:nth-of-type(4):hover{
+      background-color: yellow;
+    }
+    ul.part1 li:nth-of-type(4) b{
+      display: none;
+    }
+    ul.part1 li:nth-of-type(4):hover b{
+      display: inline;
+    }
+    ul.part1 li:nth-of-type(4):hover span{
+      display: none;
     }
   </style>
 </head>
@@ -94,7 +134,7 @@
           <li>나 보기가 역겨워</li>
           <li>가실 때에는</li>
           <li>말없이 고이 보내 드리우리다</li>
-          <li>영변에 약산</li>
+          <li><b>영변</b><span>寧邊</span>에 <b>약산</b><span>藥山</span></li>
           <li>진달래꽃</li>
           <li>아름 따다 가실 길에 뿌리우리다</li>
           <li>가시는 걸음 걸음</li>
