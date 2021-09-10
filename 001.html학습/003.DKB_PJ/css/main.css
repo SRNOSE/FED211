@@ -38,7 +38,9 @@ body{
 /* 캐릭터 박스 */
 #cbx{
   width: 90%;
-  /* height: 300px; 자식요소float때문에 자식요소를 인식하지 못함
+  height: 450px;
+  /* height: 300px; 
+  자식요소float때문에 자식요소를 인식하지 못함
   높이값이 없을때 높이값이 안나옴 */
   margin: 50px auto 0;/* 마영오 - 블록박스 가로중앙정렬 */
   /* overflow: hidden; 가상요소로 해제함*/
@@ -177,4 +179,57 @@ body{
   padding: 10px;
   font: 14px/1.5, '맑은 고딕', '돋움', arial ;
   text-align: justify;/* 양쪽정렬 */
+}
+
+/* 하단영역 footer */
+
+.info{
+  background-color: rgba(255, 255, 255, 0.7);/* 반투명 */
+  padding: 15px;
+}
+/* 하단링크 */
+ul.bm{
+  width: 720px;
+  max-width: 90%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* overflow: hidden; 플롯해제1*/
+  margin: 0 auto;
+}
+ul.bm::after{
+  content: '';
+  display: block;
+  clear: both; /* 플롯해제2 */
+}
+ul.bm li{
+  float: left;
+  padding: 0 5px;
+}
+ul.bm li a{
+  text-decoration: none;
+  color: #222;
+  font: bold 14px/1.5 '맑은 고딕';
+
+}
+ul.bm li a:hover{
+  color: red;
+  text-decoration: underline;
+}
+
+/* 주소박스 */
+.info address{
+  width: 720px;
+  margin: 20px auto;
+  max-width: 90%;
+  font: normal 12px/1.5 '맑은 고딕';
+  text-align: center;
+  border: 5px double #555;
+  padding: 10px 0;
+}
+
+/* 하단로고박스 */
+#blogo{
+  text-align: center;
+ 
 }
