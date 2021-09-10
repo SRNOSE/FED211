@@ -3,9 +3,85 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>004.가상클래스</title>
+  <title>CSS 가상클래스</title>
   <style>
-    
+    h1,h2{
+      text-align: center;
+    }
+    /* a요소 가상클래스 주기 */
+
+    /* :link 링크최초상태 */
+    /* h2 a:link{
+      color: crimson;
+      text-decoration: none;
+    } */
+    /* 일반적으로 a요소 자체 디자인을 잡느다  */
+    h2 a{
+      color: crimson;
+      text-decoration: none;
+      text-shadow: 2px 2px 2px papayawhip;
+      /* 
+      글자그림자
+      text-shadow:x축 y축 블러 색;
+      */
+    }
+
+    /* :hover 마우스 오버상태 */
+    h2 a:hover{
+      color:rgb(190, 190, 42);
+      text-decoration: overline;
+    }
+    /* :active 마우스로 눌려진 상태(클!상태) */
+    /* h2 a:active{
+      color: rgb(70, 70, 153);
+    } */
+    /* :visited 링크 방문후(한번클릭후) */
+    /* h2 a:visited{
+      color: darksalmon;
+    } */
+
+    /* 포커스 :focus 요소를 클릭하여 초점이 올떄 */
+    h2 a:focus{
+      outline: 10px dotted orange;
+    }
+
+    /* 시인이름 */
+    h3{
+      width: 800px;
+      margin: 0 auto;
+      text-align: right;
+      padding-right: 50px;
+    }
+
+    /* 첫번째 파트 */
+    /* 요소명.클래스명->종속선택자
+      ->종속선택자를 언제 쓰는가?
+      1)같은 클래스명인데 요소별로 다른 셋팅을 할때
+      2)클래스나 아이디의 요소명을 밝히고 싶을때
+    */
+    ul.part1{
+      /* ul기본 3가지 없애기 */
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      width: 800px;
+      margin: 20px auto 0;
+      border: 2px solid #ccc;
+      border-radius:20px ;
+      padding: 20px 0;
+      text-align: center;
+      }
+
+    /* 1번 li */
+    ul.part1 li:first-child{
+      font-size: 40px;
+      font-family: '궁서';
+      color: red;
+    }
+    ul.part1 li:first-child:hover{
+      font-size: 50px;
+    }
   </style>
 </head>
 
