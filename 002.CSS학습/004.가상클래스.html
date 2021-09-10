@@ -122,6 +122,32 @@
     ul.part1 li:nth-of-type(4):hover span{
       display: none;
     }
+
+    /* 4번 이후 모든 li 전부셋팅 */
+    /* 틸드(~)를 사용한 다중형제요소 선택 */
+
+    ul.part1 li:nth-of-type(4)/* 4번째는 포함하지 않는다 */ ~ li{
+      font-size: 25px;
+      font-family: '궁서';
+      color:orangered;
+    }
+
+    /* 오버시 */
+    ul.part1 li:nth-of-type(4)~ li:hover{
+      font-size: 28px;
+      color:blue;
+    }
+    /* 마지막li */
+    /* 
+      틸드(~)를 사용한 CSS가 한단계 더 선택하여서
+      우선순위가 높으므로 이것보다 우선순위를 높이는 
+      가장 쉬운 방법은 한단계 위의 부모요소를 써주면 된다(예:body)
+    */
+     body ul.part1 li:last-child{
+      font-size: 40px;
+      font-family: '맑은 고딕';
+      color:coral;
+    }
   </style>
 </head>
 
