@@ -3,13 +3,36 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="css/major.css">
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/slick-theme.css">
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <script src="js/jquery.min.js"></script>
   <script src="slick/slick.min.js"></script>
-  <script type="text/javascript">
-   
+  <script type="text/javascript"> 
+    $(document).ready(function(){
+      $('.slide').slick({
+      autoplay : true,
+
+      dots: true,
+
+      speed : 400 /* 이미지가 슬라이딩시 걸리는 시간 */,
+
+      infinite: true,
+
+      autoplaySpeed: 4000 /* 이미지가 다른 이미지로 넘어 갈때의 텀 */,
+
+      arrows: true,
+
+      slidesToShow: 8,
+
+      slidesToScroll: 1,
+
+      fade: false,
+      });
+    });
   </script>
   <title>브래드 이발소</title>
 </head>
