@@ -3,23 +3,13 @@
 /* reset.css */
 *{margin: 0;padding: 0;box-sizing: border-box;word-wrap: break-word;}
 *::before, *::after{box-sizing: border-box;}
-fieldset{border:none;}
-legend, caption{position: absolute;left: -9999px;}
 a{text-decoration: none;color:inherit;}
 h1,h2,h3,h4,h5,h6{font-size: 1em;font-weight: normal;}
-img{vertical-align: middle;border: none;}
+img{vertical-align: middle;border: none;cursor: pointer;}
 img,video{max-width: 100%;}
-input{vertical-align: middle;}
-input[type="text"],
-input[type="password"]{border: 1px solid #aaa;}
-input, textarea, select{border-radius:0;}
 li{list-style: none;}
 em, address{font-style: normal;}
-.skip-menu a{background-color: #000;color:#fff;position: fixed;left: 0;top: -9999px;width: 100%;text-align: center;padding: 8px 0;z-index: 9999px;}
-.skip-menu a:focus{top: 0;}
-.hide{display:none;}
-table {
-  border-collapse: collapse;}
+
 
 /* 폰트부분 */
 body{
@@ -88,10 +78,10 @@ select{
 
 /* 2.슬릭 슬라이드 */
 .slide{
-  width: 1400px;
+  width: 100%;
   margin: 0 auto;
   background-color: #f6f6f6;
-  height: 140px;
+  height: 150px;
 }
 .slide::after{
   content: '';
@@ -119,7 +109,7 @@ select{
   overflow: hidden;
 }
 .cat{
-  width: 900px;
+  width: 1000px;
   height: 368px;
   float: left;
   margin-left: 350px;
@@ -142,9 +132,12 @@ select{
 }
 .cd{
   margin-top: 50px;
+  transition: all 0.5s linear;
+  width: 450px;
+  overflow: hidden;
 }
 .cd:hover{
-
+  transform: scale( 1.1);
 }
 .cd h2{
   font-size: 48px;
@@ -159,6 +152,38 @@ select{
   display: block;
   font-weight: bold;
 }
+.txt span {
+  position:relative;  
+  display: inline-block; 
+  color: #0088cf;
+  letter-spacing:-0.8px;
+  animation:txtup 1.5s infinite; 
+  -webkit-animation:txtup 1.5s infinite; 
+  -ms-animation:txtup 1.5s infinite;   
+  -moz-animation: txtup 1.5s infinite; 
+  }
+  .txt span:nth-of-type(1){animation-delay:0.1s;}
+  .txt span:nth-of-type(2){animation-delay:0.2s;}
+  .txt span:nth-of-type(3){animation-delay:0.3s;}
+  .txt span:nth-of-type(4){animation-delay:0.4s;} 
+  .txt span:nth-of-type(5){animation-delay:0.4s;} 
+  @-webkit-keyframes txtup {
+      0%{top:0;}
+      20% {top:-0.2rem;}
+      40% {top:0;}
+      60% {top:0;}
+      80% {top:0;}
+      100% {top:0}
+  }
+  @keyframes txtup {
+      0% {top:0;}
+      20% {top:-0.2rem;}
+      40% {top:0}
+      60% {top:0}
+      80% {top:0}
+      100% {top:0}
+  }
+  
 .cd p{
   margin-top: 25px;
   line-height: 25px;
