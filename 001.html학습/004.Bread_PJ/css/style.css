@@ -31,10 +31,8 @@ body{
 .on {
   border: 3px solid #0088cf;
 }
-#show{
-  display: block;
-}
-.db{display: block;}
+
+#db{display: block;}
 
 .clb::after{
   content: '';
@@ -89,8 +87,6 @@ select{
 }
 
 /* 2.슬릭 슬라이드 */
-
-
 .slide{
   width: 1400px;
   margin: 0 auto;
@@ -131,10 +127,7 @@ select{
   display: none;
 }
 
-.cat:hover .cd{
- display: block;
- transition: all 1s ease-in;/* 안먹힘 */
-}
+
 .ci,.cd{
   float: left;
   width: 50%;
@@ -148,8 +141,10 @@ select{
   transform: rotate(720deg);
 }
 .cd{
-  display: none;
   margin-top: 50px;
+}
+.cd:hover{
+
 }
 .cd h2{
   font-size: 48px;
