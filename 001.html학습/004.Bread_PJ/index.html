@@ -11,30 +11,28 @@
   <script src="js/jquery.min.js"></script>
   <script src="slick/slick.min.js"></script>
   <script type="text/javascript"> 
-    // $(document).ready(function(){
-    //   $('.slick').slick({
+    $(document).ready(function(){
+      // $('.slide').slick({
+      //   autoplay : true,
 
-    //   infinite : true,
-    //   autoplay : true,
+      //   dots: true,
 
-    //   dots: true,
+      //   speed : 200 /* 이미지가 슬라이딩시 걸리는 시간 */,
 
-    //   speed : 200 /* 이미지가 슬라이딩시 걸리는 시간 */,
+      //   infinite: true,
 
-    //   infinite: true,
+      //   autoplaySpeed: 4000 /* 이미지가 다른 이미지로 넘어 갈때의 텀 */,
 
-    //   autoplaySpeed: 4000 /* 이미지가 다른 이미지로 넘어 갈때의 텀 */,
+      //   arrows: true,
 
-    //   arrows: true,
+      //   slidesToShow:8,
 
-    //   slidesToShow: 8,
+      //   slidesToScroll: 1,
 
-    //   slidesToScroll: 1,
-
-    //   fade: false,
+      //   fade: false,
      
-    //   });
-    // });
+      // });
+    });
   </script>
   <title>브래드 이발소</title>
 </head>
@@ -62,65 +60,31 @@
         <option value="8">버터</option>
       </select>
     </div>
-    <div class="slick">
-      <ul>
-        <li>
-          <div class="ch">
-            <a href="">
-              <img src="images/ch1.jpg" alt="브레드" class="on">
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="ch">
-            <a href="">
-              <img src="images/ch2.jpg" alt="윌크">
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="ch">
-            <a href="">
-              <img src="images/ch3.jpg" alt="초코">
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="ch">
-            <a href="">
-              <img src="images/ch4.jpg" alt="크로아상">
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="ch">
-            <a href="">
-              <img src="images/ch5.jpg" alt="찐빵박사">
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="ch">
-            <a href="">
-              <img src="images/ch6.jpg" alt="감자칩">
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="ch">
-            <a href="">
-              <img src="images/ch7.jpg" alt="프레첼">
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="ch">
-            <a href="">
-              <img src="images/ch8.jpg" alt="버터">
-            </a>
-          </div>
-        </li>
-      </ul>
+    <div class="slide">
+      <div>
+        <img src="images/ch1.jpg" alt="브레드" class="on">
+      </div>
+      <div>
+        <img src="images/ch2.jpg" alt="윌크">
+      </div>
+      <div>
+        <img src="images/ch3.jpg" alt="초코">
+      </div>
+      <div>
+        <img src="images/ch4.jpg" alt="크로아상">
+      </div>
+      <div>
+        <img src="images/ch5.jpg" alt="찐빵박사">
+      </div>
+      <div>
+        <img src="images/ch6.jpg" alt="감자칩">
+      </div>
+      <div>
+        <img src="images/ch7.jpg" alt="프레첼">
+      </div>
+      <div>
+        <img src="images/ch8.jpg" alt="버터">
+      </div>
     </div>
     <div id="cbx">
       <!-- <div class="cat"> -->
@@ -268,7 +232,7 @@
           <li><a href="#"><img src="images/sns3.png" alt="트위터"></a></li>
           <li><a href="#"><img src="images/sns4.png" alt="블로그"></a></li>
           <li><a href="#"><img src="images/sns5.png" alt="카카오스토리"></a></li>
-          <li><a href="#"><img src="images/sns6png.png" alt="유투브"></a></li>
+          <li><a href="#"><img src="images/sns6.png" alt="유투브"></a></li>
         </ul>
       </div>
     </div>
