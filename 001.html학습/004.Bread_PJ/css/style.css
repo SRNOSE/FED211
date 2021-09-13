@@ -64,13 +64,12 @@ header .logo img{
 
 select{
   margin: 20px;
-  width: 150px;
-  height: 45px;
+  width: 130px;
+  height: 40px;
   border: 2px solid #3B2216;;
-  background: url(../images/ico_select02.png) no-repeat right 16px;
+  background: url(../images/ico_select02.png) no-repeat 100px 16px;
   color: #3B2216;
-  font-size: 18px;
-  /* !!!!!font-weight: 500;웹폰트가 안먹힘!!!*/
+  font-size: 17px;
   -webkit-appearance: none;
   padding: 0 20px;
   border-radius: 2px;
@@ -79,9 +78,8 @@ select{
 /* 2.슬릭 슬라이드 */
 .slide{
   width: 100%;
-  margin: 0 auto;
-  background-color: #f6f6f6;
   height: 150px;
+  background-color: #f6f6f6;
 }
 .slide::after{
   content: '';
@@ -115,9 +113,8 @@ select{
   margin-left: 350px;
   overflow: hidden;
   display: none;
+  cursor: crosshair;
 }
-
-
 .ci,.cd{
   float: left;
   width: 50%;
@@ -151,12 +148,13 @@ select{
   margin: 20px 20px 20px 0;
   display: block;
   font-weight: bold;
+  font-size: 18px;
 }
 .txt span {
   position:relative;  
   display: inline-block; 
   color: #0088cf;
-  letter-spacing:-0.8px;
+  letter-spacing:0.2px;
   animation:txtup 1.5s infinite; 
   -webkit-animation:txtup 1.5s infinite; 
   -ms-animation:txtup 1.5s infinite;   
@@ -192,7 +190,7 @@ select{
 /* 푸터부분 */
 #footer{
   width: 100%;
-  height: 150px;
+  height: 120px;
   border-top: 1px solid #ddd;
   font-size: 14px;
   margin-top: 40px;
@@ -200,7 +198,7 @@ select{
 }
 #footer .bottom{
   width:1200px;
-  margin: 30px auto 0;
+  margin: 12px auto 0 ;
   overflow: hidden;
   padding: 10px;
 }
@@ -230,7 +228,7 @@ select{
 }
 #footer .bottom div.br .sns > li{
   float: left;
-  padding:10px 0 0 10px ;
+  padding:15px 0 0 10px ;
 }
 #footer .bottom div.br .sns > li:first-child{
   padding-left: 0;
