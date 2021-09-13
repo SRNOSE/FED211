@@ -4,35 +4,37 @@
 <head>
   <meta charset="UTF-8">
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="css/major.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/slick-theme.css">
   <script src="js/jquery.min.js"></script>
   <script src="slick/slick.min.js"></script>
   <script type="text/javascript"> 
-    $(document).ready(function(){
-      $('.slide').slick({
-      autoplay : true,
+    // $(document).ready(function(){
+    //   $('.slick').slick({
 
-      dots: true,
+    //   infinite : true,
+    //   autoplay : true,
 
-      speed : 400 /* 이미지가 슬라이딩시 걸리는 시간 */,
+    //   dots: true,
 
-      infinite: true,
+    //   speed : 200 /* 이미지가 슬라이딩시 걸리는 시간 */,
 
-      autoplaySpeed: 4000 /* 이미지가 다른 이미지로 넘어 갈때의 텀 */,
+    //   infinite: true,
 
-      arrows: true,
+    //   autoplaySpeed: 4000 /* 이미지가 다른 이미지로 넘어 갈때의 텀 */,
 
-      slidesToShow: 8,
+    //   arrows: true,
 
-      slidesToScroll: 1,
+    //   slidesToShow: 8,
 
-      fade: false,
-      });
-    });
+    //   slidesToScroll: 1,
+
+    //   fade: false,
+     
+    //   });
+    // });
   </script>
   <title>브래드 이발소</title>
 </head>
@@ -60,54 +62,73 @@
         <option value="8">버터</option>
       </select>
     </div>
-    <div class="slide">
-      <div class="ch">
-        <a href="">
-          <img src="images/ch1.jpg" alt="브레드">
-        </a>
-      </div>
-      <div class="ch">
-        <a href="">
-          <img src="images/ch2.jpg" alt="윌크">
-        </a>
-      </div>
-      <div class="ch">
-        <a href="">
-          <img src="images/ch3.jpg" alt="초코">
-        </a>
-      </div>
-      <div class="ch">
-        <a href="">
-          <img src="images/ch4.jpg" alt="크로아상">
-        </a>
-      </div>
-      <div class="ch">
-        <a href="">
-          <img src="images/ch5.jpg" alt="찐빵박사">
-        </a>
-      </div>
-      <div class="ch">
-        <a href="">
-          <img src="images/ch6.jpg" alt="감자칩">
-        </a>
-      </div>
-      <div class="ch">
-        <a href="">
-          <img src="images/ch7.jpg" alt="프레첼">
-        </a>
-      </div>
-      <div class="ch">
-        <a href="">
-          <img src="images/ch8.jpg" alt="버터">
-        </a>
-      </div>
+    <div class="slick">
+      <ul>
+        <li>
+          <div class="ch">
+            <a href="">
+              <img src="images/ch1.jpg" alt="브레드" class="on">
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="ch">
+            <a href="">
+              <img src="images/ch2.jpg" alt="윌크">
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="ch">
+            <a href="">
+              <img src="images/ch3.jpg" alt="초코">
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="ch">
+            <a href="">
+              <img src="images/ch4.jpg" alt="크로아상">
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="ch">
+            <a href="">
+              <img src="images/ch5.jpg" alt="찐빵박사">
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="ch">
+            <a href="">
+              <img src="images/ch6.jpg" alt="감자칩">
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="ch">
+            <a href="">
+              <img src="images/ch7.jpg" alt="프레첼">
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="ch">
+            <a href="">
+              <img src="images/ch8.jpg" alt="버터">
+            </a>
+          </div>
+        </li>
+      </ul>
     </div>
-    <!-- <div id="cbx">
-      <div class="cat">
+    <div id="cbx">
+      <!-- <div class="cat"> -->
+      <div class="cat" id="show">
         <div class="ci">
-          <img src="images/ch1.jpg" alt="브레드">
+          <img src="images/cbx1.jpg" alt="브레드">
         </div>
-        <div class="cd">
+        <div class="cd db">
           <h2>브레드<span>BREAD</span></h2>
           <strong>빵집 최고의 천재 이발사</strong>
           <p>
@@ -117,9 +138,10 @@
           </p>
         </div>
       </div>
-      <div class="cat">
+       <div class="cat">
+      <!-- <div class="cat" id="show"> -->
         <div class="ci">
-          <img src="images/ch2.jpg" alt="윌크">
+          <img src="images/cbx2.jpg" alt="윌크">
         </div>
         <div class="cd">
           <h2>윌크<span>WILK</span></h2>
@@ -134,8 +156,9 @@
         </div>
       </div>
       <div class="cat">
+      <!-- <div class="cat" id="show"> -->
         <div class="ci">
-          <img src="images/ch3.jpg" alt="초코">
+          <img src="images/cbx3.jpg" alt="초코">
         </div>
         <div class="cd">
           <h2>초코<span>CHOCO</span></h2>
@@ -149,8 +172,9 @@
         </div>
       </div>
       <div class="cat">
+      <!-- <div class="cat" id="show"> -->
         <div class="ci">
-          <img src="images/ch4.jpg" alt="크로아상">
+          <img src="images/cbx4.jpg" alt="크로아상">
         </div>
         <div class="cd">
           <h2>크로아상<span>CROISSANT</span></h2>
@@ -163,8 +187,9 @@
         </div>
       </div>
       <div class="cat">
+      <!-- <div class="cat" id="show"> -->
         <div class="ci">
-          <img src="images/ch5.jpg" alt="찐빵도사">
+          <img src="images/cbx5.jpg" alt="찐빵도사">
         </div>
         <div class="cd">
           <h2>찐빵도사<span>STEAM BUN</span></h2>
@@ -176,8 +201,9 @@
         </div>
       </div>
       <div class="cat">
+      <!-- <div class="cat" id="show"> -->
         <div class="ci">
-          <img src="images/ch6.jpg" alt="감자칩">
+          <img src="images/cbx6.jpg" alt="감자칩">
         </div>
         <div class="cd">
           <h2>감자칩<span>POTATO CHIP</span></h2>
@@ -190,8 +216,9 @@
         </div>
       </div>
       <div class="cat">
+      <!-- <div class="cat" id="show"> -->
         <div class="ci">
-          <img src="images/ch7.jpg" alt="프레첼">
+          <img src="images/cbx7.jpg" alt="프레첼">
         </div>
         <div class="cd">
           <h2>프레첼<span>PRETZEL</span></h2>
@@ -203,8 +230,9 @@
         </div>
       </div>
       <div class="cat">
+      <!-- <div class="cat" id="show"> -->
         <div class="ci">
-          <img src="images/ch8.jpg" alt="버터">
+          <img src="images/cbx8.jpg" alt="버터">
         </div>
         <div class="cd">
           <h2>버터<span>BUTTER</span></h2>
@@ -216,16 +244,16 @@
           </p>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
-  <!-- <footer id="footer">
+  <footer id="footer">
     <div class="bottom">
       <div class="bl">
         <ul class="bl">
           <li><a href="#">몬스터 스튜디오 소개</a></li>
           <li><a href="#">광고</a></li>
           <li><a href="#">이용약관</a></li>
-          <li><a href="#">개인정보 처리방침</a></li>
+          <li><a href="#"><em>개인정보 처리방침</em></a></li>
         </ul>
         <address>
           광주광역시 서구 치평로 124, 414호 <br>
@@ -243,7 +271,7 @@
         </ul>
       </div>
     </div>
-  </footer> -->
+  </footer>
 </body>
 
 </html>
