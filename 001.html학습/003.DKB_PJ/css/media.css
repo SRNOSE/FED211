@@ -68,4 +68,8 @@
   .cat:hover {
     margin-top: 0;
 }
+/* 하단링크 */
+ul.bm {
+  display: none;
+}
 }/* 미디어쿼리 */

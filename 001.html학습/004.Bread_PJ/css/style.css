@@ -56,13 +56,17 @@ header .logo img{
 
 .gnb{
   width: 400px;
-  height: 100px;
+  height: 75px;
   margin-left: 100px;
 }
 .gnb > ul> li{
   position: relative;
   width: 115px;
   font-weight: bold;
+  transition: margin-top .5s ease-in-out;
+}
+.gnb > ul> li:hover{
+  margin-top: -20px;
 }
 .gnb > ul> li:nth-child(2){
   margin-left: 15px;
@@ -91,7 +95,7 @@ header .logo img{
   right: 35px;
 }
 .gnb > ul> li:nth-child(3) >a::after{
-  right: 40px;
+  right: 45px;
 }
 .gnb > ul> li:hover>a:after{
   transform: rotate(180deg);
@@ -106,13 +110,14 @@ header .logo img{
 }
 .smenu > li{
   float: none;
+  font-weight: normal;
 }
 .smenu > li >a{
   font-size: 13px;
   color:#333;
 }
 .smenu > li >a:hover{
-  border-bottom: 2px solid #333;
+  border-bottom: 1px solid #333;
   transition: underline linear .5s;
 }
 .gnb >ul > li:hover .smenu{
