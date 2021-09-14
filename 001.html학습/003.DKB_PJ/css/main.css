@@ -7,8 +7,15 @@ html, body{
   padding: 0;
   height: 100%;/* 화면에 보이는 높이값 */
 }
+  /* 배경 한번에 셋팅하기! */
+  /* background: 색 이미지 반복 고정 위치/크기;
+  background: 색이반고윙/크; */
 body{
-  background: url(../images/bg_mainvisual.jpg) no-repeat center/cover;
+  background: 
+  url(../images/bg_logo_a_01.png)no-repeat fixed 10% 20%/10%,
+  url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+  
+  /* 배경이미지를 여러개 사용할 경우 먼저 쓴것이 위에온다 */
 }
 
 /* 스크롤바 트랙 변경하기 클래스 */
@@ -41,8 +48,15 @@ li{
   float: left;/* 옆으로 흐르게 */
 }
 /* 1.상단영역 */
-
+.top{
+  position: relative;
+  /* gnb의 부목자격 */
+}
 /* 로고 */
+.logo{
+  margin: 0;
+  padding: 0;
+}
 .logo img{/* 이미지 마진위치 조정 */
   margin: 45px 0 0 70px;
 }
@@ -50,16 +64,20 @@ li{
 /* GNB메뉴 */
 
 .gnb{
+width: 640px;
 position: absolute;
 top: 0;
 /* 나의 부모는? */
-
+left: calc(50% - 320px);
+/* calc-> (%수치 - 특정px) */
+/* 앱솔루트로 가로 중앙정렬 */
+background-color: #fff;
 }
 .gnb > ul{
 
 }
 .gnb > ul > li{
-  padding-right: 34px;
+ padding: 0 17px;/* 글자 가운데 오게 하기위해서 */
 }
 .gnb > ul > li > a{
   color: #000;
