@@ -2,90 +2,134 @@
 /* 도깨비 메인 CSS - main.css */
 
 /* 초기화 셋팅 */
-html, body{
+html,
+body {
   margin: 0;
   padding: 0;
-  height: 100%;/* 화면에 보이는 높이값 */
+  height: 100%;
+  /* 화면에 보이는 높이값 */
+  overflow-x: hidden;
+  /* 뷰포트 적용시 내용이 넘쳐서 x축 공간이 비어 보일 겅우 */
 }
-  /* 배경 한번에 셋팅하기! */
-  /* background: 색 이미지 반복 고정 위치/크기;
+
+/* 배경 한번에 셋팅하기! */
+/* background: 색 이미지 반복 고정 위치/크기;
   background: 색이반고윙/크; */
 
 /* 스크롤바 트랙 변경하기 클래스 */
 /* -webkit- 벤더사명(크롬,사파리) 접두어 */
-.scbar::-webkit-scrollbar{/*전체 스크롤바 크기 */
+.scbar::-webkit-scrollbar {
+  /*전체 스크롤바 크기 */
   width: 7px;
 }
-.scbar::-webkit-scrollbar-thumb{/* 스크롤바 */
+
+.scbar::-webkit-scrollbar-thumb {
+  /* 스크롤바 */
   background-color: #555;
   border-radius: 5px;
 }
-.scbar::-webkit-scrollbar-track{/*흰부분 통로 */
+
+.scbar::-webkit-scrollbar-track {
+  /*흰부분 통로 */
   background-color: #ddd;
   border-radius: 5px;
 }
 
 /* 공통초기화 */
-ul,ol{
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 ul::after,
-ol::after{
+ol::after {
   content: '';
   display: block;
   clear: both;
 }
-li{
-  float: left;/* 옆으로 흐르게 */
+
+li {
+  float: left;
+  /* 옆으로 흐르게 */
 }
+
 /* 1.상단영역 */
-.top{
+.top {
   position: relative;
   /* .gnb>ul>li:after의 부모자격 */
   background-color: #fff;
   padding-top: 20px;
-  border-bottom: 1px solid #ccc;/* 하단구분선 */
- 
+  border-bottom: 1px solid #ccc;
+  /* 하단구분선 */
+
 }
+/* 햄버거버튼 */
+.ham{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 30px;
+  height: 30px;
+  font-size: 40px;
+
+  border: none;
+  background-color: transparent;
+  /* 배경없애기(투명) */
+
+  cursor: pointer;/* 손가락모양 */
+}
+
 /* 로고 */
-.logo{
+.logo {
   margin: 0;
   padding: 0;
   text-align: center;
   /* 내부에 있는 인라인 컨텐츠 중앙정렬 img에 주면 안된다 */
 }
-.logo img{/* 이미지 마진위치 조정 */
+
+.logo img {
+  /* 이미지 마진위치 조정 */
   width: 100px;
 }
 
 /* GNB메뉴 */
 
-.gnb{
-width: 640px;
-margin: 0 auto;
+.gnb {
+  /* 최대크기 640px을 유지하다가 화면이 640px보다 작아지면
+  width:auto적용 */
+  max-width: 640px;
+  margin: 0 auto;
 
 }
-.gnb > ul > li{
- padding: 0 17px;/* 글자 가운데 오게 하기위해서 */
+
+.gnb>ul>li {
+  padding: 0 17px;
+  /* 글자 가운데 오게 하기위해서 */
 }
-.gnb > ul > li > a{
+
+.gnb>ul>li>a {
   color: #000;
   text-decoration: none;
   font-size: 13px;
   line-height: 54px;
   height: 54px;
-  display: block;/* 높이값 적용위해 */
+  display: block;
+  /* 높이값 적용위해 */
 }
+
 /* 상위메뉴 오버시 보더로 밑줄만들기 */
-.gnb > ul > li > a:hover{
+.gnb>ul>li>a:hover {
   border-bottom: 4px solid red;
-  box-sizing: border-box;/* 보더, 패딩 내부로 포함 */
+  box-sizing: border-box;
+  /* 보더, 패딩 내부로 포함 */
   /* 호버하면 들썩들썩하는데 그건 a에 높이값을 주면된다 */
 }
+
 /* 서브메뉴 감추기 */
-.smenu{
+.smenu {
   position: absolute;
 
   /* 서브메뉴 숨기기 */
@@ -98,48 +142,66 @@ margin: 0 auto;
   /* 서브메뉴가 안보이니까 부모li 가상요소 앱솔루트보다 위로하려고 */
   z-index: 1;
 }
-.smenu > li{
+
+.smenu>li {
   float: none;
 }
-.smenu > li > a{
+
+.smenu>li>a {
   color: #000;
   text-decoration: none;
   font-size: 13px;
   line-height: 30px;
 }
+
 /* 상위메뉴 마우스 오버시 서브메뉴보이기 */
-.gnb > ul >li:first-child:hover .smenu{/* 서브메뉴 */
+.gnb>ul>li:first-child:hover .smenu {
+  /* 서브메뉴 */
   height: 90px;
 }
-.gnb > ul >li:first-child:hover::after{/* 가상요소 배경 */
+
+.gnb>ul>li:first-child:hover::after {
+  /* 가상요소 배경 */
   height: 100px;
   border-bottom: 2px solid red;
 }
-.gnb > ul >li:nth-child(3):hover .smenu{/* 서브메뉴 */
+
+.gnb>ul>li:nth-child(3):hover .smenu {
+  /* 서브메뉴 */
   height: 120px;
 }
-.gnb > ul >li:nth-child(3):hover::after{/* 가상요소 배경 */
+
+.gnb>ul>li:nth-child(3):hover::after {
+  /* 가상요소 배경 */
   height: 130px;
   border-bottom: 2px solid red;
 }
-.gnb > ul >li:nth-child(4):hover .smenu{/* 서브메뉴 */
+
+.gnb>ul>li:nth-child(4):hover .smenu {
+  /* 서브메뉴 */
   height: 60px;
 }
-.gnb > ul >li:nth-child(4):hover::after{/* 가상요소 배경 */
+
+.gnb>ul>li:nth-child(4):hover::after {
+  /* 가상요소 배경 */
   height: 70px;
   border-bottom: 2px solid red;
 }
 
 /* JS없이 가상요소로 서브메뉴 전체배경 깔아주기 */
 /* top값없이 젠틀하게 하려고 ::after사용함 */
-.gnb > ul> li::after{
+.gnb>ul>li::after {
   content: '';
-  display: block;/* 명시적 */
-  position: absolute;/* 자동으로 block상태가 된다!! */
+  display: block;
+  /* 명시적 */
+  position: absolute;
+  /* 자동으로 block상태가 된다!! */
   left: 0;
   /* 나의 부모는? header */
-  width: 100%;/* 부모요소를 꽉채움 */
-  height: 0;/* 처음에는 안보이게 하기위해! */
+  width: 100%;
+  /* 부모요소를 꽉채움 */
+  height: 0;
+  /* 처음에는 안보이게 하기위해! */
   background-color: #fff;
 
   /* 부모요소 .top의 하단 보더 보이게 하기위해 matgin-top사용 */
@@ -150,31 +212,33 @@ margin: 0 auto;
 }
 
 /* 메인 하단 section영역 */
-.wrap{
-  background: 
-  url(../images/bg_logo_a_01.png)no-repeat fixed 10% 24%/10%,
-  url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+.wrap {
+  background:
+    url(../images/bg_logo_a_01.png)no-repeat fixed 10% 24%/10%,
+    url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
 
   /* 배경이미지를 여러개 사용할 경우 먼저 쓴것이 위에온다 */
 }
 
 
 /* 2.메인영역 */
-.cont{
+.cont {
   min-height: 800px;
   /* 최소높이 800px 유지 */
 }
 
 /* 캐릭터 박스 */
-#cbx{
+#cbx {
   width: 90%;
-  margin: 0 auto;/* 마영오 - 블록박스 가로중앙정렬(relative일때도 적용됨) */
+  margin: 0 auto;
+  /* 마영오 - 블록박스 가로중앙정렬(relative일때도 적용됨) */
   position: relative;
-  top: 400px;/* 현재의 위치에서 아래로 400px이동 */
+  top: 400px;
+  /* 현재의 위치에서 아래로 400px이동 */
 }
 
 /* 가상요소로 float해제 */
-.clb::after{
+.clb::after {
   content: '';
   display: block;
   clear: both;
@@ -182,8 +246,9 @@ margin: 0 auto;
 
 /* 개별캐릭터 박스 공통*/
 
-.cat{
-  width: 25%; /* 4등분 */
+.cat {
+  width: 25%;
+  /* 4등분 */
   /* height: 100%;
   높이값이 없으면 auto이고 내용만큼 늘어남 */
   float: left;
@@ -196,22 +261,27 @@ margin: 0 auto;
   box-sizing: border-box;
   /* 트랜지션 */
   transition: margin-top .6s ease-out;
-  
+
 }
+
 /* 캐릭터박스(.cat)에 마우스 오버시 마진top올리기 */
 .cat:hover {
   margin-top: -150px;
 }
+
 /* 캐릭터 이미지 */
-.cat > img{
+.cat>img {
   width: 100%;
   /* 이미지의 height는 자동(비율유지) */
 }
-.ci > img{/* 직계자식 이미지만 */
+
+.ci>img {
+  /* 직계자식 이미지만 */
   width: 100%;
 }
+
 /* 캐릭터 이름 */
-.ci span{
+.ci span {
   text-align: center;
   display: block;
   margin-top: -22%;
@@ -219,7 +289,7 @@ margin: 0 auto;
 }
 
 /* 캐릭터 이름 이미지 */
-.ci span img{
+.ci span img {
   width: 40%;
 
 }
@@ -227,27 +297,31 @@ margin: 0 auto;
 /* 캐릭터 이름 첫번째 이미지 숨기기 */
 
 /* display:none사용 */
-.ci span img:first-child{
+.ci span img:first-child {
   display: none;
 }
 
 /* .cat박스에 마우스 오버시 */
 /* 캐릭터 이름 첫번쨰 이미지 보이기 */
 /* 원래 이미지는 display:inline */
-.cat:hover .ci span img:first-child{
-  display: inline; /* 인라인 요소니까 인라인을 주느거임 */
+.cat:hover .ci span img:first-child {
+  display: inline;
+  /* 인라인 요소니까 인라인을 주느거임 */
 }
+
 /* .cat박스에 마우스 오버시 */
 /* 캐릭터 이름 마지막 이미지 숨기기 */
-.cat:hover .ci span img:last-child{
+.cat:hover .ci span img:last-child {
   display: none;
 }
 
 /* 캐릭터 설명박스 */
-.cd{
+.cd {
   background: url(../images/eachBG.jpg) no-repeat center/cover;
-  height:0;/* 마우스오버시 250px */
-  overflow: auto;/* 넘치면 스크롤바 */
+  height: 0;
+  /* 마우스오버시 250px */
+  overflow: auto;
+  /* 넘치면 스크롤바 */
   margin-top: 15px;
   border-radius: 20px 0 0 20px;
 
@@ -290,32 +364,36 @@ margin: 0 auto;
   */
   transition: height .6s ease-out;
 }
+
 /* 캐릭터개별박스(.cat) */
-.cat:hover .cd{
+.cat:hover .cd {
   height: 250px;
-  
+
 }
 
 /* 캐릭터 설명 타이틀 */
-.cd h3{
+.cd h3 {
   padding: 5px 10px 0;
 }
 
 /* 캐릭터설명 문단 */
-.cd p{
+.cd p {
   padding: 10px;
-  font: 14px/1.5, '맑은 고딕', '돋움', arial ;
-  text-align: justify;/* 양쪽정렬 */
+  font: 14px/1.5, '맑은 고딕', '돋움', arial;
+  text-align: justify;
+  /* 양쪽정렬 */
 }
 
 /* 하단영역 footer */
 
-.info{
-  background-color: rgba(255, 255, 255, 0.7);/* 반투명 */
+.info {
+  background-color: rgba(255, 255, 255, 0.7);
+  /* 반투명 */
   padding: 15px;
 }
+
 /* 하단링크 */
-ul.bm{
+ul.bm {
   width: 720px;
   max-width: 90%;
   margin: 0;
@@ -324,28 +402,33 @@ ul.bm{
   /* overflow: hidden; 플롯해제1*/
   margin: 0 auto;
 }
-ul.bm::after{
+
+ul.bm::after {
   content: '';
   display: block;
-  clear: both; /* 플롯해제2 */
+  clear: both;
+  /* 플롯해제2 */
 }
-ul.bm li{
+
+ul.bm li {
   float: left;
   padding: 0 5px;
 }
-ul.bm li a{
+
+ul.bm li a {
   text-decoration: none;
   color: #222;
   font: bold 14px/1.5 '맑은 고딕';
 
 }
-ul.bm li a:hover{
+
+ul.bm li a:hover {
   color: red;
   text-decoration: underline;
 }
 
 /* 주소박스 */
-.info address{
+.info address {
   width: 720px;
   margin: 20px auto;
   max-width: 90%;
@@ -356,7 +439,7 @@ ul.bm li a:hover{
 }
 
 /* 하단로고박스 */
-#blogo{
+#blogo {
   text-align: center;
- 
+
 }
