@@ -10,13 +10,6 @@ html, body{
   /* 배경 한번에 셋팅하기! */
   /* background: 색 이미지 반복 고정 위치/크기;
   background: 색이반고윙/크; */
-body{
-  background: 
-  url(../images/bg_logo_a_01.png)no-repeat fixed 10% 20%/10%,
-  url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
-
-  /* 배경이미지를 여러개 사용할 경우 먼저 쓴것이 위에온다 */
-}
 
 /* 스크롤바 트랙 변경하기 클래스 */
 /* -webkit- 벤더사명(크롬,사파리) 접두어 */
@@ -156,17 +149,28 @@ margin: 0 auto;
   transition: height .4s ease-out;
 }
 
+/* 메인 하단 section영역 */
+.wrap{
+  background: 
+  url(../images/bg_logo_a_01.png)no-repeat fixed 10% 20%/10%,
+  url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+
+  /* 배경이미지를 여러개 사용할 경우 먼저 쓴것이 위에온다 */
+}
+
+
 /* 2.메인영역 */
+.cont{
+  min-height: 700px;
+  /* 최소높이 700px 유지 */
+}
 
 /* 캐릭터 박스 */
 #cbx{
   width: 90%;
-  height: 450px;
-  /* height: 300px; 
-  자식요소float때문에 자식요소를 인식하지 못함
-  높이값이 없을때 높이값이 안나옴 */
-  margin: 50px auto 0;/* 마영오 - 블록박스 가로중앙정렬 */
-  /* overflow: hidden; 가상요소로 해제함*/
+  margin: 0 auto;/* 마영오 - 블록박스 가로중앙정렬(relative일때도 적용됨) */
+  position: relative;
+  top: 400px;/* 현재의 위치에서 아래로 400px이동 */
 }
 
 /* 가상요소로 float해제 */
