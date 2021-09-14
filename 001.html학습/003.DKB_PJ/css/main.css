@@ -50,9 +50,11 @@ li{
 /* 1.상단영역 */
 .top{
   position: relative;
-  /* gnb의 부목자격 */
+  /* .gnb>ul>li:after의 부모자격 */
   background-color: #fff;
   padding-top: 20px;
+  border-bottom: 1px solid #ccc;/* 하단구분선 */
+ 
 }
 /* 로고 */
 .logo{
@@ -72,9 +74,6 @@ width: 640px;
 margin: 0 auto;
 
 }
-.gnb > ul{
-
-}
 .gnb > ul > li{
  padding: 0 17px;/* 글자 가운데 오게 하기위해서 */
 }
@@ -83,10 +82,78 @@ margin: 0 auto;
   text-decoration: none;
   font-size: 13px;
   line-height: 54px;
+  height: 54px;
+  display: block;/* 높이값 적용위해 */
+}
+/* 상위메뉴 오버시 보더로 밑줄만들기 */
+.gnb > ul > li > a:hover{
+  border-bottom: 4px solid red;
+  box-sizing: border-box;/* 보더, 패딩 내부로 포함 */
+  /* 호버하면 들썩들썩하는데 그건 a에 높이값을 주면된다 */
 }
 /* 서브메뉴 감추기 */
 .smenu{
-  display: none;
+  position: absolute;
+
+  /* 서브메뉴 숨기기 */
+  height: 0;
+  overflow: hidden;
+
+  /* 트랜지션 */
+  transition: height .4s ease-out;
+
+  /* 서브메뉴가 안보이니까 부모li 가상요소 앱솔루트보다 위로하려고 */
+  z-index: 1;
+}
+.smenu > li{
+  float: none;
+}
+.smenu > li > a{
+  color: #000;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 30px;
+}
+/* 상위메뉴 마우스 오버시 서브메뉴보이기 */
+.gnb > ul >li:first-child:hover .smenu{
+  height: 90px;
+}
+.gnb > ul >li:first-child:hover::after{
+  height: 100px;
+  border-bottom: 2px solid red;
+}
+.gnb > ul >li:nth-child(3):hover .smenu{
+  height: 120px;
+}
+.gnb > ul >li:nth-child(3):hover::after{
+  height: 130px;
+  border-bottom: 2px solid red;
+}
+.gnb > ul >li:nth-child(4):hover .smenu{
+  height: 60px;
+}
+.gnb > ul >li:nth-child(4):hover::after{
+  height: 70px;
+  border-bottom: 2px solid red;
+}
+
+/* JS없이 가상요소로 서브메뉴 전체배경 깔아주기 */
+/* top값없이 젠틀하게 하려고 ::after사용함 */
+.gnb > ul> li::after{
+  content: '';
+  display: block;/* 명시적 */
+  position: absolute;/* 자동으로 block상태가 된다!! */
+  left: 0;
+  /* 나의 부모는? header */
+  width: 100%;/* 부모요소를 꽉채움 */
+  height: 0;/* 처음에는 안보이게 하기위해! */
+  background-color: #fff;
+
+  /* 부모요소 .top의 하단 보더 보이게 하기위해 matgin-top사용 */
+  margin-top: 1px;
+
+  /* 트랜지션:속시이지 .smenu와 동일 */
+  transition: height .4s ease-out;
 }
 
 /* 2.메인영역 */
