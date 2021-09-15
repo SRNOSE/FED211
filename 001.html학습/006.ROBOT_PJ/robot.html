@@ -19,8 +19,12 @@
     /* 로고페이지 로고 */
     h1#logo {
       position: fixed;
-      top: 50px;
-      left: 50px;
+      top: calc(50% - 100px);
+      left: calc(50% - 100px);
+      /* calc (%값 - px값) */
+      /* left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); */
       /* 무조건 화면기준 */
       width: 200px;
       height: 200px;
@@ -52,8 +56,27 @@
       /* 가로축 세로축 */
       background-size: 160px;
       /* 가로 세로 */
+
+      /* 애니메이션:이시이지반방마 */
+      animation: logoAni 2s ease-in-out 1s forwards;
+      /* 1초후에 2초간 처음과 마지막에 천천히 애니후 끝상태유지
+      (기본값은 한번만 실행) */
     }
 
+    /* 애니메이션 키프레임 */
+
+    @keyframes logoAni{
+      /*  시작설정 - 처음값이 CSS원본과 같으면 생략! */
+        /* from{
+          top: calc(50% - 100px);
+          left: calc(50% - 100px);
+        } */
+        /* 끝설정 */
+        to{
+          top: 50px;
+          left: 50px;
+        }
+       }/*키프레임 */
     /* 로봇머리 */
     #head {
       width: 250px;
@@ -63,8 +86,18 @@
       position: relative;
       left: 100%;
       /* 화면 오른쪽 바깥에 나가있음! */
+
+      /* 애니메이션 :이시이지반방마*/
+      animation: RAni .6s ease-out 3s forwards;
     }
 
+    /* 머리와 몸 공통 애니메이션 키프레임 */
+
+  @keyframes RAni{
+    to{
+      left: 0;
+    }
+  }/* 키프레임 */
     /* 눈1 */
     #eye1 {
       position: absolute;
@@ -131,6 +164,7 @@
       height: 300px;
       margin: 50px auto 0;
       background: url(images/metal01.jpg) no-repeat center/cover;
+      animation: RAni 1s ease-out 3s forwards;
     }
 
     /* 목 */
@@ -313,8 +347,9 @@
       7)마지막상태(animation-fill-mode): 애니메이션이 끝났을때 
         -처음으로 돌아가는 것이 기본
         -마지막상태를 유지하고 싶을때 forwards(앞쪽에...즉, 애니끝장면)
-
     */
+
+
   </style>
 </head>
 
