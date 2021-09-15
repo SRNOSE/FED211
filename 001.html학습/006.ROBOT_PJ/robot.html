@@ -8,6 +8,38 @@
     body{
       background: url(images/bg.jpg) no-repeat fixed top/cover;
     }
+
+     /* 로고페이지 로고 */
+    h1#logo{
+      position: fixed;
+      top: 50px;
+      left: 50px;
+      /* 무조건 화면기준 */
+      width: 200px;
+      height: 200px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* 패딩, 보더 포함-크기유지 */
+      text-align: center;
+      font-family: "Vladimir Script;";
+       /* 글자그림자 */
+      text-shadow: 2px 2px 2px #000;
+      /* 박스그림자 */
+      box-shadow: 0 0 10px pink;
+      /* box-shadow: x축 y축 spread blur 색;
+        spread 그림자 크기(생략가능)
+        blur 그림자 경계선 크기
+        */
+      color: #fff;
+      line-height: 196px;/* 보더 때문에 정가운데가 아니라 border값을 뺀다 */
+      background: pink url(images/robot_03.png) no-repeat ;
+      background-position: center 10px;/* 가로축 세로축 */
+      background-size: 160px;/* 가로 세로 */
+    }
+
     /* 로봇머리 */
     #head{
       width: 250px;
@@ -59,11 +91,11 @@
     }
     #mouse{
       width: 70px;
-      height: 70px;
+      height: 50px;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      bottom: 0;
+      bottom: -15px;
       background: url(images/mouth.png) no-repeat 0/100% 100%;
     }
 
@@ -143,6 +175,8 @@
   </style>
 </head>
 <body>
+  <!-- 로봇페이지 로고 -->
+  <h1 id="logo">DONDEGIRI</h1>
     <!-- 로봇머리 -->
     <div id="head">
       <!-- 눈1 -->
