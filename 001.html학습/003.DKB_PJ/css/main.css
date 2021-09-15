@@ -1,4 +1,6 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 /* 도깨비 메인 CSS - main.css */
 
 /* 초기화 셋팅 */
@@ -10,6 +12,8 @@ body {
   /* 화면에 보이는 높이값 */
   overflow-x: hidden;
   /* 뷰포트 적용시 내용이 넘쳐서 x축 공간이 비어 보일 겅우 */
+  font-family: 'Architects Daughter', cursive;
+  font-family: 'Permanent Marker', cursive;
 }
 
 /* 배경 한번에 셋팅하기! */
@@ -63,7 +67,8 @@ li {
   padding-top: 20px;
   border-bottom: 1px solid #ccc;
   /* 하단구분선 */
-
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 700;
 }
 /* 햄버거버튼 */
 .ham{
