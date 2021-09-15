@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CGV PJ 리셋CSS */
+
+/* 1.마진, 패딩 없애기 */
+html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd{
+  margin: 0;
+  padding: 0;
+}
+/* 2. a요소 리셋 */
+a{
+  color: #fff;
+  text-decoration: none;
+}
+/* 3.ul,ol리셋 */
+ul,ol{
+  list-style: none;
+}
+/* 4.li플롯 */
+li{
+  float: left;
+}
+/* 5플롯지우기 */
+ul::after,
+ol::after,
+.clb::after
+{
+  content: '';
+  display: block;
+  clear: both;
+}
