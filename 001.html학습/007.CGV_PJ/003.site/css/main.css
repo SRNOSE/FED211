@@ -55,6 +55,22 @@ body {
   background-color: #000;
 }
 
+/* 2-2. 예고편선택메뉴 */
+.mlist{
+  position: absolute;
+  bottom: 56px;
+  left: 252px;
+}
+/* li디자인 */
+.mlist ul > li{
+ margin: 0 10px;
+ /* li 바깥쪽 양쪽밀기 */
+}
+/* 포스터 이미지 */
+.mlist img{
+  width: 99px;
+  height: 140px;
+}
 /* 아이프레임 */
 #screen iframe{
   width: 100%;
