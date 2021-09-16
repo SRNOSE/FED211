@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ROBOT_PJ</title>
   <style>
+    html{
+      scroll-behavior: smooth;
+      /* a요소 #위치 이동시 스크롤 애니메이션 설정 */
+    }
     html, body{
       margin: 0;
       padding: 0;
@@ -58,9 +62,11 @@
       /* 가로 세로 */
 
       /* 애니메이션:이시이지반방마 */
-      animation: logoAni 2s ease-in-out 1s forwards;
+      animation: logoAni 2s ease-in-out 1s forwards,
       /* 1초후에 2초간 처음과 마지막에 천천히 애니후 끝상태유지
       (기본값은 한번만 실행) */
+      logoAni2 1s ease-in-out 3s infinite alternate;
+      /* 앞의 애니시간을 기다려 3초후 한번동작을 1초간 하도록 영원히 시작-끝-시작 반복설정함 */
     }
 
     /* 애니메이션 키프레임 */
@@ -77,6 +83,19 @@
           left: 50px;
         }
        }/*키프레임 */
+
+       /* 추가 키프레임 */
+
+       @keyframes logoAni2{
+         from{
+           transform: rotate(30deg);
+         }
+         to{
+           transform: rotate(-30deg);
+         }
+       }/* 키프레임 */
+
+
     /* 로봇머리 */
     #head {
       width: 250px;
@@ -191,8 +210,31 @@
     }
 
     #arm2 {
-      right: -50px;
+      top: 10px;
+      right: -20px;
+      transform-origin: top;
+      /* 팔상단으로 기준점 변경 */
+
+      /* 애니메이션:이시이지반방마 */
+      animation: armAni1 .8s ease-in 4s forwards,
+                    armAni2 .3s ease-in-out 4.8s infinite alternate;
     }
+    /* 처음에 팔 올리기 키프레임 */
+    @keyframes armAni1{
+      to{
+        transform: rotate(-15deg);
+      }
+    }/* 카프레임 */
+
+    /*바이바이 키프레임 */
+    @keyframes armAni2{
+      from{/* 값이 중간에 변경되어서 from필요함 */
+        transform: rotate(-15deg);
+      }
+      to{
+        transform: rotate(-170deg);
+      }
+    }/* 카프레임 */
 
     #leg1 {
       bottom: -235px;
@@ -350,12 +392,60 @@
     */
 
 
+    /* 글박스 유도 링크 */
+    .link{
+      position: absolute;
+      top: 100px;
+      right: 50px;
+      font-size: 40px;
+      text-shadow: 2px 2px 2px #000;
+    }
+    .link a{
+      color: #fff;
+      text-decoration: none;
+    }
+    .link a:hover{
+      color: red;
+      text-decoration: underline;
+    }
+
+    /* 버튼 */
+    .btnTop{
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+      display: block;
+      width: 100px;
+      height:100px;
+      line-height: 100px;
+      font-weight: bold;
+      font-size: 24px;
+      background-color: #fff;
+      border-radius: 50%;
+      text-decoration: none;
+      text-align: center;
+      color: hotpink;
+    }
+    .btnTop:hover{
+      background-color: pink;
+      color: red;
+    }
   </style>
 </head>
 
 <body>
   <!-- 로봇페이지 로고 -->
   <h1 id="logo">DONDEGIRI</h1>
+
+  <!-- 내용보기 링크 타이틀 -->
+
+  <h2 class="link">
+    <a href="#rdesc">What is Robot?</a>
+    <!-- 
+        a요소의 href속성값으로 "#아이디명"을 사용하면 같은 페이지 안에 있는 아이디 요소 박스의 상단라인으로 스크롤이 이동된다!
+        ->기본기능임!(아이디만 가능)
+     -->
+  </h2>
   <!-- 로봇머리 -->
   <div id="head">
     <!-- 눈1 -->
@@ -441,6 +531,10 @@
       repercussions have been addressed in fiction and may be a realistic concern in the future.
     </p>
   </div>
+
+  <!-- 위로 이동버튼 -->
+  <a href="#" class="btnTop">TOP</a>
+  <!-- href값으로 "#"은 맨위로 이동 -->
 </body>
 
 </html>
