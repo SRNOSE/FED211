@@ -12,9 +12,29 @@
     // 형식: function 함수면(전달변수){코드}
     // 함수는 전화받는 사람!
     // fuction은 키워드로 반드시 써야함!
-    function gogo(mcode){//전달변수
+    function gogo(yo){//yo는 전달변수(이름은 개발자창작)
+                           // 전달변수는 함수호출시 보내는 값을 담아놓는 메모리 공간의 이름
+                          // 이 이름은 따옴표로 싸면 안됨 
+                          //  1.함수호출확인 + 전달값 확인
+                          alert(yo);
       
     }//////gogo함수/////////
+
+    /*
+      함수의 호출은 요소(태그)의 이벤트 속성과 연결하여 가능하다!
+      각 이벤트가 발생할때를 알려주는 특성이 있음
+      이벤트 속성은 on+이벤트명으로 이름지어짐
+      예)
+      onclick, ondblclick,onmouseover, onkeypress,onload 등
+
+    [이벤트 속성 사용법]
+    구성: <태그명 이벤트속성="값">
+    ->값에서 js코드를 사용할 수 있다!
+    ->값에서 함수호출을 할 수 있다!
+    ->이벤트속성 셋팅을 js코딩구역에서만 할 수도 있다(나중엔 이렇게 함-소스분리)
+
+
+    */
   </script>
   <title>CGV PJ</title>
 </head>
@@ -34,7 +54,8 @@
     <nav class="mlist">
       <ul>
         <li>
-          <a href="#" onclick=""><img src="../007.CGV_PJ/003.site/images/m1.jpg" alt="말리그넌트"></a>
+          <!-- 함수호출시 보내는 문자값은 반드시 반드시 따옴표로 싼다!! 그래야 문자값이다! -->
+          <a href="#" onclick="gogo('말리그넌트')"><img src="../007.CGV_PJ/003.site/images/m1.jpg" alt="말리그넌트"></a>
         </li>
         <li>
           <a href="#"><img src="../007.CGV_PJ/003.site/images/m2.jpg" alt="서복"></a>
