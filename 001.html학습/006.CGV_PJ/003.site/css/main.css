@@ -32,10 +32,47 @@ body {
   text-shadow: 0px 0px 10px lime ;
 }
 #top {
+  position: relative;
+  /* 부모자격! - .gnb */
   height: 80px;
   background: url(../images/curtain.jpg) repeat-x;
+  z-index: 999;
+  /* position:static일땐 안먹힌다. 따로 porition값을 준다 */
 }
 
+/* 1-2.전체메뉴(gnb) */
+.gnb{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  /* 나의 부모는? #top */
+}
+
+/* gnb li리스트 */
+.gnb  li{
+  position: relative;
+  /* 부모자격- .smenu */
+  padding: 0 10px;
+  font-family: serif;
+  font-family: 'Jua', sans-serif; 
+  /* 글자크기 미지정시 16px임 */
+}
+
+/* GNB서브메뉴 */
+
+.smenu{
+  position: absolute;
+  /* left와 transform을 이용한 가로 중앙정렬법! */
+  left: 50%;/* 부모크기의 절반만큼 밀어준다 */
+  transform: translateX(-50%);/*자기자신크기의 절반을 왼쪽으로이동 */
+  background: url(../images/bg_smenu.png) no-repeat center/cover;
+  padding: 6px;
+  
+}
+.smenu li{
+  float: none;
+  font-size: 12px;
+}
 /* <!-- 2.메인영역 --> */
 
 

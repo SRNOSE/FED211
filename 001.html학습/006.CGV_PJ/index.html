@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="003.site/css/main.css">
   <!-- JS코딩구역 -->
   <script>
-
     // 코드를 저장하여 호출시에만 실행하는 것은?
     // 함수다! ->영어로 function
     // 형식: function 함수면(전달변수){코드}
     // 함수는 전화받는 사람!
     // fuction은 키워드로 반드시 써야함!
-    function gogo(yo){//yo는 전달변수(이름은 개발자창작)
-                           // 전달변수는 함수호출시 보내는 값을 담아놓는 메모리 공간의 이름
-                          // 이 이름은 따옴표로 싸면 안됨 
-                          //  1.함수호출확인 + 전달값 확인
-                         // alert(yo);
+    function gogo(yo) { //yo는 전달변수(이름은 개발자창작)
+      // 전달변수는 함수호출시 보내는 값을 담아놓는 메모리 공간의 이름
+      // 이 이름은 따옴표로 싸면 안됨 
+      //  1.함수호출확인 + 전달값 확인
+      // alert(yo);
 
-                         //2.변경요구사항:전달된 동영상 아이디값을 아이프레임의 src속성값으로 넣어준다
-                         //기대되는 변경사항 -> 동영상이 바껴서 play!
-                         //원하는 대상: 아이프레임 -> #tg
-                         //DOM으로 JS선택하기!
-                         //Document Object Model
-                         //->html의 구조를 따라 요소를 선택하는 방법(기술)
-                         //->웹페이지 지도 또는 네비게이션!
-                         //돔의 아버지 ->>> document 
-                         //document는 웹문서의 최상위 객체!
-                         //접근법->>우주.우리은하.태양계.지구.대한민국.서울.강남구...
-                         //점......은 하위구성요소로 들어가는 문이다!
-                         //이퀄은(=)은 같다는 뜻이 아니고 오른쪽값이 왼쪽으로 들어감(할당!)
-                         //JS 명령문은 끝날때 세미콜론해준다!
-                         //사실 브라우저는 ASI(Auto Semicolon Insertion:자동세미콜론넣기)
-                         //를 해주지만 문제가 발생할 수 있으므로 개발자가 직접해준다
-                         document.getElementById("tg").src = 
-                         "https://www.youtube.com/embed/"+
-                         yo+
-                        " ? autoplay=1&loop=1&playlist="+
-                         yo;
-                        //  기존값에 yo라는 변수에 담긴 동영상아이디값을 합쳐서 src값에 할당한다!
-      
-    }//////gogo함수/////////
+      //2.변경요구사항:전달된 동영상 아이디값을 아이프레임의 src속성값으로 넣어준다
+      //기대되는 변경사항 -> 동영상이 바껴서 play!
+      //원하는 대상: 아이프레임 -> #tg
+      //DOM으로 JS선택하기!
+      //Document Object Model
+      //->html의 구조를 따라 요소를 선택하는 방법(기술)
+      //->웹페이지 지도 또는 네비게이션!
+      //돔의 아버지 ->>> document 
+      //document는 웹문서의 최상위 객체!
+      //접근법->>우주.우리은하.태양계.지구.대한민국.서울.강남구...
+      //점......은 하위구성요소로 들어가는 문이다!
+      //이퀄은(=)은 같다는 뜻이 아니고 오른쪽값이 왼쪽으로 들어감(할당!)
+      //JS 명령문은 끝날때 세미콜론해준다!
+      //사실 브라우저는 ASI(Auto Semicolon Insertion:자동세미콜론넣기)
+      //를 해주지만 문제가 발생할 수 있으므로 개발자가 직접해준다
+      document.getElementById("tg").src =
+        "https://www.youtube.com/embed/" +
+        yo +
+        " ? autoplay=1&loop=1&playlist=" +
+        yo;
+      //  기존값에 yo라는 변수에 담긴 동영상아이디값을 합쳐서 src값에 할당한다!
+
+    } //////gogo함수/////////
 
     /*
       함수의 호출은 요소(태그)의 이벤트 속성과 연결하여 가능하다!
@@ -60,17 +60,89 @@
   </script>
   <title>CGV PJ</title>
 </head>
+
 <body>
   <!-- 상단영역 -->
   <header id="top" class="part">
     <!-- 1-1.페이지 타이틀 -->
     <h1 class="tit">CGV 예고편 상영관</h1>
+    <!-- 1-2.전체메뉴(GNB) -->
+    <nav class="gnb">
+      <ul>
+        <li>
+          <a href="#">영화</a>
+          <!-- 서브메뉴 -->
+          <div class="smenu">
+            <ol>
+              <li>
+                <a href="#">무비차트</a>
+              </li>
+              <li>
+                <a href="#">HD트레일러</a>
+              </li>
+              <li>
+                <a href="#">무비파인더</a>
+              </li>
+              <li>
+                <a href="#">CGV아트하우스</a>
+              </li>
+            </ol>
+          </div>
+        </li>
+        <li>
+          <a href="#">예매</a>
+          <!-- <div class="smenu">
+            <ol>
+              <li>
+                <a href="#">빠른예매</a>
+              </li>
+              <li>
+                <a href="#">상영시간표</a>
+              </li>
+            </ol>
+          </div> -->
+        </li>
+        <li>
+          <a href="#">극장</a>
+          <!-- <div class="smenu">
+            <ol>
+              <li>
+                <a href="#">CGV극장</a>
+              </li>
+              <li>
+                <a href="#">특별관</a>
+              </li>
+              <li>
+                <a href="#">CLUB서비스</a>
+              </li>
+            </ol>
+          </div> -->
+        </li>
+        <li>
+          <a href="#">이벤트&amp;컬처</a>
+          <!-- <div class="smenu">
+            <ol>
+              <li>
+                <a href="#">이벤트</a>
+              </li>
+              <li>
+                <a href="#">기프트샵</a>
+              </li>
+              <li>
+                <a href="#">매거진</a>
+              </li>
+            </ol>
+          </div> -->
+        </li>
+      </ul>
+    </nav>
   </header>
   <!-- 2.메인영역 -->
   <main id="cont" class="part">
     <!-- 2-1.스크린 박스  -->
     <div id="screen">
-      <iframe id ="tg" src="https://www.youtube.com/embed/2hnkUpo_2yg? autoplay=1&loop=1&playlist=2hnkUpo_2yg" allow="autoplay"></iframe>
+      <iframe id="tg" src="https://www.youtube.com/embed/2hnkUpo_2yg? autoplay=1&loop=1&playlist=2hnkUpo_2yg"
+        allow="autoplay"></iframe>
     </div>
     <!-- 2-2.예고편 선택메뉴 -->
     <nav class="mlist">
@@ -91,62 +163,62 @@
         </li>
         <li>
           <a href="#" onclick="gogo('oWVMFH_o1d0');return false;">
-             <!-- 포스터 -->
+            <!-- 포스터 -->
             <img src="../006.CGV_PJ/003.site/images/m2.jpg" alt="컨저링2">
-              <!-- 영화정보 -->
-              <ol class="movtxt">
-                <li>컨저링2</li>
-                <li>베라 파미가, <br> 패트릭 윌슨</li>
-                <li>공포</li>
-              </ol>
+            <!-- 영화정보 -->
+            <ol class="movtxt">
+              <li>컨저링2</li>
+              <li>베라 파미가, <br> 패트릭 윌슨</li>
+              <li>공포</li>
+            </ol>
           </a>
         </li>
         <li>
           <a href="#" onclick="gogo('abmpELhAOqs');return false;">
-             <!-- 포스터 -->
+            <!-- 포스터 -->
             <img src="../006.CGV_PJ/003.site/images/m3.jpg" alt="애나벨 집으로">
-              <!-- 영화정보 -->
-              <ol class="movtxt">
-                <li>애나벨 집으로</li>
-                <li>베라 파미가,<br> 패트릭 윌슨</li>
-                <li>공포</li>
-              </ol>
+            <!-- 영화정보 -->
+            <ol class="movtxt">
+              <li>애나벨 집으로</li>
+              <li>베라 파미가,<br> 패트릭 윌슨</li>
+              <li>공포</li>
+            </ol>
           </a>
         </li>
         <li>
           <a href="#" onclick="gogo('UG8Vgq15nxU');return false;">
-             <!-- 포스터 -->
+            <!-- 포스터 -->
             <img src="../006.CGV_PJ/003.site/images/m4.jpg" alt="더넌">
-              <!-- 영화정보 -->
-              <ol class="movtxt">
-                <li>더넌</li>
-                <li>타이사 파미가, <br> 데미안 버쉬어</li>
-                <li>공포, 미스터리, 스릴러</li>
-              </ol>
+            <!-- 영화정보 -->
+            <ol class="movtxt">
+              <li>더넌</li>
+              <li>타이사 파미가, <br> 데미안 버쉬어</li>
+              <li>공포, 미스터리, 스릴러</li>
+            </ol>
           </a>
         </li>
         <li>
           <a href="#" onclick="gogo('xCJVR0Us0AI');return false;">
-             <!-- 포스터 -->
+            <!-- 포스터 -->
             <img src="../006.CGV_PJ/003.site/images/m5.jpg" alt="인시디어스">
-              <!-- 영화정보 -->
-              <ol class="movtxt">
-                <li>인시디어스</li>
-                <li>패트릭 윌슨, 로즈 번</li>
-                <li>공포, 스릴러</li>
-              </ol>
+            <!-- 영화정보 -->
+            <ol class="movtxt">
+              <li>인시디어스</li>
+              <li>패트릭 윌슨, 로즈 번</li>
+              <li>공포, 스릴러</li>
+            </ol>
           </a>
         </li>
         <li>
           <a href="#" onclick="gogo('3jOnicGl-t8');return false;">
-             <!-- 포스터 -->
+            <!-- 포스터 -->
             <img src="../006.CGV_PJ/003.site/images/m6.jpg" alt="라이트아웃">
-              <!-- 영화정보 -->
-              <ol class="movtxt">
-                <li>라이트 아웃</li>
-                <li>테레사 팔머, <br> 앨리시아 벨라 베일리</li>
-                <li>공포</li>
-              </ol>
+            <!-- 영화정보 -->
+            <ol class="movtxt">
+              <li>라이트 아웃</li>
+              <li>테레사 팔머, <br> 앨리시아 벨라 베일리</li>
+              <li>공포</li>
+            </ol>
           </a>
         </li>
       </ul>
@@ -154,7 +226,8 @@
   </main>
   <!-- 3.하단영역 -->
   <footer id="info" class="part">
-    
+
   </footer>
 </body>
+
 </html>
