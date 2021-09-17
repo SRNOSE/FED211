@@ -29,7 +29,17 @@ body {
   font-family: 'Jua', sans-serif;
   
   /* 그림자를 이용한 glow효과 */
-  text-shadow: 0px 0px 10px lime ;
+  text-shadow: 0px 0px 12px lime ;
+
+  /* 애니메이션:이시이지반방마 */
+  animation: titAni .8s ease-in-out infinite alternate  ;
+}
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni{
+  to{
+    text-shadow: 0px 0px 5px lime ;
+  }
 }
 #top {
   position: relative;
