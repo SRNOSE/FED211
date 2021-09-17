@@ -18,7 +18,7 @@ body {
   outline: 4px dotted limegreen;
 }
 
-/* <!-- 상단영역 --> */
+/* <<<<<<<<<<<<!-- 상단영역 -->>>>>>>>>>>>>> */
 
 /* 1-1. 페이지 타이틀 */
 .tit{
@@ -53,11 +53,13 @@ body {
   position: relative;
   /* 부모자격- .smenu */
   padding: 0 10px;
-  font-family: serif;
-  font-family: 'Jua', sans-serif; 
+  font-family: serif;  font-family: 'Jua', sans-serif; 
   /* 글자크기 미지정시 16px임 */
+  font-size: 20px;
 }
-
+.gnb> ul> li:hover .smenu{
+  display: block;
+}
 /* GNB서브메뉴 */
 
 .smenu{
@@ -66,14 +68,82 @@ body {
   left: 50%;/* 부모크기의 절반만큼 밀어준다 */
   transform: translateX(-50%);/*자기자신크기의 절반을 왼쪽으로이동 */
   background: url(../images/bg_smenu.png) no-repeat center/cover;
-  padding: 6px;
-  
+  padding: 3px;
+  width: 143px;/* 특정크기를 주지 않고 auto일 경우 부모크기로 한점됨
+  따라서 특정크기를 줘야하는 케이스임 */
+  box-shadow: 0 0 5px #fff;
+  border-radius: 5px;
+  margin-top: 7px;
+  display: none;
 }
+
+/* 탑보더 클래스 */
+
+.tbar{
+  border-top: 1px solid #ccc
+}
+
+/* 가상요소로 삼각형 모양 만들기 */
+.smenu::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #353535;
+}
+.smenu ol{
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
 .smenu li{
   float: none;
-  font-size: 12px;
+  font-size: 16px;
+  line-height: 2;
 }
-/* <!-- 2.메인영역 --> */
+
+/* 서브메뉴 a요소 오버시 */
+.smenu a:hover{
+  color: red;
+}
+
+/* 서브메뉴 a요소 오버시 가상요소로 손가락모양 */
+.smenu a:hover::after{
+  content: '☞';
+  float: right;/* 인라인요소 오른쪽끝! */
+  font-weight: bold;
+}
+
+/* 영사기박스 */
+#cam{
+  position: absolute;
+  /* 부모는? .gnb */
+  right: -50px;
+  bottom: -19px;
+}
+/* 영사기 이미지 */
+#cam img{
+  width: 50px;
+}
+
+/* 빔박스 */
+.bim{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 71px;
+  background: url(../images/bim.png) no-repeat ;
+  background-position: right center;
+  background-size: auto 100%;
+}
+/* <<<<<<<!-- 2.메인영역 -->>>>>>>> */
 
 
 #cont {
@@ -163,7 +233,6 @@ body {
 /*포스터 리스트에 마우스 오버시 영화정보 올라오기 */
 .mlist >ul li:hover .movtxt{
   top: 0;
-
 }
 
 
