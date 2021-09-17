@@ -43,16 +43,23 @@ body {
 /* 1-2.전체메뉴(gnb) */
 .gnb{
   position: absolute;
-  bottom: 15px;
+  bottom: 10px;
   right: 15px;
   /* 나의 부모는? #top */
 }
-
+ .glist{
+  position: relative;
+  z-index: 1;
+  /* 다음형제인 #cam앱솔루트 박스보다 위!
+     ->마우스 오버가 안되니까
+  */
+}
 /* gnb li리스트 */
 .gnb  li{
   position: relative;
   /* 부모자격- .smenu */
-  padding: 0 10px;
+  padding: 0 10px 5px;
+  /* 하위메뉴 마진탑부분과 겹치게 함 */
   font-family: serif;  font-family: 'Jua', sans-serif; 
   /* 글자크기 미지정시 16px임 */
   font-size: 20px;
@@ -129,14 +136,18 @@ body {
 }
 /* 영사기 이미지 */
 #cam img{
+  position: relative;
+  /* z-index적용위해 */
+  z-index: 1;
+  /* 빔박스보다 위! */
   width: 50px;
 }
 
 /* 빔박스 */
 .bim{
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -17px;
+  right: 9px;
   width: 200px;
   height: 71px;
   background: url(../images/bim.png) no-repeat ;
