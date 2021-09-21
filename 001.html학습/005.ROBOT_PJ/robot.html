@@ -25,48 +25,39 @@
       position: fixed;
       top: calc(50% - 100px);
       left: calc(50% - 100px);
-      /* calc (%값 - px값) */
-      /* left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%); */
-      /* 무조건 화면기준 */
+      /* calc(%값 - px값) 정중앙 셋팅*/
+      /* 무조건 보이는 화면기준! */
       width: 200px;
       height: 200px;
       border: 2px solid #ccc;
       border-radius: 50%;
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
-      /* 패딩, 보더 포함-크기유지 */
+      /* 패딩,보더포함-크기유지 */
+
+      /* 글자중앙 */
       text-align: center;
-      font-family: "Vladimir Script";
-      /* 글자그림자 */
-      font-size: 28px;
-      text-shadow: 2px 2px 2px #000;
-      /* [박스그림자] */
-      /* box-shadow: x축 y축 blur spread 색;
-         blur 그림자 경계선 크기
-        spread 그림자 크기(생략가능)
-        밝으색을 쓰면 glow효과!!
-        inset을 쓰면 내부그림자로 전환(생략하면 일반그림자)
-        ->콤마로 셋팅하면 여러개의 그림자 효과를 줄 수 있다
-        */
-      box-shadow: 0 0 20px 5px pink;
       color: #fff;
       line-height: 196px;
-      /* 보더 때문에 정가운데가 아니라 border값을 뺀다 */
-      background: pink url(images/robot_03.png) no-repeat;
-      background-position: center 10px;
-      /* 가로축 세로축 */
-      background-size: 160px;
-      /* 가로 세로 */
+      /* 보더가 4px이므로 뺌! */
+      text-shadow: 2px 2px 2px#000;
+      /* 글자그림자 */
 
-      /* 애니메이션:이시이지반방마 */
-      animation: logoAni 2s ease-in-out 1s forwards,
-      /* 1초후에 2초간 처음과 마지막에 천천히 애니후 끝상태유지
-      (기본값은 한번만 실행) */
-      logoAni2 1s ease-in-out 3s infinite alternate;
-      /* 앞의 애니시간을 기다려 3초후 한번동작을 1초간 하도록 영원히 시작-끝-시작 반복설정함 */
+      box-shadow:0 0 20px 5px pink,
+      inset 0 0 20px 5px #000;
+      /* 박스그림자 -밝은 색을 쓰면 glow효과임 */
+      /* box-shadow:x축 y축 blur spread 색;
+      blur는 그림자 경계선 흐림 
+      spread 그림자 크기(생략가능)
+      inset을 쓰면 내부그림자로 전환됨(생략하면 일반그림자)
+      ->콤마로 셋팅하면 여러개의 그림자 효과를 줄 수 있다!
+      */
+      
+      background: pink url(images/robot_03.png) no-repeat;
+      background-position: center 10px;/* 가로 세로 */
+      background-size: 160px auto;/* 가로 세로 */
+      margin: 0;
+      padding: 0;
+
     }
 
     /* 애니메이션 키프레임 */
@@ -78,21 +69,21 @@
           left: calc(50% - 100px);
         } */
         /* 끝설정 */
-        to{
+        /* to{
           top: 50px;
           left: 50px;
-        }
+        } */
        }/*키프레임 */
 
        /* 추가 키프레임 */
 
        @keyframes logoAni2{
-         from{
+         /* from{
            transform: rotate(30deg);
          }
          to{
            transform: rotate(-30deg);
-         }
+         } */
        }/* 키프레임 */
 
 
@@ -107,15 +98,15 @@
       /* 화면 오른쪽 바깥에 나가있음! */
 
       /* 애니메이션 :이시이지반방마*/
-      animation: RAni .6s ease-out 3s forwards;
+      /* animation: RAni .6s ease-out 3s forwards; */
     }
 
     /* 머리와 몸 공통 애니메이션 키프레임 */
 
   @keyframes RAni{
-    to{
+    /* to{
       left: 0;
-    }
+    } */
   }/* 키프레임 */
     /* 눈1 */
     #eye1 {
@@ -183,7 +174,7 @@
       height: 300px;
       margin: 50px auto 0;
       background: url(images/metal01.jpg) no-repeat center/cover;
-      animation: RAni 1s ease-out 3s forwards;
+      /* animation: RAni 1s ease-out 3s forwards; */
     }
 
     /* 목 */
@@ -216,23 +207,23 @@
       /* 팔상단으로 기준점 변경 */
 
       /* 애니메이션:이시이지반방마 */
-      animation: armAni1 .8s ease-in 4s forwards,
-                    armAni2 .3s ease-in-out 4.8s infinite alternate;
+      /* animation: armAni1 .8s ease-in 4s forwards,
+                    armAni2 .3s ease-in-out 4.8s infinite alternate; */
     }
     /* 처음에 팔 올리기 키프레임 */
     @keyframes armAni1{
-      to{
+      /* to{
         transform: rotate(-15deg);
-      }
+      } */
     }/* 카프레임 */
 
     /*바이바이 키프레임 */
     @keyframes armAni2{
       from{/* 값이 중간에 변경되어서 from필요함 */
-        transform: rotate(-15deg);
+        /* transform: rotate(-15deg); */
       }
       to{
-        transform: rotate(-170deg);
+        /* transform: rotate(-170deg); */
       }
     }/* 카프레임 */
 
@@ -366,7 +357,7 @@
 
       -장면에 대한 시간 계산은? 전체시간 곱하기 %소수점변경수치
       -전체시간은 호출시 설정함!
-      -%소수점변경수치는 명%/100 
+      -%소수점변경수치는 몇%/100 
       -> 예) 50%는 0.5 (소수점 2자리 이동) 
 
       [설정된 키프레임 호출하는 방법]
@@ -384,7 +375,7 @@
         -영원히는 infinite
       6)방향(animation-direction):시작 -> 끝
         -대체경로 설정하기 : alternate
-                                   시작->끝, 끝-> 시작
+                            시작->끝, 끝-> 시작
         -대체경로는 반복횟수가 2이상 또는 infinite
       7)마지막상태(animation-fill-mode): 애니메이션이 끝났을때 
         -처음으로 돌아가는 것이 기본
