@@ -205,16 +205,32 @@
       document.getElementById("name").innerHTML = 
       '<img src="images/kim.png" alt = "김비서가 왜그럴까?">';
 
-      //CSS변경하기//
-      //(2) 글자색 변경하기
+      //CSS변경하기////////////////////////
       //대상선정: .pbox
+      //대상을 변수에 담아서 재사용한다! 계속 호출할수는 없으니까 변수에 담는다
+
+      var tg =  document.getElementsByClassName("pbox").item(0);
+      //var는 variable(변수)에서 나온말. 선언지 사용한다!
+
+
+      //(2) 글자색 변경하기
       //변경내용:글자색 라임색
 
-      document.getElementsByClassName("pbox").item(0).style.color = "lime";
+      // document.getElementsByClassName("pbox").item(0).style.color = "lime";
+
+      tg.style.color = "lime";
 
       //(3)글자 크기변경
       //대상선정: .pbox
       //변경내용: 글자크기 50px
+
+      tg.style.fontSize = "50px";
+
+      //(4) 트랜지션주기(2초)
+      tg.style.transition = "2s";
+
+      //(5)배경이미지 넣기
+      tg.style.background = "url(images/kimbs.jpg) no-repeat top/cover";
 
       
 
@@ -230,7 +246,9 @@
       border: 4px solid purple;
       color:#ff0;
       text-shadow: 1px 1px 1px #000;
+     
     }
+   
   </style>
 </head>
 <body>
