@@ -162,17 +162,40 @@
 
         -> 주의사항: 클래스를 단 하나만 썼어도 순번선택 필수
 
+__________________________________________________________________________________________________________________
 
       4.CSS선택자를 그대로 사용하는 선택법!
-      
+
       (1)하나의 요소만 선택하는 법
       document.querySelector(css선택자)
       ->무조선 선택요소가 여러개여도 처음 만나는 것 하나만 가져온다!
-      (2)
+      예) document.querySelector("#my")->아이디가 my인 요소
+       document.querySelector(".say")->클래스가 say인 요소 중 첫번째것
+       document.querySelector("ul>li")->li 요소 중 첫번째것
+
+      ->매서드명 분석
+      -query 쿼리 -> 질의(기술적인 질문)
+      -Selector 선택자 -> css선택자
+      ->브라우저에게 css선택자로 질의한다! 요소를 선택한다!
 
 
+      (2)여러개의 요소를 선택하는 방법
+      document.querySelectorAll(css선택자)
+      ->선택시 컬랙션 집합에 결과를 담는다!
+      ->따라서 요소가 하나일지라도 순번으로 선택한다!
+      방법: .item(순법) 또는 [순법]
+      -> 순번은 0부터~
+      ->컬랙션 갸수는 .length로 구해온다
+      (위의 방법은 getElementsByClassName, getElementsByTagName과 동일함)
+
+      예)
+      document.querySelectorAll("#my > li").item(3)
+      ->아이디가 my인 요소 아래 li 중 4번째 요소선택
+      동일한 표현법은
+      document.querySelectorAll("#my > li")[3]
 
 
+______________________________________________________________________________________________________________________________
 
         [JS에서 요소 선택 후 html 변경하기]
         선택요소.innerHTML = HTML코드
@@ -272,6 +295,58 @@
     }/////////showMe함수////////////////////////
 
 
+    
+    /*
+    함수명:circle
+    기능:선택요소 중앙으로 보내기
+    
+    */
+   function circle(num){//num순번전달변수
+    //1.함수호출확인 및 전달값확인
+    console.log(num+"나야나");
+
+    //2.대상선정: .circle
+    var cc = document.querySelectorAll(".circle");
+
+    //3.변경내용 : transition으로 화면 중앙으로 이동
+    console.log("개수:" + cc.length);
+    //트랜지션
+    cc.item(num).style.transition = "1s ease-out";
+    cc.item(num).style.top = "50%";
+    cc.item(num).style.right = "50%";
+    cc.item(num).style.transform = "translate(50%, -50%)";
+
+     
+  }//////////////////////////circle함수///////////////////////////////
+
+
+  /* 
+  함수명:rect
+  기능: 오른쪽 상단으로 이동하여 사각형으로 전체 챙우기
+  */
+ function rect(){
+   //1.함수호출확인
+   console.log("부모님이 누구니?");
+  //2.대상선정: #rect
+  var rt =document.querySelector("#rect");
+  //3.변경내용:top,트랜지션,width,height
+
+  rt.style.top = "0%";
+  rt.style.borderRadius ="0";
+  rt.style.width ="100%";
+  rt.style.height ="100%";
+  rt.style.transition ="3s 1s , top 1s 0s";
+  //트랜지션 top값만 1초, 나머지는 1초후 3초간 변경
+
+  }/////////////////////////////rect함수/////////////////////////////
+
+
+
+
+
+
+
+
   </script>
   <style>
     .pbox{
@@ -287,6 +362,33 @@
       color:#ff0;
       text-shadow: 1px 1px 1px #000;
     }
+
+  .circle,
+  #rect
+  {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .circle:first-of-type{
+      background-image: url(images/01.png);
+    }
+    .circle:nth-of-type(2){
+      background-image: url(images/02.png);
+    }
+    .circle:nth-of-type(3){
+      background-image: url(images/03.png);
+    }
+
+    #rect{
+      top: 40%;
+      background-image: url(images/04.png);
+    }
   </style>
 </head>
 <body>
@@ -294,5 +396,13 @@
     나는 요즘 매일 생각한다! <br>
     도대체 <span id="name"></span>
   </p>
+
+  <div class="circle" onclick="circle(0)"></div>
+  <div class="circle" onclick="circle(1)"></div>
+  <div class="circle" onclick="circle(2)"></div>
+
+  <div id="rect" onclick="rect()"></div>
+
+
 </body>
 </html>
