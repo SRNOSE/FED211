@@ -336,11 +336,12 @@ body {
 .sns > li{
   width: 34px;
   height: 34px;
-  outline: 2px solid lime;
   margin: 2px;
   /* 배경이미지 넣기-sprites */
   background: url(../images/sprites_logo.png) no-repeat;
   background-position: -509px  -430px;
+  /* 흑백처리-오버시칼라(0%)*/
+  filter: grayscale(100%);
 }
 .sns > li:nth-of-type(2){
   background-position: -550px -430px;
@@ -348,6 +349,15 @@ body {
 .sns > li:nth-of-type(3){
   background-position: -593px -430px;
 }
-.sns > li >a{
 
+/*sns a요소 확장(태그기능을 잃어서 손가락 모양이 안생겨) */
+.sns > li >a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  
 }
+/* li오버시 칼라로 */
+.sns > li:hover{
+  filter: grayscale(0);
+} 
