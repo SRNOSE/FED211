@@ -5,6 +5,7 @@
 @import url(reset.css);
 @import url(core.css);
 
+
 /* 외부파일 합치는 @import는 하나의 CSS외부파일에서 다른 외부CSS파일을 하나의 문서로
   합치는 기능을 한다. html에서 link방식의 요청을 최소화 할 수 있어서 랜더링 효율성을 높여준다*/
 
@@ -350,7 +351,8 @@ body {
   background-position: -593px -430px;
 }
 
-/*sns a요소 확장(태그기능을 잃어서 손가락 모양이 안생겨) */
+/*sns a요소 확장(태그기능을 잃어서 손가락 모양이 안생겨
+!!내용은 있지만 안보이게 width:0,height:0 처리해놔서!!!) */
 .sns > li >a{
   display: block;
   width: 100%;
