@@ -162,6 +162,18 @@
 
         -> 주의사항: 클래스를 단 하나만 썼어도 순번선택 필수
 
+
+      4.CSS선택자를 그대로 사용하는 선택법!
+      
+      (1)하나의 요소만 선택하는 법
+      document.querySelector(css선택자)
+      ->무조선 선택요소가 여러개여도 처음 만나는 것 하나만 가져온다!
+      (2)
+
+
+
+
+
         [JS에서 요소 선택 후 html 변경하기]
         선택요소.innerHTML = HTML코드
         ->선택요소 내부 자식으로 HTML코드를 집어 넣는다!
@@ -232,23 +244,49 @@
       //(5)배경이미지 넣기
       tg.style.background = "url(images/kimbs.jpg) no-repeat top/cover";
 
-      
+      //(6) 원모양만들기
+      tg.style.borderRadius = "50%";
 
-     }/////////showMe함수////////////////////////
+      //(7) 글자중앙정렬
+      tg.style.textAlign = "center";
+
+      //(8) 글자 줄간격 변경
+      tg.style.lineHeight = "320px";
+
+      //(9)회전 축소 + 트랜스폼 중앙이동(translate로 먼저 중앙이동 해놓고  그 후에 도는거랑 크기변화 주기)
+      tg.style.transform = "translate(-50%, -50%) rotate(360deg) scale(0.5)";
+
+      //(10)정중앙 보내기 위한 top,left변경
+      tg.style.top = "50%";
+      tg.style.left = "50%";
+
+      //(11) 배경색 바꾸기
+      //대상:body
+      //JS에서 body 는 특별히 취급한다
+      //document.body라고 선택
+      //선택대상을 변수에 담는다!
+      var bd = document.body;
+      bd.style.backgroundColor = "hotpink";
+      bd.style.transition = "5s";
+
+    }/////////showMe함수////////////////////////
 
 
   </script>
   <style>
     .pbox{
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
       font-size: 24px;
       width: 700px;
       height: 600px;
       border: 4px solid purple;
       color:#ff0;
       text-shadow: 1px 1px 1px #000;
-     
     }
-   
   </style>
 </head>
 <body>
@@ -256,6 +294,5 @@
     나는 요즘 매일 생각한다! <br>
     도대체 <span id="name"></span>
   </p>
- 
 </body>
 </html>
