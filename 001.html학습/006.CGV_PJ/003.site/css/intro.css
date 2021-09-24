@@ -64,6 +64,14 @@ body::after{
   /* 옆에 아무도 못오고 width끝까지 간다 */
   text-align: center;/* 글자중앙 */
   font: bold 34px/40px 'Audiowide' ;
+  transition: all .4s ease-out .2s;
+  /* 트랜지션 지연시간 0.2초 (양방향) */
+}
+
+/* 박스에 오버시 span변형하기 */
+#enter:hover span{
+  transform: scale(2);
+  color: chartreuse;
 }
 
 /* 로고 이미지 마우스 오버시 */
@@ -75,3 +83,4 @@ body::after{
 #enter:hover img{
   transform: rotate(-15deg) scale(1.5);
 }
+
