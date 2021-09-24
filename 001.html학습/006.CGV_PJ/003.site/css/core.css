@@ -1,10 +1,12 @@
 @charset "utf-8";
 /* CGV PJ 공통핵심 CSS */
-@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Jua&family=Audiowide&display=swap');
 /* ->웹폰트, 공용클래스 */
 
 /* font-family: 'Cute Font', cursive;
-  font-family: 'Jua', sans-serif; */
+  font-family: 'Jua', sans-serif; 
+  font-family: 'Audiowide', cursive;
+  */
 
 
   /* IR(Image Replacement)클래스 */

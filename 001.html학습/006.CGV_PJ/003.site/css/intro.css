@@ -46,3 +46,32 @@ body::after{
   background-color: #000;
   opacity: .5; /* 투명도(0~1) */
 }
+
+/* 들어가기 버튼박스 */
+#enter{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* 부모는?보이는 화면 */
+  transform: translate(-50%, -50%);
+  z-index: 1;/* body:after가상요소보다 위! */
+  
+}
+
+/* click here 글자박스 */
+#enter span{
+  display: block;
+  /* 옆에 아무도 못오고 width끝까지 간다 */
+  text-align: center;/* 글자중앙 */
+  font: bold 34px/40px 'Audiowide' ;
+}
+
+/* 로고 이미지 마우스 오버시 */
+#enter img{
+  transition: transform .4s ease-out;
+}
+
+/* 박스에 마우스 오버시 로고이미지 변형하기 */
+#enter:hover img{
+  transform: rotate(-15deg) scale(1.5);
+}
