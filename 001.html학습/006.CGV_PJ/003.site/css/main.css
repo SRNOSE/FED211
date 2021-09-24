@@ -5,6 +5,7 @@
 @import url(reset.css);
 @import url(core.css);
 
+
 /* 외부파일 합치는 @import는 하나의 CSS외부파일에서 다른 외부CSS파일을 하나의 문서로
   합치는 기능을 한다. html에서 link방식의 요청을 최소화 할 수 있어서 랜더링 효율성을 높여준다*/
 
@@ -302,6 +303,8 @@ body {
 
 #info {
   height: 100px;
+  position: relative;
+  /* 부모자격 */
 }
 
 /* 3-1. 회사정보박스 */
@@ -323,3 +326,40 @@ body {
   /* 인라인요소 이미지는 왼쪽에 글자는 오른쪽으로 흐르게 */
   margin-right: 20px;
 }
+
+/* 3-2.sns버튼 */
+.sns{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  /* 부모는? #info */
+}
+.sns > li{
+  width: 34px;
+  height: 34px;
+  margin: 2px;
+  /* 배경이미지 넣기-sprites */
+  background: url(../images/sprites_logo.png) no-repeat;
+  background-position: -509px  -430px;
+  /* 흑백처리-오버시칼라(0%)*/
+  filter: grayscale(100%);
+}
+.sns > li:nth-of-type(2){
+  background-position: -550px -430px;
+}
+.sns > li:nth-of-type(3){
+  background-position: -593px -430px;
+}
+
+/*sns a요소 확장(태그기능을 잃어서 손가락 모양이 안생겨
+!!내용은 있지만 안보이게 width:0,height:0 처리해놔서!!!) */
+.sns > li >a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  
+}
+/* li오버시 칼라로 */
+.sns > li:hover{
+  filter: grayscale(0);
+} 
