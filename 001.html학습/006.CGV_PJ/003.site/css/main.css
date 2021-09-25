@@ -70,7 +70,7 @@ body {
   position: relative;
   /* 부모자격- .smenu */
   padding: 0 10px 5px;
-  /* 하위메뉴 마진탑부분과 겹치게 함 */
+  /* 하위메뉴 마진탑부분과 겹치게 함. 단순히 .gnb의 하위 li뿐만아니라 모든 li에 먹히게하기위해 */
   font-family: serif;  font-family: 'Jua', sans-serif; 
   /* 글자크기 미지정시 16px임 */
   font-size: 20px;
