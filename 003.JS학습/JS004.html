@@ -263,17 +263,37 @@
                 -> 변수형속성 호출
                 객체명.속성명
                 예)obj.name
+
+                또는 
+                객체명["속성명"]
+                예)obj["name"] ->반드시 변수를 따옴표로!
             */
 
             var GU = {
                 name:"공유",
-                tall : "184cm",
-                weight :"75kg",
-                company:"소나무",
-                work :"학교",
-                msg:function(txt){//txt는 전달변수
-                    //1. 메시지 띄우기
-                    alert("펜레터:"+txt);
+                tall:"184cm",
+                weight:"74kg",
+                com:"매니지먼트 숲",
+                work: "도깨비,부산행",
+                msg:function(txt){ // txt는 전달변수
+                    // 1. 메시지 띄우기
+                    alert("팬레터: "+txt);
+                    // 2. 공유 이미지 배경넣기
+                    txt5.style.background =
+                    "url(./images/gu.png) repeat-x top/auto 100%";
+                     // 3. 글자색변경
+                     txt5.style.color = "#fff";
+                    // 4. 글자테두리(글자그림자를 이용한 테두리)
+                    txt5.style.textShadow =
+                    "2px 0 #000,-2px 0 #000,0 2px #000,0 -2px #000";
+                    //6.transition
+                    txt5.style.transition= "2s ease-in-out .5s";
+                    //7.줄간격
+                    txt5.style.lineHeight = "30px";
+                    //8.상단패딩
+                    txt5.style.paddingTop = "100px";
+
+
                 }////msg메서드//////
 
 
@@ -291,9 +311,133 @@
             txt5.innerHTML += "저는" + GU.name+"입니다";
             
 
-            txt5.innerHTML += "몸무게는 비밀인데요 그래도 말씀드리자면 " + GU.weight+"ㅎㅎㅎ입니다";
+            txt5.innerHTML += "몸무게는 비밀인데요 그래도 말씀드리자면 " + GU.weight+"ㅎㅎㅎ입니다<br>";
+
+            txt5.innerHTML += "제 대표작은 "+GU. work+"입니다<br>";
 
 
+            txt5.innerHTML += "제 소속사는 잘 모르시는 분이 많은데 "+GU.com+"입니다";
+
+            //공유박스 마우스 오버시 툴팁보이기 (title속성을 추가시켜 줌)
+            //속성넣기의 2가지 방법 : .속성명 +값 or setAttribute()
+
+            // txt5.title="공유의 팬레터를 확인하세요!바로클릭";
+            txt5.setAttribute("title","공유의 팬레터를 확인하세요!바로클릭");
+            //오버시 손가락모양
+            txt5.style.cursor = "pointer";
+
+            //공유박스 클릭시 GU객체의 메서드 호출하기!
+            txt5.onclick= function(){
+                GU.msg("공유오빠 커피프린스에서 너무 멋졌어요!  \n차기작도 기대해요!")
+                //alert창은 html태그를 사용할 수 없고 줄바꿈은 ＼n줄바꿈문자를 사용한다
+
+            };/////click이벤트 함수//////////////////
+
+            //미션 :#txt6는 객체를 만들어서 자유출력하시오
+            //자신이 영화를 선정하여 아래와 같은 항목으로 영화정보를 셋팅하시오
+        
+            //변수명 : devil
+            var devil = {
+                //1.영화제목
+               name: "악마를 보았다",
+                //2.감독
+                director: "김지운",
+                //3. 배우
+                actor :"이병현<br>",
+                //4. 장르
+                genre :"스릴러",
+                //5.관람가
+                age :"18세",
+                //6.예고편
+                trailer :function(){
+                    //1.호출확인
+                    console.log("예고편");
+                    //2.영화박스만들고 iframe 넣기
+                    //대상: body끝에 추가!!+= 대입연산자 중요
+                    document.body.innerHTML += 
+                    '<div id="mv">'+
+                        '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/BIw4s_5S0fw?autoplay=1&loop=1&playlist=BIw4s_5S0fw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'+
+                        '<span class="cbtn">×</span>' +
+                        '</div>';
+
+                        //삽입된 동영상 박스 CSS설정하기!
+                        var mv = document.getElementById("mv");//iframe넣으니 자동으로 생긴 아이디요소
+                        mv.style.position = "fixed";
+                        mv.style.top = "50%";
+                        mv.style.left = "50%";
+                        mv.style.transform = "translate(-50%, -50%)";
+                        mv.style.width = "700px";
+                        mv.style.height = "450px";
+
+                        //닫기버튼 셋팅
+                        var cbtn = document.querySelector(".cbtn");
+                        cbtn.style.position= "absolute";
+                        cbtn.style.top= "0";
+                        cbtn.style.right= "-70px";
+                        cbtn.style.width= "50px";
+                        cbtn.style.height= "50px";
+                        cbtn.style.background= "blue";
+                        cbtn.style.textAlign= "center";
+                        cbtn.style.fontSize= "40px";
+                        cbtn.style.borderRadius= "50%";
+                        cbtn.style.fontWeight= "bold";
+                        cbtn.style.color= "#fff";
+                        cbtn.style.cursor= "pointer";
+                        cbtn.style.lineHeight= "40px";
+
+                        //닫기버튼 클릭시 리로드!
+                        cbtn.onclick =function(){
+                            window.location.reload();
+                            //페이지 새로고침
+                            //location.reaload()로 줄여쓰기도 함
+                        }///click이벤트 함수//////
+
+
+                }///trailer메소드//////
+
+            }//////devil함수(영화정보 객체)/////////////////////////////
+
+            //devil객체 출력하기
+            //출력대상 #txt6
+
+            //내용출력
+            var txt6 = document.getElementById("txt6");
+            
+            //줄간격
+            txt6.style.lineHeight = "35px"
+            
+            txt6.innerHTML = "▣영화명:"+devil.name;
+
+            txt6.innerHTML+= "▣감독:"+devil.director;
+            
+            txt6.innerHTML += "▣배우:"+devil.actor;
+
+            txt6.innerHTML += "▣장르:"+devil.genre ;
+
+            txt6.innerHTML += "▣등급:"+devil.age;
+
+
+            // txt6.innerHTML = 한꺼번에 쓸수있다
+            // "▣영화명: " +devil.title +
+            // "▣감독: " +devil.director +
+            // "▣배우: " +devil.actor +
+            // "<br>▣장르: " +devil.genre +
+            // "▣등급: " +devil.age;
+
+            //변수형 속성 객체의 호출시
+            //변수명.속성명으로 호출하는데
+            //다른 방법으로 변수명["변수형속성명"]이 있다
+
+            //마우스 오버시 툴팁과 손가락 모양 셋팅
+            txt6.title="클릭하시면 "+devil.name+" 예고편을 보실 수 있습니다";
+            txt6.style.cursor = "pointer";
+
+            //트레일러 함수 호출하기
+            //#txt6 를 클릭시
+            txt6.onclick= function(){
+                devil.trailer();//트레일러 메서드 호출
+            }/////click이벤트 함수///////클릭이벤트가 발생할때만 발생해!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            
         }); /////load////////////////////////////////////
         ///////////////////////////////////////////////
     </script>
