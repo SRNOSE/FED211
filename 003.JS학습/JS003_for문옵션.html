@@ -31,13 +31,23 @@
                 //|| or논리합
                 //&& and 논리곱
                 //num이 1번이고 i가 4또는 7일대 continue
-                if(num===1&&(i===4||i===7))continue
+                if(num===1&&(i===4||i===7))continue;
                 //[continue 키워드]
                 //-for문안에서 continue 키워드를 만나면 아래쪽 코드를 실행하지 않고
-                //랙문 증감파트로 다시 올라감-> 다음조건실행
+                //for문 증감파트로 다시 올라감-> 다음조건실행
+
+                //num이 2이면 6번부터 안나오게하기
+
+                if(num===2 && i===6) break;
+                //[break키워드]
+                //-for문 안에서 break를 만나면 for문을 빠져나감
+                //참고: switch case문에서도 사용함
+                //->return키워드는 함수를 빠져나갈때 사용함
+                //리턴은 함수용!!
 
                 tg[num].innerHTML+= 
-                '<img src="images/num/num_0'+i+'.png" alt="숫자이미지">';
+                '<img src="images/num/num_0' + i + 
+                    '.png" alt="숫자이미지">';
 
             } /////for문////////////////////////////////
 
