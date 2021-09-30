@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Flex Layout</title>
+  <style>
+    html,body{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      /* 보이는화면 채우기- 자식요소 height값 %의 기분이 된다! 꼭해야함! */
+    }
+    ul,ol{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      /* 3무 */
+    }
+    /* 전체부모 */
+    #wrap{
+      height: 100%;
+      /* 화면채우기 */
+    }
+    /* ul 파티션 부모박스 */
+    #wrap>ul{
+      display: flex;
+      /* 
+        [ flex란?]
+        -가변적인 자식요소를 컨트롤 하기 위해 css3에서 새롭게 선보인 display 기술
+        -자식요소를 같은 비율 혹은 다른 비율로 분할이 쉽다
+        -자식요소의 순서를 일괄적으로 변경할 수 있다
+        -무엇보다도 블록요소를 옆으로 흐르게 하는데 탁월하다!
+        [ 셋팅법 ]
+        -옆으로 흐르게 할 요소의 부모요소에 display:flex;로 설정
+        -자식요소에 flex:1로 설정하면 등분할 된다
+      */
+      height: 100%;
+      /* 화면채우기 */
+    }
+    /* li공통 */
+    #wrap > ul > li{
+      flex:1;
+    }
+
+    /* 각 파티션 li */
+    #wrap >ul >li:nth-child(1){
+      background: url(images/m01_bg.jpg)no-repeat center/cover;
+    }
+    #wrap >ul >li:nth-child(2){
+      background: url(images/m02_bg.jpg)no-repeat center/cover;
+    }
+    #wrap >ul >li:nth-child(3){
+      background: url(images/m03_bg.jpg)no-repeat center/cover;
+    }
+    #wrap >ul >li:nth-child(4){
+      background: url(images/m04_bg.jpg)no-repeat center/cover;
+    }
+    #wrap >ul >li:nth-child(5){
+      background: url(images/m05_bg.jpg)no-repeat center/cover;
+    }
+  </style>
+</head>
+<body>
+  <!-- 전체부모박스 -->
+  <div id="wrap">
+    <!-- 파티션박스 -->
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+</html>
