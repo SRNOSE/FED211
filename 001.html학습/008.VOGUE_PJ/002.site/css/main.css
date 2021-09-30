@@ -50,23 +50,23 @@
 }
 /* 6번 컨텐츠 */
 .bg10{
-  background: url(../images/cont6-1.png);
+  background-image: url(../images/cont6-1.png);
 }
 .bg11{
-  background: url(../images/cont6-2.jpg);
+  background-image: url(../images/cont6-2.jpg);
 }
 .bg12{
-  background: url(../images/cont6-3.png);
+  background-image: url(../images/cont6-3.png);
 }
 /* 7번 컨텐츠 */
 .bg13{
-  background: url(../images/cont7-1.jpg);
+  background-image: url(../images/cont7-1.jpg);
 }
 .bg14{
-  background: url(../images/cont7-2.jpg);
+  background-image: url(../images/cont7-2.jpg);
 }
 .bg15{
-  background: url(../images/cont7-3.jpg);
+  background-image: url(../images/cont7-3.jpg);
 }
 
 
