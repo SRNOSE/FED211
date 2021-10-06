@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* VOGUE_PJ 공통 기능 디자인 - common.css */
+/* 
+  공통기능: 상단영역 (로고,메뉴,GNB)
+               하단영역(하단로고, 회사정보)
+*/
+
+/* 공사중 외곽선 */
+body *{
+  outline: 3px dotted rgb(200, 198, 198);
+}
+/* 1-1.상단메뉴 */
+.tmenu{
+  display: flex;
+  /* 플렉스 박스 */
+  max-width:970px;
+  /* 최대 970px이고 이것보다 작아지면 auto */
+  height: 45px;
+  margin: 0 auto;
+}
