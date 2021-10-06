@@ -155,7 +155,58 @@
             */
             //난수 발생시키기
             let rdm = Math.random();
-            console.log("난수발생:"+rdm);
+            console.log("난수발생:"+rdm*7);
+            console.log("난수발생:"+Math.ceil(rdm*7));
+            console.log("난수발생:"+Math.floor(rdm*7));
+
+            /* 
+                [ 내가 원하는 난수발생하기 ]
+                1. 먼저 난수를 발생한다!
+                    Math.random
+                2. 1부터 원하는 최대수일 경우 최대수를 곱한다
+                    Math.ramdom()*최대수
+                3. 원하는 범위의 난수를 올림처리한다!
+                    Math.ceil(Math.random()*최대수)
+
+                ※중간범위 수일 경우 시작범위수를 
+                1부터 최대수를 구한 후 시작수 만큼 더하면 된다
+                예) 4 ~ 12사이의 난수를 발생한다면
+                    1~9 사이의 난수를 발생후 3을 더하면 됨!
+                    Math.ceil(Math.random()*9)+3
+            */
+           //1~7 사이의 난수만들기
+           rdm = Math.ceil(Math.random()*7);
+           console.log("1~7사이 난수:"+rdm);
+
+           //이미지변경대상
+           let tg = document.querySelector(".ibox img");
+
+           //이전랜덤수 저장변수(같은 이미지 안나오게)
+           let temp = 1;//처음에 1번 이미지가 있으므로!
+
+           //1~7 사이의 난수로 이미지를 랜덤하게 나오게하기
+           setInterval(() => {
+               //1. 랜덤수 발생
+               let num = Math.ceil(Math.random()*7);
+               console.log("이미지랜덤수:"+num);
+
+               //2. 랜덤수 검사 :이전번호와 같으면 다시 발생
+               //while(조건문){코드}
+               //-> 조건문이 true일동안 코드를 계속실행
+               while(num === temp){//이전수와 같으면
+                num = Math.ceil(Math.random()*7);
+                console.log("새로랜덤:"+num);
+               }////while문//////////////////
+               //while문에 안걸리면 바로3번으로 간다!
+
+               //3.이미지 src변경하기
+               tg.src = "images/img"+num+".jpg";
+
+               //4. 지금 발생시킨 확정된num을 temp에 저장함
+               //왜? 다음 랜덤 발생시 비교할 이전랜덤수니까
+               temp=num;
+
+           }, 2000);/////인터발 함수///////
 
 
 
