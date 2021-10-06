@@ -7,7 +7,7 @@
 
 /* 공사중 외곽선 */
 body *{
-  outline: 3px dotted rgb(200, 198, 198);
+  outline: 1px dashed rgb(97, 94, 94);
 }
 /* 1-1.상단메뉴 */
 .tmenu{
@@ -17,4 +17,41 @@ body *{
   /* 최대 970px이고 이것보다 작아지면 auto */
   height: 45px;
   margin: 0 auto;
+}
+/* 상단메뉴 하위 박스 등분할 */
+.tmenu > div{
+  flex: 1;
+  /* flex 등분할시 높이값은 자동으로 채워진다(height:100%안해도 된다) */
+}
+
+/* 1-1-1. sns박스 */
+.sns a{
+  display: inline-block;
+  /* 마지막 카카오스토리는 다른걸로 넣을거라 */
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  /* 폰트사이즈는 안줘도 기본이 16px이다 */
+  text-align: center;
+  /* 박스내의 인라인요소 가로중앙정렬 */
+  vertical-align: top;
+  /* 인라인요소간 세로정렬(top은 윗줄정렬) */
+  line-height: 16px;
+  /* 글자가 박스 세로 중앙에 오도록 설정 */
+
+  /* 위치조정 */
+  margin: 15px 16px 0 0;
+}
+
+/* 트위터 아이콘 박스 */
+.sns a.fi-twitter{
+  font-size: 13px;
+}
+.sns a.fi-youtube-play{
+  font-size: 11px;
+}
+
+/* sns마지막 a요소의 카스이미지 넣기 */
+.sns a:last-child{
+  background: url(../images/sns_kakao.png) no-repeat center/auto 100%;
 }
