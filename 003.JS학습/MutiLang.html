@@ -147,12 +147,48 @@
 
             document.querySelector(".sel").onchange = ()=>{
 
-                //화살표함수 this
+                //화살표함수 this(this를 쓰려면  화살표함수 안쓰는게 낫다)
                 let obj = event.currentTarget;
 
                 //1. 선택값 가져오기 : option value속성
                 let opt = obj.value;
-                console.log(opt);
+                // console.log(opt);
+
+                //2.메뉴변경하기
+                //lang객체의 코드별 속성값을 가져온다!
+                let menu = lang[opt]["메뉴"];
+                // console.log(menu);
+
+                //2-2. 메뉴의 개수만큼 메뉴 텍스트 바꾸기
+                //대상: #gnb a
+                let gnb = document.querySelectorAll("#gnb a");
+
+                //gnb메뉴 순번변수
+                let gnum = 0;
+
+
+                //메뉴배열값의 개수만큼 for문을 돌린다
+                for(let x of menu){//x는 배열의 메뉴택스트
+
+                    gnb[gnum].innerText = x;
+                    gnum++;//1씩 증가
+
+                }/////for of문////////////////////////////////
+
+                //3. 회사정보 변경하기
+                //대상: #info address
+                document.querySelector("#info address")
+                .innerText = lang[opt]["주소"];
+
+                //4. 메인 이미지 변경하기
+                //이미지명이 같은 경로에 opt변수의 코드값과 같다!
+                //images/코드명.jpg
+                //대상 : #cont img
+                document.querySelector("#cont img")
+                .setAttribute("src","images/"+opt+".jpg");
+
+
+
 
             };////////////change이벤트 함수////////////
 
