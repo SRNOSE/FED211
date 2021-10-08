@@ -105,8 +105,6 @@
             /*주소요소 기본 이탤릭 해제*/
         }
     </style>
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
 
     <script>
         ///// 전역변수 구역 ///////
@@ -138,6 +136,28 @@
                 "주소": "94, JJ Building, 34-22, Cheongdam-dong, Gangnam-gu, Seúl, Representante: James Hong"
             }
         }; ///////// lang 객체 ///////
+
+        /////////로드구역//////////////////
+        window.addEventListener("load",()=>{
+
+            //선택박스 변경시 사이트 다국어 변경하기
+            //이벤트 대상 : .sel
+            //이벤트 종류 : change
+            //변경대상 ; 메뉴, 이미자, 하단정보
+
+            document.querySelector(".sel").onchange = ()=>{
+
+                //화살표함수 this
+                let obj = event.currentTarget;
+
+                //1. 선택값 가져오기 : option value속성
+                let opt = obj.value;
+                console.log(opt);
+
+            };////////////change이벤트 함수////////////
+
+        });///////////////로드구역//////////////////////
+        ////////////////////////////////////////////////
 
         
     </script>
