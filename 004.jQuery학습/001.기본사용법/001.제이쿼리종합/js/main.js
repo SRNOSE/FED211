@@ -48,6 +48,17 @@ $(function(){
   //주사기태그 셋업
   let inj =  '<img src="images/inj.png" alt="주사기" class="inj">';
 
+  //미니언즈 가로크기 보정값
+  //윈도우 가로크기의 5%
+  let win5 = $(window).width()* 0.05;
+  // console.log("가로크기5%"+win5);
+  //width() 선택요소의 가로크기
+  //heigt() 선택요소의 세로크기 구하기
+  //-> 단위없는 px값
+
+
+
+
   /////////////////////////////////////////
   //2. 초기화 셋팅//////////////////////
   ///////////////////////////////////////
@@ -96,30 +107,189 @@ $(function(){
    btns.first().click(function(){
      console.log("들어가기버튼");
 
-     //이동할 빌딩 li의 위치정보 알아내기!
+     //1.자기자신 버튼 없애기(들어가기 버튼)
+    //  $(this).hide();
+     $(this).slideUp(400);
+
+     //2.메시지 지우기
+
+     msg.fadeOut(200);
+     //fadeOut(시간)-opacity로 서서히 사라짐
+
+     //3.이동할 빌딩 li의 위치정보 알아내기!
+
      // offset() 메서드 위치나 크기정보를 알려줌
      //offset().top-top값
      //offset().left-left값
 
      //이동할 li  타겟-> bd변수에 할당(.building li)
-    //  let tg = bd.eq();
+     let tg = bd.eq(8);//8번방
+     let tval = tg.offset().top;//화면에서의 top값
+     let lval = tg.offset().left+win5;//화면에서의 left값
+     //win5는 미니언즈를 left 값 보정함!(화면의 5%)
+     console.log(tval+"/"+lval);
 
-     //미니언즈 이동하기
+     //4.미니언즈 이동하기
+
     // 대상 : .mi -> mi변수에 할당!
-
-    // [ 애니메이트 메서드 ]
     // animate({css설정},시간, 이징, 함수)
-    // - css설정에 따라 애니메이션 연출 메서드
-    // -시간은 1/1000초(단위가 없음)
-    // -이징은 가속도
-    // -함수는 애니 후 실행코드(콜백함수)
 
     mi.animate({
-      top: "500px",
-      left: "500px"
-    },2000);
+      top: tval+"px",
+      left: lval+"px"
+    },1000,function(){//콜백함수(애니 후 실행)
 
-   });/////////3-1 click/////////////
+    //5. 메시지요소 변경하기
+      msg
+      //메시지 넣기
+      .text("와~ 아늑하다. 옆방으로 가보자!")
+      //나타나기
+      .fadeIn(200);
+      //한번 선택하고 이어서 메서드를 계속 쓰는 방법을 메서드 체인이라고 함!
+      //중간에 이어서 쓸땐 세미콜론 없어야함
+      // .css({background:"skyblue"})
+
+      //6. 다음변경버튼 보이기(옆방으로~)
+      btns.eq(1).slideDown(400);//show도 가능
+
+
+    });///animate//////
+
+   });/////////3-1.들어가기 버튼 click/////////////
+
+    //3-2. "옆방으로!" 버튼///////////////////////
+    btns.eq(1).click(function(){
+      // console.log("옆방으로 버튼");
+ 
+      //1.자기자신 버튼 없애기(들어가기 버튼)
+     //  $(this).hide();
+      $(this).slideUp(400);
+ 
+      //2.메시지 지우기
+      msg.fadeOut(200);
+      //fadeOut(시간)-opacity로 서서히 사라짐
+ 
+      //3.이동할 빌딩 li의 위치정보 알아내기!
+ 
+      // offset() 메서드 위치나 크기정보를 알려줌
+      //offset().top-top값
+      //offset().left-left값
+ 
+      //이동할 li  타겟-> bd변수에 할당(.building li)
+      let tg = bd.eq(9);//9번방
+      let tval = tg.offset().top;//화면에서의 top값
+      let lval = tg.offset().left+win5;//화면에서의 left값
+      //win5는 미니언즈를 left 값 보정함!(화면의 5%)
+      console.log(tval+"/"+lval);
+ 
+      //4.미니언즈 이동하기
+ 
+     // 대상 : .mi -> mi변수에 할당!
+     // animate({css설정},시간, 이징, 함수)
+ 
+     mi.animate({
+       top: tval+"px",
+       left: lval+"px"
+     },1000,function(){//콜백함수(애니 후 실행)
+       
+      //5. 좀비 나타나기!(콜백에서 2초 후)
+      setTimeout(() => {
+        //현재li(9번방에 있는 tg변수)에 있는 좀비만 보여라!
+        tg.find(".mz").fadeIn(300);
+        //find(요소) 하위 중 자손요소 찾기!
+
+        //6. 메시지요소 변경하기
+          // msg.text("악! 좀비;;;;;<br> 어서피하자!")//br이 안먹히니 html로
+          msg.html("악! 좀비;;;;;<br> 어서피하자!")
+          .css({left:"-90%"})
+          .delay(500).fadeIn(200);
+          //delay(시간) -애니메이션 앞에서 지연시간주기(애니메이션에서만 사용가능)
+         
+          //7. 다음변경버튼 보이기(윗층으로~)
+          btns.eq(2)
+          .delay(700)
+          .slideDown(400);
+          //0.5초 기다리고 0.2초 나타난 메시지 기다린 후(0.7) 실행
+    
+      }, 2000);//타임아웃함수//
+
+
+ 
+     });///animate//////////////////////////////////////
+
+
+    });/////////3-2.옆방으로! 버튼 click/////////////
+    //3-3. "윗층으로 도망가!" 버튼///////////////////////
+    btns.eq(2).click(function(){
+      // console.log("옆방으로 버튼");
+ 
+      //1.자기자신 버튼 없애기(들어가기 버튼)
+     //  $(this).hide();
+      $(this).slideUp(400);
+ 
+      //2.메시지 지우기
+      msg.fadeOut(200);
+      //fadeOut(시간)-opacity로 서서히 사라짐
+ 
+      //3.이동할 빌딩 li의 위치정보 알아내기!
+ 
+      // offset() 메서드 위치나 크기정보를 알려줌
+      //offset().top-top값
+      //offset().left-left값
+ 
+      //이동할 li  타겟-> bd변수에 할당(.building li)
+      let tg = bd.eq(7);//7번방
+      let tval = tg.offset().top;//화면에서의 top값
+      let lval = tg.offset().left+win5;//화면에서의 left값
+      //win5는 미니언즈를 left 값 보정함!(화면의 5%)
+      console.log(tval+"/"+lval);
+ 
+      //4.미니언즈 이동하기
+ 
+     // 대상 : .mi -> mi변수에 할당!
+     // animate({css설정},시간, 이징, 함수)
+ 
+     mi.animate({
+       top: tval+"px",
+       left: lval+"px"
+     },1000,function(){//콜백함수(애니 후 실행)
+       
+      //5. 메시지요소 변경하기
+        msg.text("여긴없겠지?")
+       . delay(500).fadeIn(200);
+        //delay(시간) -애니메이션 앞에서 지연시간주기(애니메이션에서만 사용가능)
+
+      // 6. 좀비 나타나기! (콜백에서 2초후)
+      setTimeout(() => {
+        // 현재li(tg변수)에 있는 좀비만 보여라!
+        tg.find(".mz").fadeIn(300);
+        // find(요소) 하위 중 자손요소 찾기!
+
+        // 6. 메시지변경
+        msg.text("악!여기도...");
+        // delay(시간) - 애니메이션 앞에서 지연시간주기
+
+
+         
+          //7. 다음변경버튼 보이기(윗층으로~)
+          btns.eq(2)
+          .delay(700)
+          .slideDown(400);
+          //0.5초 기다리고 0.2초 나타난 메시지 기다린 후(0.7) 실행
+    
+      }, 2000);//타임아웃함수//
+
+
+ 
+     });///animate//////////////////////////////////////
+
+
+    });/////////3-3.윗층으로 도망가! 버튼 click/////////////
+
+
+
+
+
 
 
 
