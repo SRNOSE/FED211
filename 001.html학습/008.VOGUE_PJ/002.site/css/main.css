@@ -5,6 +5,7 @@
 @import url(reset.css);
 @import url(core.css);
 @import url(common.css);
+@import url(sub.css);
 
 /* 메인 페이지 공통 디자인 */
 .bgc {
@@ -13,70 +14,73 @@
 
 
 /*************** 2. 메인영역 ******************/
-.cont>div{
+.cont>div {
     outline: 2px dashed red;
 }
 
 /* 1번 컨텐츠 */
-.bg1{
+.bg1 {
     background-image: url(../images/cont1a.jpg);
 }
+
 /* 2번 컨텐츠 3개 */
-.bg2{
+.bg2 {
     background-image: url(../images/cont2-1.jpg);
 }
-.bg3{
+
+.bg3 {
     background-image: url(../images/cont2-2.jpeg);
 }
-.bg4{
+
+.bg4 {
     background-image: url(../images/cont2-3.jpg);
 }
+
 /* 3번 컨텐츠 */
-.bg5{
+.bg5 {
     background-image: url(../images/cont3a.jpg);
 }
+
 /* 4번 컨텐츠 3개 */
-.bg6{
+.bg6 {
     background-image: url(../images/cont4-1.jpg);
 }
-.bg7{
+
+.bg7 {
     background-image: url(../images/cont4-2.jpg);
 }
-.bg8{
+
+.bg8 {
     background-image: url(../images/cont4-3.jpg);
 }
+
 /* 5번 컨텐츠 */
-.bg9{
+.bg9 {
     background-image: url(../images/cont5a.jpg);
 }
+
 /* 6번 컨텐츠 3개 */
-.bg10{
+.bg10 {
     background-image: url(../images/cont6-1.png);
 }
-.bg11{
+
+.bg11 {
     background-image: url(../images/cont6-2.jpg);
 }
-.bg12{
+
+.bg12 {
     background-image: url(../images/cont6-3.png);
 }
+
 /* 7번 컨텐츠 3개 */
-.bg13{
+.bg13 {
     background-image: url(../images/cont7-1.jpg);
 }
-.bg14{
+
+.bg14 {
     background-image: url(../images/cont7-2.jpg);
 }
-.bg15{
+
+.bg15 {
     background-image: url(../images/cont7-3.jpg);
-}
-
-
-
-/* 파트타입1 - 이미지1개 */
-.pt1{
-    /* height: 724px; */
-}
-/* 파트타입2 - 이미지3개 */
-.pt2{
-    /* height: 650px; */
 }
