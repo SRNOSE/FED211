@@ -241,6 +241,14 @@
 
 
 /*********** 슬림 상단영역:#top의 .on을 준다 *************************/
+#top.on{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 내용만큼 줄어드니까 width는 100% */
+    background-color: #fff;
+}
 /* 속박스 */
 #top.on .top{
     min-height: auto;
@@ -253,16 +261,39 @@
 /* 로고 */
 #top.on .logo{
     position: absolute;
+    left: 0;
+    /* 부모는? #top-겉박스가 기준! */
 }
 /* 로고이미지 */
 #top.on .logo img{
-    height: 28px;
-    margin: 12px 0 ;
+    height: 26px;
+    margin: 5px 0 0 7px ;
 }
 /* gnb */
 #top.on .gnb{
-
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 0 107px;
+    /* 양쪽패딩으로 끝에 닿기 전에 떨어져 줄바꿈되게 함 */
 }
+/* gnb ul */
+#top.on .gnb ul{
+    max-width:631px ;
+    /* 로고와 겹쳐지지 않게 기본크기 축소 */
+}
+/* gnb li*/
+#top.on .gnb li{
+    margin: 0 18px;
+}
+/* gnb li a*/
+#top.on .gnb li a{
+    color: #333;
+}
+/* gnb li a:hover*/
+#top.on .gnb li a:hover{
+    color: red;
+}
+
 /***************** 3. 하단영역 *********************/
 .info {
     min-height: 285px;
