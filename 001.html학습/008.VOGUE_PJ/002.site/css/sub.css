@@ -6,6 +6,44 @@
 @import url(core.css);
 @import url(common.css);
 
+
+/* 1. 서브타이틀 */
+.stit{
+  font-family: 'Pistilli', sans-serif;
+  font-size: 50px;
+  padding: 40px 0 20px;
+  text-align: center;
+  font-weight: normal;
+}
+/* 2. 서브메뉴lnb */
+.lnb{
+  padding: 5px 0 50px;
+}
+.lnb ul{
+  display: flex;
+  justify-content: center;
+  /* 가로컨텐츠 중앙 */
+}
+.lnb ul li{
+  margin: 0 10px;
+  /* 양쪽마진 */
+}
+.lnb ul li a{
+  font-family: 'NanumBarunGothic', sans-serif;
+  font-size: 18px;
+  color: #333;
+  transition: all .5s ease-in-out;
+  font-weight: lighter;
+}
+/* 마우스오버시 */
+.lnb ul li a:hover{
+  color: red;
+}
+/* 첫번째 메뉴 */
+.lnb li:first-child a{
+  color: red;
+}
+
 /* 개별 배경이미지 셋업 */
 .bg1-1{
   background-image: url(../images/fashion/cont1-1a.jpg);
