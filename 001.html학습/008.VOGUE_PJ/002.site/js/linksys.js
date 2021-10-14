@@ -3,7 +3,14 @@ $(function(){///JQB///////////////////////////
 
   console.log("링크시스템 로딩구역");
 
-  ///1. GNB메뉴 링크 연결하기///
+
+  //1. 로고클릭시 첫페이지로 가기!
+  //대상 : .logo a
+  $(".logo a").click(function(){
+    location.href = "index.html";
+  });////click/////////////////////////
+
+  ///2. GNB메뉴 링크 연결하기///
   //대상 : .gnb a
   //이벤트 : click -> click()메서드 사용
   $(".gnb a").click(function(e){//e는 이벤트 전달변수(꼭 써줘야 한다!!)
