@@ -358,6 +358,7 @@
     z-index: 999;
     /* 트랜지션 */
     transition: .3s;
+    display: none;
 }
 /* 탑버튼 마우스 오버시 */
 .tbtn:hover{
