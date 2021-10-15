@@ -357,7 +357,7 @@
     border-radius: 4px 4px 0 0;
     z-index: 999;
     /* 트랜지션 */
-    transition: .3s;
+    transition:  background-color .3s;
     display: none;
 }
 /* 탑버튼 마우스 오버시 */

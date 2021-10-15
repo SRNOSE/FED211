@@ -64,17 +64,32 @@ $(function(){ ////// jQB ////////////////////////
       if(scTop >= 300 && scSts2===1){
           scSts2 = 0;//한번만!
           console.log("탑버튼보여!");
-          tbtn.show();//보여
+          tbtn.fadeIn(300);//쓱~보여
       } ///////// if ///////////////////
       else if(scTop < 300 && scSts2===0){
           scSts2 = 1;//한번만
           console.log("탑버튼숨겨!");
-          tbtn.hide();//숨겨
+          tbtn.fadeOut(300);//쓱~숨겨
       } ///////// else if //////////////
 
 
 
   }); //////////// scroll //////////////////////
+  ////////////////////////////////////////////
+
+  ////탑버튼 이동 구현하기//////////////
+  //대상 : .tbtn === tbtn변수
+  tbtn.click(function(e){//e-이벤트 전달변수
+    //기본이동막기
+    e.preventDefault();
+
+    //맨위로 이동하기
+    //변경대상:html, body 두가지모두!
+    $("html,body").animate({
+      scrollTop: "0ox"
+    },1000,"easeInOutQuad");
+
+  });////////click////////////////////////////
 
 
 
