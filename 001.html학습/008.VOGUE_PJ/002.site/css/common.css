@@ -240,6 +240,60 @@
 }
 
 
+/*********** 슬림 상단영역:#top의 .on을 준다 *************************/
+#top.on{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 내용만큼 줄어드니까 width는 100% */
+    background-color: #fff;
+}
+/* 속박스 */
+#top.on .top{
+    min-height: auto;
+    /* 최소높이 없애기 */
+}
+/* 상단메뉴 없애기 */
+#top.on .tmenu{
+    display: none;
+}
+/* 로고 */
+#top.on .logo{
+    position: absolute;
+    left: 0;
+    /* 부모는? #top-겉박스가 기준! */
+}
+/* 로고이미지 */
+#top.on .logo img{
+    height: 26px;
+    margin: 5px 0 0 7px ;
+}
+/* gnb */
+#top.on .gnb{
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 0 107px;
+    /* 양쪽패딩으로 끝에 닿기 전에 떨어져 줄바꿈되게 함 */
+}
+/* gnb ul */
+#top.on .gnb ul{
+    max-width:631px ;
+    /* 로고와 겹쳐지지 않게 기본크기 축소 */
+}
+/* gnb li*/
+#top.on .gnb li{
+    margin: 0 18px;
+}
+/* gnb li a*/
+#top.on .gnb li a{
+    color: #333;
+}
+/* gnb li a:hover*/
+#top.on .gnb li a:hover{
+    color: red;
+}
+
 /***************** 3. 하단영역 *********************/
 .info {
     min-height: 285px;
@@ -286,4 +340,27 @@
 /* 마지막 li만 두껍게! */
 .blink li:last-child a {
     font-weight: bold;
+}
+
+
+/* 위로가기버튼 */
+.tbtn{
+    position: fixed;
+    bottom: 0;
+    right: 75px;
+    background: #333;
+    color: #fff;
+    width: 48px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+    z-index: 999;
+    /* 트랜지션 */
+    transition:  background-color .3s;
+    display: none;
+}
+/* 탑버튼 마우스 오버시 */
+.tbtn:hover{
+    background-color: red;
 }
