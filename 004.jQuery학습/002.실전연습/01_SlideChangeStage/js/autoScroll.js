@@ -169,6 +169,14 @@ $(function(){////JQB////////////////////
           scrollTop: pos +"px"
         },800,"easeInOutCirc");
 
+        //////////////////////////////////////////////////////////////
+         //대상: .gnb li + .indic li
+         $(".gnb li").eq(pno).addClass("on")
+         .siblings().removeClass("on");
+         $(".indic li").eq(pno).addClass("on")
+         .siblings().removeClass("on");
+ 
+
       });////////////////////mousewheel이벤트////////////////////////
 
 
