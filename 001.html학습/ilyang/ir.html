@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="images/common/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/board.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/common.js"></script>
+    <!-- min은압축되어있다는뜻 -->
+    <title>일양약품</title>
+</head>
+<body>
+    <p class="skip-menu"><a href="#container">본문바로가기</a></p>
+    
+    <header id="header">
+        <h1 class="logo"><a href="index.html"><img src="images/common/logo.png" alt="일양약품"></a></h1>
+        <a href="#gnb-menu-wrap" class="allmenu"><img src="images/common/btn-header-menu.png" alt="전체메뉴"></a>
+        <div id="gnb-menu-wrap" class="menu-wrap">
+            <div class="scroll-wrap">
+                <ul class="util-menu">
+                    <li class="home"><a href="#"><i class="fa fa-home"></i><span class="txt">HOME</span></a></li>
+                    <li class="mall"><a href="#">일양헬스몰</a></li>
+                    <li class="recruit"><a href="#">채용정보</a></li>
+                    <li class="lang">
+                        <!-- <a href="#" class="on">언어선택</a> -->
+                        <a href="#">언어선택</a>
+                    <ul>
+                        <li><a href="#">한국어</a></li>
+                        <li><a href="#">영어</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                
+                <ul id="gnb">
+                    <!-- list에첨부터클래스주고시작하기 -->
+                    <li class="m-1">
+                        <!-- <a href="#" class="on">제품정보</a> -->
+                        <a href="#" >제품정보</a>
+                    <ul>
+                        <li><a href="#">제품소개</a></li>
+                        <li><a href="#">재품소식</a></li>
+                        <li><a href="#">최신허가변경</a></li>
+                    </ul></li>
+                    <li class="m-2">
+                        <!-- <a href="#" class="on">연구개발</a> -->
+                        <a href="#">연구개발</a>
+                    <ul>
+                        <li><a href="#">일양연구소</a></li>
+                        <li><a href="#">R&D 비전</a></li>
+                        <li><a href="#">연구분야</a></li>
+                        <li><a href="#">주요연구분야</a></li>
+                        <li><a href="#">Licensing</a></li>
+                    </ul>
+                    </li>
+                    <li class="m-3">
+                        <!-- <a href="#" class="on">투자정보</a> -->
+                        <a href="#">투자정보</a>
+                    <ul>
+                        <li><a href="#">주가정보</a></li>
+                        <li><a href="#">재무정보</a></li>
+                        <li><a href="#">공시정보</a></li>
+                        <li><a href="#">IR정보</a></li>
+                        <li><a href="#">결산정보</a></li>
+                    </ul>
+                    </li>
+                    <li class="m-4">
+                        <!-- <a href="#" class="on">건강정보</a> -->
+                        <a href="#">건강정보</a>
+                    <ul>
+                        <li><a href="#">주제별 건강정보</a></li>
+                        <li><a href="#">건강정보</a></li>
+                        <li><a href="#">이달의 건강웹진</a></li>
+                    </ul>
+                    </li>
+                    <li class="m-5">
+                        <!-- <a href="#" class="on">홍보센터</a> -->
+                        <a href="#">홍보센터</a>
+                    <ul>
+                        <li><a href="#">일양의 발자취</a></li>
+                        <li><a href="#">일양 가족지</a></li>
+                        <li><a href="#">사외공헌</a></li>
+                    </ul>
+                    </li>
+                    <li class="m-6">
+                        <!-- <a href="#" class="on">고객센터</a> -->
+                        <a href="#">고객센터</a>
+                    <ul>
+                        <li><a href="#">자주묻는 질문</a></li>
+                        <li><a href="#">당번약국검색</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                <p class="btn-menu-close"><a href="">닫기</a></p>
+            </div>
+        </div>
+        <div class="dim"></div>
+    </header>
+    <div id="container" class="sub-page">
+        <div class="bg-header-title">
+            <div class="header-title bg-ir">
+                <h2>투자정보<span>IR정보</span></h2>
+            </div>
+        </div>
+        <div class="contents">
+            <h3 class="sub-tit-1">IR정보</h3>
+            <div class="board-wrap">
+                <p class="info-1">총 게시물:<em>10</em></p>
+                <form action="#" class="board-sch-frm" method="get">
+                    <!-- form>fieldset>ledgend는 한쌍 -->
+                    <fieldset>
+                        <legend>IR정보 단어 검색</legend>
+                        <P class="inp-zone-1">
+                            <!-- select>option*4 -->
+                            <select name="sch-option-1" class="inp-select-1" id="sch-option-1" title="검색옵션을 선택하세요">
+                                <option value="all">전체</option>
+                                <option value="title">제목</option>
+                                <option value="writer">작성자</option>
+                                <option value="id">아이디</option>
+                            </select>
+                            <input type="text" name="board-sch-keyword" class="inp-txt-1" id="board-sch-keyword" title="검색어입력">
+                            <!-- 시각장애인을위해서 title달아준다(label이없으니까 넣어준다) -->
+                            <input type="submit" class="btn-st-1 board-btn-1" value="검색">
+                        </P>
+                    </fieldset>
+                </form>
+                <div class="scroll-wrap">
+                    <table class="table-basic-st-1 cl-b">
+                        <caption>IR정보 게시물</caption>
+                        <colgroup>
+                        <col style="width:78px">
+                        <col style="width:auto">
+                        <col style="width:112px">
+                        <col style="width:117px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">첨부파일</th>
+                                <th scope="col">등록일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>100</td>
+                                <td class="ta-l td-subject"><a href="">일양약품 "코로나19 바이러스" 치료 물질 발견!</a></td>
+                                <td><a href="./download/ilyang_1.pdf" target="_blank" title="새 창 열림" class="icon-pdf">PDF VIEW</a></td>
+                                <td>2020-10-13</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td class="ta-l td-subject"><a href="">일양약품 "코로나19 바이러스" 치료 물질 발견!</a></td>
+                                <td><a href="#" class="icon-pdf">PDF VIEW</a></td>
+                                <td>2020-10-13</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td class="ta-l td-subject"><a href="">일양약품 "코로나19 바이러스" 치료 물질 발견!</a></td>
+                                <td><a href="#" class="icon-pdf">PDF VIEW</a></td>
+                                <td>2020-10-13</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td class="ta-l td-subject"><a href="">일양약품 "코로나19 바이러스" 치료 물질 발견!</a></td>
+                                <td><a href="#" class="icon-pdf">PDF VIEW</a></td>
+                                <td>2020-10-13</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td class="ta-l td-subject"><a href="">일양약품 "코로나19 바이러스" 치료 물질 발견!</a></td>
+                                <td><a href="#" class="icon-pdf">PDF VIEW</a></td>
+                                <td>2020-10-13</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td class="ta-l td-subject"><a href="">일양약품 "코로나19 바이러스" 치료 물질 발견!</a></td>
+                                <td><a href="#" class="icon-pdf">PDF VIEW</a></td>
+                                <td>2020-10-13</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td class="ta-l td-subject"><a href="">일양약품 "코로나19 바이러스" 치료 물질 발견!</a></td>
+                                <td><a href="#" class="icon-pdf">PDF VIEW</a></td>
+                                <td>2020-10-13</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td class="ta-l td-subject"><a href="">일양약품 "코로나19 바이러스" 치료 물질 발견!</a></td>
+                                <td><a href="#" class="icon-pdf">PDF VIEW</a></td>
+                                <td>2020-10-13</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td class="ta-l td-subject"><a href="">일양약품 "코로나19 바이러스" 치료 물질 발견!</a></td>
+                                <td><a href="#" class="icon-pdf">PDF VIEW</a></td>
+                                <td>2020-10-13</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td class="ta-l td-subject"><a href="">일양약품 "코로나19 바이러스" 치료 물질 발견!</a></td>
+                                <td><a href="#" class="icon-pdf">PDF VIEW</a></td>
+                                <td>2020-10-13</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="info-page-view ta-r">2/10</p>
+                <div class="pager-wrap">
+                    <a href="#" class="first-page">첫 페이지</a>
+                    <a href="#" class="prev-page">이전 페이지</a>
+                    <ul class="pager-list">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                    </ul>
+                    <a href="#" class="next-page">다음 페이지</a>
+                    <a href="#" class="last-page">마지막 페이지</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-footer">
+        <footer id="footer">
+            <p class="bottom-logo"><a href="#"><img src="images/common/logo-footer.png" alt="일양약품"></a></p>
+            <address>
+                <p>서울시 강남구 도곡동 544-5 일양빌딩 Tel:02-570-3700 Fax:02-570-3708~9 고객상담실:080-021-1010(수신자요금부담전화) </p>
+                <p>본사 및 용인공장:경기도 용인시 기흥구 하갈동 182-4번지</p>
+            </address>
+            <p>Copyright @ 2013 ILYANG pharmaceutical Co.LTD</p>
+        </footer>
+    </div>
+    
+</body>
+</html>
