@@ -42,10 +42,16 @@
   /* 4. 상단영역 - 최소높이없앰 */
   .top {
     min-height: auto;
+    height: 55px;
   }
   /* 5. 모바일전용버튼 보이기 */
   .mobtn{
     display: block;
+  }
+  /* 6.컨텐츠 상단밀기(상단메뉴에 덮이므로) */
+  .cont{
+    margin-top: 55px;
+    /* 상단메뉴 높이값만큼 밀었음 */
   }
 }
 
