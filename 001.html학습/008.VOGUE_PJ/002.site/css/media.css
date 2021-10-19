@@ -53,6 +53,51 @@
     margin-top: 55px;
     /* 상단메뉴 높이값만큼 밀었음 */
   }
+  /* 7. 컨텐츠박스 3번째 안보이게 처리 */
+  /* flex:0으로 처리함 */
+  .pt2 .cbx:last-child{
+    flex: 0;
+  }
+  /* 8. 비율박스 비율변경 */
+  .pt1.rbx::before {
+    padding-top: 150%;
+}
+  .pt2.rbx::before{
+    padding-top: 75%;
+  }
+  /* 9. 컨텐츠 배경이미지 모바일용 변경 */
+  .bg1{
+    background-image: url(../images/cont1b.jpg);
+}
+.bg5{
+    background-image: url(../images/cont3b.jpg);
+}
+.bg9{
+    background-image: url(../images/cont5b.jpg);
+}
+/* 10. 컨텐츠타이틀 변경 */
+.cbx h2 {
+  font-size: 5vw;
+  padding: 5vw;
+}
+/* 11. 하단박스 */
+.info{
+  padding: 40px;
+  min-height: auto;
+}
+/* 12. 하단로고 */
+.blogo img{
+  width: 200px;
+}
+/* 13. 위로 이동버튼 */
+.tbtn{
+  bottom: 100px;
+  right: 15px;
+}
+.cbx:hover::after {
+border-width: 10px;
+/* 보더 두께만 변경 */
+}
 }
 
 
