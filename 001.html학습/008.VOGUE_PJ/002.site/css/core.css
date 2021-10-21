@@ -12,13 +12,7 @@
     src: url(../fonts/Roboto-Light.woff) format('woff');
   }
   /* Roboto Condensed체 */
-  @font-face {
-    font-family: 'Roboto Condensed';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url(../fonts/RobotoCondensed-Bold.woff) format('woff');
-  }
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap');
 
 /* 나눔바른고딕 */
 @font-face {
