@@ -25,6 +25,15 @@
             list-style: none;
         }
 
+        /* 드래그선택 안되게 하는 css */
+        .dselect{
+            user-select: none;
+            /* 선택안되게함 */
+            -webkit-user-drag: none;
+            /* 드래그안되게 함 */
+        }
+
+
 
 
         /*움직일 갤러리 화면크기의 부모박스*/
@@ -93,15 +102,16 @@
 
             //이동위치 한계설정/////////////////////////////////////////
 
-            //첫번째한계선:화면 가로크기의 절반값
-            let fpt = $(window).width()/2;
+            //첫번째한계선:화면 가로크기의 1/3값
+            let fpt = $(window).width()/3;
             //first point 첫번쨰 포인트 지점
 
 
-            //마지막 한계선 : move박스 가로크기 - 전체화면의 절반
-            let lpt = move.width() - fpt;
+            //마지막 한계선 : move박스 가로크기 - 전체화면의 2/3
+            //마지막 한계선 : move박스 가로크기 - 전체화면의 2/3
+            let lpt = move.width() - fpt*2;
             //last point 마지막 포인트 지점(끝 절반이 보인다)
-            console.log("마지막포인트"+lpt);
+            // console.log("마지막포인트"+lpt);
 
             //화면에서 마우스가 움직일때 이벤트는? 
             //->mousemove (터치펀치 모바일 변경 ->touchmove)
@@ -113,13 +123,13 @@
             //on(이벤트명,함수)-> 이벤트명에 띄어쓰기로 여러개 쓰면 다중적용됨!
             $("html,body").on("mousemove mouseup mousedown", function(){
 
-                console.log("마우스움직여");
+                // console.log("마우스움직여");
 
                 //1. 움직이는 박스의 left값
                 let mpos = move.offset().left;
                 //현재 박스의 화면에서의 left값
 
-                console.log("현재left:"+mpos);
+                // console.log("현재left:"+mpos);
 
                 //2. 처음한계값 체크 후 고정하기
                 if(mpos > fpt){
@@ -154,7 +164,7 @@
     <h1>ICE CREAM GALLERY</h1>
     <div id="handle">
         <div id="move">
-            <ul>
+            <ul class="dselect"><!-- 드래그랑 선택안되게 -->
                 <li><img src="images/1.jpg" alt="items"></li>
                 <li><img src="images/2.jpg" alt="items"></li>
                 <li><img src="images/3.jpg" alt="items"></li>
