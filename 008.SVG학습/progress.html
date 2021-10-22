@@ -20,6 +20,8 @@
 
         /* 팽수박스 */
         .pang{
+            position: relative;
+            /* .txt의 부모자격 */
             width: 200px;
             height: 200px;
             margin: 100px auto;
@@ -65,7 +67,8 @@
                 ->데쉬옵셋으로 선을 공백부터 보이게 한 후 이 값을 0으로 만들면
                 원래 선부터 셋팅된 부분이 보이게 된다.
             */
-            transition: stroke-dashoffset 1s ease-in-out ;
+            transition:.1s linear ;
+            /* 퍼센트 증가에 따른 트랜지션 */
 
         }
         /* 팽수에 오버시 데쉬옵셋 변경하기 */
@@ -73,8 +76,74 @@
             stroke-dashoffset: 0;
         } */
 
+        /* 퍼센트 글자박스 */
+        .txt{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 정중앙 이동 */
+            font-size: 5vw;
+            text-shadow: 2px 2px 2px #000;
+            color: #fff;
+        }
+
+        /* #pbtn 버튼 */
+        #pbtn{
+            text-align: center;
+        }
+        #pbtn button{
+            font-size: 50px;
+        }
     </style>
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){//JQB//////////////////////
+
+        //버튼클릭시 팽수 퍼센트 애니메이션 하기
+        //이벤트 대상 :#pbtn button
+        $("#pbtn button").click(function(){
+
+
+        progFn();//호출
+
+
+
+        });///click////////////////////////////////
+
+        //퍼센트 박스
+        let ptxt =$(".ptxt");
+   
+
+        // 퍼센트 증가함수////////////////////
+        /////////////////////////////////////////
+        let progFn = ()=>{
+
+            //퍼센트값 증가///
+            //1. 기존값 읽어오기
+            let pers = ptxt.text();//읽어오기
+            //2. 기존값에 1증가
+            pers++;//1증가
+            //3.증가된 값 화면출력!
+            ptxt.text(pers);//
+
+            //4. 재귀호출(함수 자신을 다시 호출 1부터 100까지)
+            if(pers < 100){//100보다 작을때 호출
+                //호출이 너무 빠르므로 setTimeout으로 시간조정
+                setTimeout(() => {
+                    progFn();
+                    
+                }, 100);
+            }////if문////////////////////////////////
+
+
+        };//////////////// progFn/////////////////
+
+
+
+
+        });//////////////JQB//////////////////////
+    </script>
     
 </head>
 
@@ -88,6 +157,9 @@
         <svg viewBox="0 0 200 200">
             <circle class="c1" cx="100" cy="100" r="95"></circle>
         </svg>
+    </div>
+    <div id="pbtn">
+        <button >팽수퍼센트</button>
     </div>
     <!-- 
         [ svg요소 ]
