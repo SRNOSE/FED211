@@ -1,0 +1,20 @@
+[ HTML그래픽 요소 ]
+
+1.비트맵 이미지 : 픽셀로 표현되는 특정해상도를 가지는 이미지
+(특징: 축소확대시 이미지가 변형된다)
+-대표툴 : 포토샵
+->HTML5에서 증장한 비트맵 이미지 요소는? CANVAS
+- 참고:
+    https://www.w3schools.com/graphics/canvas_intro.asp
+
+
+2.벡터 이미지 : 화면에 계산되어 디스플레이되는 이미지
+(특징: 축소확대시 이미지 원형이 유지된다)
+대표툴: 일러스트레이터
+->HTML5에서 등장한 벡터 이미지 요소는 ? SVG
+- 참고:
+    https://www.w3schools.com/graphics/svg_intro.asp
+
+    
+[ SVG: SCALABLE VECTOR GRAPHIC ]
+-> SVG파일은 코드로 구성되어있다
