@@ -30,7 +30,7 @@ $(function () { /////// jQB ///////////////////
 
             console.log("아이디:" + cid);
 
-            if(!cid) return;
+            if (!cid) return;
 
             // 2. 입력된 값 알아오기 : val() 메서드
             let cv; // 현재읽어온 값 (current value)
@@ -64,7 +64,7 @@ $(function () { /////// jQB ///////////////////
             // 3. 빈값일 경우 "필수입력" 메시지 출력
             if (cv === "") {
                 $(this).siblings(".msg").text("필수입력!")
-                .removeClass("on");//글자색 복원!
+                    .removeClass("on"); //글자색 복원!
                 // siblings(필터) -> 선택요소 이외의 형제들 중 특정요소
 
                 // 통과여부 false
@@ -268,21 +268,21 @@ $(function () { /////// jQB ///////////////////
 
         // 1. 선택박스 변경된 값 읽어오기
         let cv = $(this).val();
-        console.log("선택값:"+cv);
+        console.log("선택값:" + cv);
 
         // 2. 선택옵션별 분기문
-        if(cv === "init"){ // "선택해주세요" 선택시
+        if (cv === "init") { // "선택해주세요" 선택시
 
             // 메시지 출력
             eml1.siblings(".msg")
-            .text("이메일 옵션 선택필수!")
-            .removeClass("on");// 글자색 복원
+                .text("이메일 옵션 선택필수!")
+                .removeClass("on"); // 글자색 복원
 
             // 직접입력창 숨기기
             eml2.fadeOut(300);
 
         } ///// if문 : init일때 /////
-        else if(cv === "free"){ // free일때
+        else if (cv === "free") { // free일때
 
             // 1.직접입력창 보이기(fadeIn)
             //   + 값초기화(val) + 포커스주기(focus)
@@ -325,7 +325,7 @@ $(function () { /////// jQB ///////////////////
     // 이벤트 발생메서드: trigger(이벤트명)
     // //////////////////////////////////////////
     let pass; // 검사용변수
-    $("#btnj").click(function(e){ // 서브밋버튼 클릭시
+    $("#btnj").click(function (e) { // 서브밋버튼 클릭시
 
         // 1. 서브밋 기능막기
         e.preventDefault();
@@ -337,34 +337,86 @@ $(function () { /////// jQB ///////////////////
         // 대상: input[type=text][id!=email2],input[type=password]
         // 이벤트발생 메서드: trigger(이벤트명) -> blue이벤트 발생!
         $("input[type=text][id!=email2],input[type=password]")
-        .trigger("blur");
+            .trigger("blur");
 
-        console.log("통과여부:"+pass);
+        console.log("통과여부:" + pass);
 
         //4. 검사결과에 따라 메시지 보이기 및 처리
-        if(pass){//pass가 true니까,통과시
+        if (pass) { //pass가 true니까,통과시
 
-          //메시지 띄우기
-          alert("회원가입 축하드립니다!!!");
-          //원래는 post방식으로 DB에 회원정보 입력 후 
-          //입력완료시에 위의 메시지를 띄워준다!
+            /* 
+                [ Ajax를 이용한 POST방식으로 DB에 데이터 입력하기 ]
+                Ajax = Asynchronous javascript and XML
 
-          //로그인페이지로 이동하기
-          location.replace("login.html");
-          // location.href = "login.html";
-          /* 
-            location.href는 뒤로 가기시 history가 살아있어서 보안상 위험
-            따라서 현재 페이지에 그대로 덮어쓰기로 위치 이동을 하는 방법을 쓴다!
-             location.replace("이동주소");
-             ->현재 페이지 history가 덮어써져서 사라진다!
-             (전페이지 돌아가기 안됨!!)
-          */
-          
-        }/////////if///////////////////////////
-        else{//불통과시!
-          alert("다시 작성해주세요!");
+                -비동기통신이란? 쉽게 말해서 페이지가 새로고쳐지지 않고
+                그대로 있으면서 일부분만 서버통신을 하는 것을 말한다.
+                -제이쿼리는 POST방식으로 ajax를 할 수 있다
 
-        }///////////////else/////////////////
+                [ POST방식 AJAX메서드 ]
+                $.post(url,data, callback)
+                $.post(전송할 페이지,전송할 데이터, 전송후실행함수)
+            */
+
+            $.post(
+
+                //1.전송할 페이지
+                "process/ins.php",
+                //2.전송할 데이터-{속성:값}객체형식
+                {
+                    // 1.아이디
+                    "mid":$("#mid").val(),
+                    // 2.비번
+                    "mpw":$("#mpw").val(),
+                    // 3.이름
+                    "mnm":$("#mnm").val(),
+                    // 4.성별
+                    "gen":$(":radio[name=gen] checked").val(),
+                    // 5-1.이메일 앞주소
+                    "email1":$("#email1").val(),
+                    // 5-2.이메일 뒷주소
+                    "seleml":$("#seleml").val(),
+                    // 5-3.직접입력 이메일 뒷주소
+                    "email2":$("#email2").val()
+                },
+                //3. 전송후실행함수
+                function(res){//res-리턴된결과값 받음!
+                    
+                    //성공시//
+                    if(res==="ok"){
+                        alert("회원가입 축하드립니다!!!");
+                        //원래는 post방식으로 DB에 회원정보 입력 후 
+                        //입력완료시에 위의 메시지를 띄워준다!
+
+                        //로그인페이지로 이동하기
+                        location.replace("login.php");
+                        // location.href = "login.html";
+                        
+                    }///if문:성공시//
+                    else{
+                    alert(res);
+                        //실패메시지 찍기
+                    }///else문:실패시
+
+                }/////전송휴 실행함수
+
+            ); /////post메서드/////////////////////
+
+
+            //메시지 띄우기
+
+            /* 
+              location.href는 뒤로 가기시 history가 살아있어서 보안상 위험
+              따라서 현재 페이지에 그대로 덮어쓰기로 위치 이동을 하는 방법을 쓴다!
+               location.replace("이동주소");
+               ->현재 페이지 history가 덮어써져서 사라진다!
+               (전페이지 돌아가기 안됨!!)
+            */
+
+        } /////////if///////////////////////////
+        else { //불통과시!
+            alert("다시 작성해주세요!");
+
+        } ///////////////else/////////////////
 
     }); //////////////// click //////////////////////
     ////////////////////////////////////////////////
