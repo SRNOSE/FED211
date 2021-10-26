@@ -98,6 +98,10 @@ $(function(){//////////////////////////JQB///////////////////////////////
           //광드래그 커버 지우기
           cover.hide();
 
+          //배너글자 등장함수 호출!
+          showTxt();
+          //아랫쪽의 sno변경이 먼저이루어짐!
+
       });/////////animate콜백함수///////////////
 
       //블릿순번 변경하기 : 오른쪽이동은 증가
@@ -173,8 +177,44 @@ $(function(){//////////////////////////JQB///////////////////////////////
      
     };///////////chgIndic 함수/////////////
 
+    ////배너등장택스트////
+    let banTxt =[
+      "Men's Season<br>Collection",
+      "2021 Special <br> Collection",
+      "GongYoo<br>Collection",
+      "T-shirt<br> Collection",
+      "Shoes<br> Collection",
+      "Wind Jacket<br> Collection"
+    ];
+    /////////배너 글자 등장 함수///////////////////////////////////////////
+    let showTxt=()=>{
+      // console.log("슬순"+sno);
+      
+      //0. 있을수도 잇는 .btit박스 지우기!
+      $(".btit").remove();
 
+      //1.배너글자 박스 넣기
+      //대상: .slide li(해당순번li)
+      slide.find("li").eq(sno)
+      .append('<h2 class="btit"></h2>');
 
+      //2.배너 글자박스 css
+      $(".btit")//주인공
+      .css({
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate (-50%, -50%)",
+        font: "bold 4.5vmax Verdana",
+        color: "#fff",
+        textShadow:"1px 1px 3px #777",
+        whiteSpace: "nowrap"
+
+      })/////////////////css/////////////////////
+      //3. 글자넣기-주인공에서 이어짐!
+      .html(banTxt[sno]);
+      
+    };////////////////////////////showTxt함수/////////////////////////////
 
 
 
