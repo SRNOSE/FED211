@@ -11,7 +11,7 @@
 
 /* 페이지 액션 class */
 .act{
-    transform: rotate(23deg);
+    transform: rotate(23deg) translateY(50px);
     transform-origin: left top;
     opacity: 0;
     transition: all 1s ease-in-out ;
@@ -20,11 +20,19 @@
 }
 /* 액션상태변경 */
 .act.on{
-    transform: rotate(0deg);
+    transform: rotate(0deg) translateY(0px);
     transform-origin: left top;
     opacity: 1;
 }
-
+/* 트랜지션 지연시간 차이주기 */
+/* 이미지 */
+img.act.on{
+transition-delay: .2s;
+}
+/* 글자 */
+a.act.on{
+transition-delay: .6s;
+}
 /* 개별 페이지 셋팅 */
 
 /********** 2-1.배너영역 ************/
