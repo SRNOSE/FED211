@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion | 보그 코리아 (Vogue Korea)</title>
     <!-- 탭메뉴 아이콘 넣기 -->
-    <link rel="shortcut icon" href="images/icon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../vogue/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css">
     <link rel="stylesheet" href="css/sub.css">
     <link rel="stylesheet" href="css/media.css">
@@ -225,6 +225,9 @@
                 클래스명 만들어주기->경로명과 같은 이름으로 설정
              -->
 
+             <!-- 탭 타이틀 변경하기 함수호출! -->
+             {{chgTit(v.제목)}}
+
             <!-- 1. 타이틀 -->
             <h2 class="stit">{{v.제목}}</h2>
 
@@ -248,26 +251,32 @@
             <section class="pt2 rbx">
                 <div class="rbxIn">
                     <div class="cbx bgi bg1-1">
-                        <h2>{{v.타이틀[0]}}</h2>
+                        <h2 v-html="v.타이틀[0]"></h2>
+                        <!-- 
+                            v-html="값" 해당값을 요소의 데이타로 
+                            html태그로 적용하기
+                            주의){{}}콧수염은 text만 넣어줌
+                            (html태그 처리 불가!)
+                         -->
                     </div>
                     <div class="cbx bgi bg1-2">
-                        <h2>{{v.타이틀[1]}}</h2>
+                        <h2 v-html="v.타이틀[1]"></h2>
                     </div>
                     <div class="cbx bgi bg1-3">
-                        <h2>{{v.타이틀[2]}}</h2>
+                        <h2 v-html="v.타이틀[2]"></h2>
                     </div>
                 </div>
             </section>
             <section class="pt2 rbx">
                 <div class="rbxIn">
                     <div class="cbx bgi bg2-1">
-                        <h2>{{v.타이틀[3]}}</h2>
+                        <h2 v-html="v.타이틀[3]"></h2>
                     </div>
                     <div class="cbx bgi bg2-2">
-                        <h2>{{v.타이틀[4]}}</h2>
+                        <h2 v-html="v.타이틀[4]"></h2>
                     </div>
                     <div class="cbx bgi bg2-3">
-                        <h2>{{v.타이틀[5]}}</h2>
+                        <h2 v-html="v.타이틀[5]"></h2>
                     </div>
                 </div>
             </section>
