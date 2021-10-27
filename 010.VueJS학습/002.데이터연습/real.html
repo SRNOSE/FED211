@@ -36,7 +36,17 @@
   <h1>Vue JS 데이터 바인딩 연습</h1>
   <ul id="app">
     <li v-for="(v,i) in items.data">
-      {{v.메뉴}}
+      {{v.제목}}
+      <ol v-if="v.메뉴!=='없음'">
+        <!-- 
+          v-if="v.메뉴!=='없음'
+          만약에 v.메뉴의 값이 '없음'이 아니면  true
+          이때 for문이 실행됨! false이면 실행안됨!
+         -->
+        <li v-for="(m,i) in v.메뉴">
+          {{m}}
+        </li>
+      </ol>
     </li>
   </ul>
 </body>
