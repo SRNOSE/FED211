@@ -45,8 +45,8 @@ $(function(){ //////// jQB /////////////////////
     let msg = $(".msg");
 
     // 좀비 태그 셋업
-    let mz1 = '<img src="images/mz1.png" alt="좀비1" class="mz">';
-    let mz2 = '<img src="images/mz2.png" alt="좀비2" class="mz">';
+    let mz1 = '<img src="images/eel.png" alt="좀비1" class="mz">';
+    let mz2 = '<img src="images/ein.png" alt="좀비2" class="mz">';
     let zom = '<img src="images/zom.png" alt="좀비들" class="mz">';
 
     // 주사기 태그 셋업
@@ -141,7 +141,7 @@ $(function(){ //////// jQB /////////////////////
             // 메시지요소
             msg
             // 메시지 넣기
-            .text("와~! 아늑하다! 옆방으로 가보자!")
+            .text("꼬르륵~! 배고프다! 밥먹으러 가보자!")
             // 나타나기
             .fadeIn(200);
             // 한번 선택하고 이어서 메서드를 계속
@@ -198,7 +198,7 @@ $(function(){ //////// jQB /////////////////////
                 // find(요소) 하위 중 자손요소 찾기!
 
                 // 6. 메시지변경
-                msg.html("악!;;;; 좀비!<br>어서피하자!")
+                msg.html("와!;;;; 장어덮밥!<br>너무 마이쪙!")
                 .css({left: "-100%"})
                 .delay(500).fadeIn(200);
                 // delay(시간) - 애니메이션 앞에서 지연시간주기
@@ -248,7 +248,7 @@ $(function(){ //////// jQB /////////////////////
         },1000,function(){ // 콜백함수 (애니후 실행!) //
 
             // 5. 메시지변경
-            msg.text("여긴없겠지?")
+            msg.text("여긴 어떤 커피가 맛있어요?")
             .delay(500).fadeIn(200);
 
             
@@ -259,7 +259,7 @@ $(function(){ //////// jQB /////////////////////
                 // find(요소) 하위 중 자손요소 찾기!
 
                 // 6. 메시지변경
-                msg.text("악!여기도...");
+                msg.text("저희는 아인슈페너 맛집입니다.");
                 // delay(시간) - 애니메이션 앞에서 지연시간주기
     
                 // 7. 다음변경 버튼 보이기
@@ -305,13 +305,13 @@ $(function(){ //////// jQB /////////////////////
         },1000,function(){ // 콜백함수 (애니후 실행!) //
 
             // 5. 메시지변경
-            msg.text("여긴 없겠지?...")
+            msg.text("시몬형제~~")
             .css({left:"100%"})
             .delay(500).fadeIn(200);
 
             // 6. 다음메시지: 2초후 변경하기
             setTimeout(() => {
-                msg.html("그래도 무서우니까<br>윗층으로 가자!");
+                msg.html("회개하세요!!!!!!");
 
                 // 버튼보이기
                 btns.eq(4).fadeIn(200);
