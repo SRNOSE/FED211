@@ -358,9 +358,9 @@ $(function(){ //////// jQB /////////////////////
             // 5. 메시지변경 : 1초후
             setTimeout(() => {
                 msg.empty() // empty() 선택요소 텍스트 데이터 지우기
-                .fadeIn(200,()=>{msg.text("무.");})
-                .delay(1500).fadeIn(200,()=>{msg.text("무.서.");})
-                .delay(1500).fadeIn(200,()=>{msg.text("무.서.워...");});
+                .fadeIn(200,()=>{msg.text("부.");})
+                .delay(1500).fadeIn(200,()=>{msg.text("부.끄.");})
+                .delay(1500).fadeIn(200,()=>{msg.text("부.끄.러...");});
                 // msg요소 뒤에 delay와 fadeIn 애니메이션을
                 // 이어서 하면 순서대로 msg에 애니메이션이 쌓여서
                 // 하나씩 실행된다! (이것을 애니메이션 큐에 쌓인다고함!)
@@ -374,19 +374,20 @@ $(function(){ //////// jQB /////////////////////
                 bd.eq(7).find(".mz")
                 // 윗층으로 올라오기 -> 타겟의 높이만큼(li하나높이)
                 .animate({
-                    top: -tg.height() + "px"
+                    // top: -tg.height() + "px"
                 },500)
                 // 주인공에게 달려들기 -> 타겟의 가로값의 1.5배
                 .animate({
-                    right: tg.width()*1.5 +"px"
-                },3000,"easeOutBounce",function(){
+                    // right: tg.width()*1.5 +"px"
+                },
+                3000,"easeOutBounce",function(){
                     // 애니후 주인공 이미지 변경하기!
-                    mi.find("img").attr("src","images/mz1.png");
+                    mi.find("img").attr("src","images/heart.png");
                     // attr(속성명,값) - 선택요소의 속성바꾸기
                     // attr(속성명) - 선택요소의 속성값 가져오기
                     
                     // 메시지 변경하기
-                    msg.html("나도좀비!;;;<br>어서치료주사를!");
+                    msg.html("부끄부끄!;;;");
                     // 다음버튼 보이기
                     btns.eq(5).fadeIn(200);
                 });
@@ -413,7 +414,7 @@ $(function(){ //////// jQB /////////////////////
 
     // 3-6. '치료주사방으로!' 버튼 //////////////////
     btns.eq(5).click(function(){
-        console.log("치료주사방으로! 버튼!");
+        console.log("저녁먹으러 가자!");
 
         // 1. 자기자신 버튼 없애기
         $(this).slideUp(400);
@@ -455,13 +456,13 @@ $(function(){ //////// jQB /////////////////////
             // 주사놓은 후(1.5초후) 다시 미니언즈2(후유증)
             setTimeout(() => {
                 // 미니언즈 이미지 변경하기
-                mi.find("img").attr("src","images/m2.png");
+                mi.find("img").attr("src","images/u&i.png");
 
                 // 메시지넣기
-                msg.text("치료완료!").fadeIn(200)
-                .delay(1000).fadeIn(200,
+                msg.text("소주한잔 할까~?").fadeIn(200)
+                .delay(2000).fadeIn(100,
                     ()=>{
-                        msg.html("이제, 조금만 더<br>가면 탈출이닷!");
+                        msg.html("소주엔 삼겹살이지!");
                     }); //// fadeIn /////////////
 
                 // 주사기 없애기
@@ -469,7 +470,7 @@ $(function(){ //////// jQB /////////////////////
                 // remove() 선택요소 삭제하기
 
                 // 다음버튼 보이기
-                btns.eq(6).fadeIn(200);
+                btns.eq(6).fadeIn(8000);
 
             }, 1500); /////// 타임아웃 //////////
 
@@ -482,7 +483,7 @@ $(function(){ //////// jQB /////////////////////
 
     // 3-7. '3번방으로!' 버튼 //////////////////
     btns.eq(6).click(function(){
-        console.log("3번방으로! 버튼!");
+        console.log("아님 홍콩음식 먹을까?");
 
         // 1. 자기자신 버튼 없애기
         $(this).slideUp(400);
@@ -513,10 +514,10 @@ $(function(){ //////// jQB /////////////////////
         },1000,function(){ // 콜백함수 (애니후 실행!) //
 
             // 메시지 보이기
-            msg.text("어서 윗층으로 가자!").fadeIn(200);
+            msg.text("2차는 간단하게 와인?").fadeIn(800);
 
             // 다음버튼 보이기
-            btns.eq(7).fadeIn(200);
+            btns.eq(7).fadeIn(1000);
 
         }); ////////// animate //////////
 
@@ -557,10 +558,10 @@ $(function(){ //////// jQB /////////////////////
         },1000,function(){ // 콜백함수 (애니후 실행!) //
 
             // 메시지 보이기
-            msg.text("이제 곧 탈출이닷!").fadeIn(200);
+            msg.text("이젠 젠가하러 가자~").fadeIn(1000);
 
             // 다음버튼 보이기
-            btns.last().fadeIn(200);
+            btns.last().fadeIn(1200);
 
         }); ////////// animate //////////
 
@@ -601,7 +602,7 @@ $(function(){ //////// jQB /////////////////////
         },1000,function(){ // 콜백함수 (애니후 실행!) //
 
             // 메시지 보이기
-            msg.text("도와줘요~!!!").fadeIn(200);
+            msg.text("오빠멋쪙~!!!").fadeIn(200);
 
             // 좀비들 최종추적!!!
             // 좀비는? bd.eq(1) 1번방에 있는 좀비들

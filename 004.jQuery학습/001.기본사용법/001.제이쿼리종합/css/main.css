@@ -47,7 +47,7 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-    background: url(../images/bg.jpg) no-repeat 0/100% 100%;
+    background: url(../images/bg.png) no-repeat 0/100% 100%;
 }
 
 .building li {
