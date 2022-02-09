@@ -23,12 +23,12 @@ body {
     padding: 5px 30px;
     margin: 0;
     font-size: 5vh;
-    color: rgb(251, 255, 0);
+    color: rgb(0, 89, 255);
     text-align: center;
-    border: 5px solid red;
+    /* border: 5px solid red; */
     border-radius: 50px;
-    background-color: pink;
-    box-shadow: 3px 3px 3px #000;
+    /* background-color: pink; */
+    /* box-shadow: 3px 3px 3px #000; */
     text-shadow: 2px 2px 2px #000;
 
     z-index: 999999;
@@ -59,8 +59,8 @@ body {
     text-align: center;
     line-height: 16vh;
     font-size: 7vh;
-    color: #ff0;
-    text-shadow: 2px 2px 2px #000;
+    color:transparent;
+    /* text-shadow: 2px 2px 2px #000; */
 }
 /* 미니언즈 */
 .mi {
@@ -108,7 +108,9 @@ body {
     height: 100%;
     animation: runMi .1s infinite alternate;
 }
-
+.mz.eel{
+    right: 10%;
+}
 .inj{
     position: absolute;
     bottom: 0;

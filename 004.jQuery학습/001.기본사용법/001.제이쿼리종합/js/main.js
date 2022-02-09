@@ -11,8 +11,8 @@ $(function(){ //////// jQB /////////////////////
     tit.mouseover(function(){
         // 변경대상: .tit -> 나자신 this키워드
         $(this).css({
-            color: "red",
-            background: "yellow"
+            color: "pink"
+            // background: "yellow"
         });/// css ////
     }); //////// mouseover ////////////////
 
@@ -21,8 +21,8 @@ $(function(){ //////// jQB /////////////////////
     tit.mouseout(function(){
         // 변경대상: .tit -> 나자신 this키워드
         $(this).css({
-            color: "yellow",
-            background: "pink"
+            // color: "yellow",
+            // background: "pink"
         });/// css ////
     }); //////// mouseover ////////////////
 
@@ -45,7 +45,7 @@ $(function(){ //////// jQB /////////////////////
     let msg = $(".msg");
 
     // 좀비 태그 셋업
-    let mz1 = '<img src="images/eel.png" alt="좀비1" class="mz">';
+    let mz1 = '<img src="images/eel.png" alt="좀비1" class="mz eel">';
     let mz2 = '<img src="images/ein.png" alt="좀비2" class="mz">';
     let zom = '<img src="images/zom.png" alt="좀비들" class="mz">';
 
