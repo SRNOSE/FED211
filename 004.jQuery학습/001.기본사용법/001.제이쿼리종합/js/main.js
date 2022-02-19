@@ -11,7 +11,7 @@ $(function(){ //////// jQB /////////////////////
     tit.mouseover(function(){
         // 변경대상: .tit -> 나자신 this키워드
         $(this).css({
-            color: "pink"
+            color: "hotpink"
             // background: "yellow"
         });/// css ////
     }); //////// mouseover ////////////////
@@ -35,7 +35,7 @@ $(function(){ //////// jQB /////////////////////
     // 대상1 : 버튼 - .btns button
     let btns = $(".btns button");
 
-    // 대상2 : 미니언즈 - .mi
+    // 대상2 : 민이세라 - .mi
     let mi = $(".mi");
 
     // 대상3 : 빌딩 - .building li
@@ -44,15 +44,15 @@ $(function(){ //////// jQB /////////////////////
     // 대상4 : 메시지 - .msg
     let msg = $(".msg");
 
-    // 좀비 태그 셋업
+    // 이미지 태그 셋업
     let mz1 = '<img src="images/eel.png" alt="좀비1" class="mz eel">';
     let mz2 = '<img src="images/ein.png" alt="좀비2" class="mz">';
     let zom = '<img src="images/zom.png" alt="좀비들" class="mz">';
 
-    // 주사기 태그 셋업
+    // 소주병 태그 셋업
     let inj = '<img src="images/inj.png" alt="주사기" class="inj">';
 
-    // 미니언즈 가로크기 보정값
+    // 우리사진 가로크기 보정값
     // 윈도우 가로크기의 5%
     let win5 = $(window).width()*0.05;
     // console.log("가로크기5%:" + win5);
@@ -69,7 +69,7 @@ $(function(){ //////// jQB /////////////////////
     // 버튼들을 .숨겨() .첫번째()는 .보여()
     // 주어는 하나! 뒤에 메서드 체인!
 
-    // 2-2. 모든 빌딩 li를 순서대로 돌면서 순번넣기 + 좀비넣기
+    // 2-2. 모든 빌딩 li를 순서대로 돌면서 순번넣기 + 메뉴넣기
     // each(function(idx,ele){구현부})
     // -> 선택요소를 순서대로 돌면서 구현부를 실행하는 메서드
     // -> idx 전달변수는 순번이 전달됨(0부터)
@@ -84,7 +84,7 @@ $(function(){ //////// jQB /////////////////////
         // 1. 각 li요소에 글자넣기(순번)
         $(ele).text(idx);
 
-        // 2. 좀비+주사기 넣기
+        // 2.메뉴+소주병 넣기
         if(idx===9)
             $(ele).append(mz1);
         else if(idx===7)
@@ -96,7 +96,7 @@ $(function(){ //////// jQB /////////////////////
 
     }); ////// each //////////////////
 
-    // 2-3. 모든 좀비 숨기기
+    // 2-3.이미지 숨기기
     $(".mz").hide();
     // 선택요소가 여러개이면 for문을 돌듯이 모두 셋팅됨!
 
@@ -126,10 +126,10 @@ $(function(){ //////// jQB /////////////////////
         let tg = bd.eq(8); // 8번방
         let tval = tg.offset().top; // 화면에서의 top값
         let lval = tg.offset().left + win5; // 화면에서의 left값
-        // win5는 미니언즈를 left값 보정함!(화면의 5%)
+        // win5는 이미지의 left값 보정함!(화면의 5%)
         console.log(tval+"/"+lval);
 
-        // 4. 미니언즈 이동하기
+        // 4. 민이세라 이동하기
         // 대상: .mi -> mi변수에 할당!
         // animate({CSS설정},시간,이징,함수)
         mi.animate({
@@ -176,10 +176,10 @@ $(function(){ //////// jQB /////////////////////
         let tg = bd.eq(9); // 9번방
         let tval = tg.offset().top; // 화면에서의 top값
         let lval = tg.offset().left + win5; // 화면에서의 left값
-        // win5는 미니언즈를 left값 보정함!(화면의 5%)
+        // win5는 이미지를 left값 보정함!(화면의 5%)
         console.log(tval+"/"+lval);
 
-        // 4. 미니언즈 이동하기
+        // 4. 민이세라 이동하기
         // 대상: .mi -> mi변수에 할당!
         // animate({CSS설정},시간,이징,함수)
         mi.animate({
@@ -191,9 +191,9 @@ $(function(){ //////// jQB /////////////////////
             // -> JS내장 타이밍함수 : 일정시간뒤 함수 한번실행
             // setTimeout(()=>{},1/1000초)
 
-            // 5. 좀비 나타나기! (콜백에서 2초후)
+            // 5. 메뉴 나타나기! (콜백에서 2초후)
             setTimeout(() => {
-                // 현재li(tg변수)에 있는 좀비만 보여라!
+                // 현재li(tg변수)에 있는 메뉴만 보여라!
                 tg.find(".mz").fadeIn(300);
                 // find(요소) 하위 중 자손요소 찾기!
 
@@ -215,9 +215,9 @@ $(function(){ //////// jQB /////////////////////
 
     }); /// 3-2. '옆방으로!' 버튼 click ////////
 
-    // 3-3. '윗층으로 도망가!' 버튼 //////////////////
+    // 3-3. '윗층으로!' 버튼 //////////////////
     btns.eq(2).click(function(){
-        console.log("윗층으로 도망가! 버튼!");
+        console.log("윗층으로!");
 
         // 1. 자기자신 버튼 없애기
         $(this).slideUp(400);
@@ -236,10 +236,10 @@ $(function(){ //////// jQB /////////////////////
         let tg = bd.eq(7); // 7번방
         let tval = tg.offset().top; // 화면에서의 top값
         let lval = tg.offset().left + win5; // 화면에서의 left값
-        // win5는 미니언즈를 left값 보정함!(화면의 5%)
+        // win5는 이미지를 left값 보정함!(화면의 5%)
         console.log(tval+"/"+lval);
 
-        // 4. 미니언즈 이동하기
+        // 4. 민이세라 이동하기
         // 대상: .mi -> mi변수에 할당!
         // animate({CSS설정},시간,이징,함수)
         mi.animate({
@@ -252,7 +252,7 @@ $(function(){ //////// jQB /////////////////////
             .delay(500).fadeIn(200);
 
             
-            // 6. 좀비 나타나기! (콜백에서 2초후)
+            // 6. 아인슈페너 나타나기! (콜백에서 2초후)
             setTimeout(() => {
                 // 현재li(tg변수)에 있는 좀비만 보여라!
                 tg.find(".mz").fadeIn(300);
@@ -270,7 +270,7 @@ $(function(){ //////// jQB /////////////////////
 
         }); ////////// animate //////////
 
-    }); /// 3-3. '윗층으로 도망가!' 버튼 click ////////
+    }); /// 3-3. '윗층으로!' 버튼 click ////////
 
     // 3-4. '다시옆방으로!' 버튼 //////////////////
     btns.eq(3).click(function(){
@@ -293,10 +293,10 @@ $(function(){ //////// jQB /////////////////////
         let tg = bd.eq(6); // 6번방
         let tval = tg.offset().top; // 화면에서의 top값
         let lval = tg.offset().left + win5; // 화면에서의 left값
-        // win5는 미니언즈를 left값 보정함!(화면의 5%)
+        // win5는 이미지를 left값 보정함!(화면의 5%)
         console.log(tval+"/"+lval);
 
-        // 4. 미니언즈 이동하기
+        // 4. 민이세라 이동하기
         // 대상: .mi -> mi변수에 할당!
         // animate({CSS설정},시간,이징,함수)
         mi.animate({
@@ -323,9 +323,9 @@ $(function(){ //////// jQB /////////////////////
 
     }); /// 3-4. '다시옆방으로!' 버튼 click ////////
 
-    // 3-5. '무서우니 윗층으로!' 버튼 //////////////////
+    // 3-5. '윗층으로!' //////////////////
     btns.eq(4).click(function(){
-        console.log("무서우니 윗층으로! 버튼!");
+        console.log("윗층으로!");
 
         // 1. 자기자신 버튼 없애기
         $(this).slideUp(400);
@@ -344,10 +344,10 @@ $(function(){ //////// jQB /////////////////////
         let tg = bd.eq(4); // 4번방
         let tval = tg.offset().top; // 화면에서의 top값
         let lval = tg.offset().left + win5; // 화면에서의 left값
-        // win5는 미니언즈를 left값 보정함!(화면의 5%)
+        // win5는 이미지를 left값 보정함!(화면의 5%)
         console.log(tval+"/"+lval);
 
-        // 4. 미니언즈 이동하기
+        // 4. 민이세라 이동하기
         // 대상: .mi -> mi변수에 할당!
         // animate({CSS설정},시간,이징,함수)
         mi.animate({
@@ -368,9 +368,7 @@ $(function(){ //////// jQB /////////////////////
 
             }, 1000); /////// 타임아웃 //////////
 
-            // 6. 아랫층 좀비 올라와서 달려들기!
             setTimeout(() => {
-                // 좀비는? 7번방의 좀비
                 bd.eq(7).find(".mz")
                 // 윗층으로 올라오기 -> 타겟의 높이만큼(li하나높이)
                 .animate({
@@ -409,10 +407,10 @@ $(function(){ //////// jQB /////////////////////
 
         }); ////////// animate //////////
 
-    }); /// 3-5. '무서우니 윗층으로!' 버튼 click ////////
+    }); /// 3-5. '윗층으로!' click ////////
 
 
-    // 3-6. '치료주사방으로!' 버튼 //////////////////
+    // 3-6. '대지식당!'//////////////////
     btns.eq(5).click(function(){
         console.log("저녁먹으러 가자!");
 
@@ -433,10 +431,10 @@ $(function(){ //////// jQB /////////////////////
         let tg = bd.eq(2); // 2번방
         let tval = tg.offset().top; // 화면에서의 top값
         let lval = tg.offset().left + win5; // 화면에서의 left값
-        // win5는 미니언즈를 left값 보정함!(화면의 5%)
+        // win5는 이미지를 left값 보정함!(화면의 5%)
         console.log(tval+"/"+lval);
 
-        // 4. 미니언즈 이동하기
+        // 4. 민이세라 이동하기
         // 대상: .mi -> mi변수에 할당!
         // animate({CSS설정},시간,이징,함수)
         mi.animate({
@@ -444,7 +442,7 @@ $(function(){ //////// jQB /////////////////////
             left: lval + "px"
         },1000,function(){ // 콜백함수 (애니후 실행!) //
 
-            // 1. 주사기 돌기! (주사기는 하나뿐)
+            // 1. 소주병 돌기! (소주병은 하나뿐)
             // 주의: transform은 animate지원불가!
             // -> css의 transition설정으로 애니메이션할것!
             $(".inj").css({
@@ -453,9 +451,9 @@ $(function(){ //////// jQB /////////////////////
                 zIndex: "9999" // 주인공보다 위!
             });//////// css ////////////
 
-            // 주사놓은 후(1.5초후) 다시 미니언즈2(후유증)
+            // 소주병 후(1.5초후) 다시 민이세라 부끄
             setTimeout(() => {
-                // 미니언즈 이미지 변경하기
+                // 민이세라 이미지 변경하기
                 mi.find("img").attr("src","images/u&i.png");
 
                 // 메시지넣기
@@ -465,7 +463,7 @@ $(function(){ //////// jQB /////////////////////
                         msg.html("소주엔 삼겹살이지!");
                     }); //// fadeIn /////////////
 
-                // 주사기 없애기
+                // 소주병 없애기
                 $(".inj").remove();
                 // remove() 선택요소 삭제하기
 
@@ -477,7 +475,7 @@ $(function(){ //////// jQB /////////////////////
 
         }); ////////// animate //////////
 
-    }); /// 3-6. '치료주사방으로!' 버튼 click ////////
+    }); /// 3-6. '대지식당!'click ////////
 
 
 
@@ -505,7 +503,7 @@ $(function(){ //////// jQB /////////////////////
         // win5는 미니언즈를 left값 보정함!(화면의 5%)
         console.log(tval+"/"+lval);
 
-        // 4. 미니언즈 이동하기
+        // 4. 민이세라 이동하기
         // 대상: .mi -> mi변수에 할당!
         // animate({CSS설정},시간,이징,함수)
         mi.animate({
@@ -546,10 +544,10 @@ $(function(){ //////// jQB /////////////////////
         let tg = bd.eq(1); // 1번방
         let tval = tg.offset().top; // 화면에서의 top값
         let lval = tg.offset().left + win5; // 화면에서의 left값
-        // win5는 미니언즈를 left값 보정함!(화면의 5%)
+        // win5는 이미지를 left값 보정함!(화면의 5%)
         console.log(tval+"/"+lval);
 
-        // 4. 미니언즈 이동하기
+        // 4. 민이세라 이동하기
         // 대상: .mi -> mi변수에 할당!
         // animate({CSS설정},시간,이징,함수)
         mi.animate({
@@ -558,10 +556,10 @@ $(function(){ //////// jQB /////////////////////
         },1000,function(){ // 콜백함수 (애니후 실행!) //
 
             // 메시지 보이기
-            msg.text("이젠 젠가하러 가자~").fadeIn(1000);
+            msg.text("이젠 젠가하러 가자~").fadeIn(1200);
 
             // 다음버튼 보이기
-            btns.last().fadeIn(1200);
+            btns.last().fadeIn(1400);
 
         }); ////////// animate //////////
 
@@ -590,10 +588,10 @@ $(function(){ //////// jQB /////////////////////
         let tg = bd.eq(0); // 0번방
         let tval = tg.offset().top; // 화면에서의 top값
         let lval = tg.offset().left + win5; // 화면에서의 left값
-        // win5는 미니언즈를 left값 보정함!(화면의 5%)
+        // win5는 이미지를 left값 보정함!(화면의 5%)
         console.log(tval+"/"+lval);
 
-        // 4. 미니언즈 이동하기
+        // 4. 민이세라 이동하기
         // 대상: .mi -> mi변수에 할당!
         // animate({CSS설정},시간,이징,함수)
         mi.animate({
@@ -604,12 +602,11 @@ $(function(){ //////// jQB /////////////////////
             // 메시지 보이기
             msg.text("아냐!! 오빠가 헬기 불렀어").fadeIn(200);
 
-            // 좀비들 최종추적!!!
-            // 좀비는? bd.eq(1) 1번방에 있는 좀비들
+            //  택시!!!
             bd.eq(1).find(".mz")
             .fadeIn(200,function(){ // 콜백함수 (애니후 실행)
 
-                // 좀비들 움직이기
+                // 택시 움직이기
                 // this키워드 === bd.eq(1).find(".mz")
                 $(this).animate({
                     right: tg.width()*1.3 + "px"
@@ -633,13 +630,12 @@ $(function(){ //////// jQB /////////////////////
                     // 조금 이동하기
                     left: "70%"
                 },2000,function(){ // 콜백함수 (애니후)
-                    // 헬기조정사 좀비로 바뀐 이미지 변경!
+                    // 헬기 탑승 후로 이미지 변경!
                     $(this).attr("src","images/heli3.png");
                 }) //// animate ////
                 .animate({ // 마지막 화면밖으로 10초간 천천히 나감
                     left: "100%"
-                }, 10000, function(){ // 콜백함수 (애니후)
-                    // 미리 지정한 class를 타이틀에 줘서 간판떨어짐
+                }, 9000, function(){ // 콜백함수 (애니후)
                     // 대상: .tit -> tit변수
                     tit.addClass("on");
                     // addClass(클래스명) - 선택요소에 class넣기
@@ -648,7 +644,6 @@ $(function(){ //////// jQB /////////////////////
                     setTimeout(() => {
                         // 타이틀 두번째 액션 클래스넣기
                         tit.addClass("on2");
-                        // 빌딩무너지기 클래스 넣기
                         bd.parent().addClass("on");
                     }, 3000);
 
